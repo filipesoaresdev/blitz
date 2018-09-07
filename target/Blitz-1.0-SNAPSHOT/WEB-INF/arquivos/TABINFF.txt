@@ -1,0 +1,449 @@
+COD..DESCRICAO...........................................................................................LEI.................GRAVID..I.INFRATOR............COMPETENCIA.........XXXXXXXXXXXXXXXXXXXXXX
+50020MULTA, POR NAO IDENTIFICACAO DO CONDUTOR INFRATOR, IMPOSTA A PESSOA JURIDICA                        257 pr 8                                                              PRO        0          
+50100DIRIGIR VEICULO SEM POSSUIR CNH OU PERMISSAO PARA DIRIGIR                                           162 * I             GRAVISS 3XCONDUTOR            ESTADUAL            CON7   57462    574,62
+50291DIRIGIR VEICULO COM CNH CASSADA                                                                     162 * II            GRAVISS 5X                                        CON7   95770    957,70
+50292DIRIGIR VEICULO COM PERMISSAO PARA DIRIGIR CASSADA                                                  162 * II            GRAVISS 5X                                        CON7   95770    957,70
+50293DIRIGIR VEICULO COM CNH OU PPD COM SUSPENSAO DO DIREITO DE DIRIGIR                                  162 * II            GRAVISS 5X                                        CON7   95770    957,70
+50371DIRIGIR VEICULO COM CNH DE CATEGORIA DIFERENTE DA DO VEICULO                                        162 * III           GRAVISS 3X                                        CON7   57462    574,62
+50372DIRIGIR VEICULO COM PPD DE CATEGORIA DIFERENTE DA DO VEICULO                                        162 * III           GRAVISS 3X                                        CON7   57462    574,62
+50450DIRIGIR VEICULO COM VALIDADE DA CNH OU PPD VENCIDA HA MAIS DE 30 DIAS                               162 * V             GRAVISS   CONDUTOR            ESTADUAL            CON7   19154    191,54
+50531DIRIGIR VEICULO SEM USAR LENTES CORRETORAS DE VISAO                                                 162 * VI            GRAVISS                                           CON7   19154    191,54
+50532DIRIGIR VEICULO SEM USAR APARELHO AUXILIAR DE AUDICAO                                               162 * VI            GRAVISS                                           CON7   19154    191,54
+50533DIRIGIR VEICULO SEM USAR APARELHO AUXILIAR DE PROTESE FISICA                                        162 * VI            GRAVISS                                           CON7   19154    191,54
+50534DIRIGIR VEICULO S/ ADAPTACOES IMPOSTAS NA CONCESSAO/RENOVACAO LICENCA CONDUZIR                      162 * VI            GRAVISS                                           CON7   19154    191,54
+50610ENTREGAR VEICULO A PESSOA SEM CNH OU PERMISSAO PARA DIRIGIR                                         163 c/c 162 * I     GRAVISS 3XPROPRIETARIO        ESTADUAL            PRO7   57462    574,62
+50701ENTREGAR VEICULO A PESSOA COM CNH CASSADA                                                           163 c/c 162 * II    GRAVISS 5X                                        PRO7   95770    957,70
+50702ENTREGAR VEICULO A PESSOA COM PERMISSAO PARA DIRIGIR CASSADA                                        163 c/c 162 * II    GRAVISS 5X                                        PRO7   95770    957,70
+50703ENTREGAR VEICULO A PESSOA COM CNH OU PPD COM SUSPENSAO DO DIREITO DE DIRIGIR                        163 c/c 162 * II    GRAVISS 5X                                        PRO7   95770    957,70
+50881ENTREGAR VEICULO A PESSOA COM CNH DE CATEGORIA DIFERENTE DA DO VEICULO                              163 c/c 162 * III   GRAVISS 3X                                        PRO7   57462    574,62
+50882ENTREGAR VEICULO A PESSOA COM PPD DE CATEGORIA DIFERENTE DA DO VEICULO                              163 c/c 162 * III   GRAVISS 3X                                        PRO7   57462    574,62
+50960ENTREGAR VEICULO A PESSOA COM CNH VENCIDA HA MAIS DE 30 DIAS                                        163 c/c 162 * V     GRAVISS   PROPRIETARIO        ESTADUAL            PRO7   19154    191,54
+51001ENTREGAR O VEICULO A PESSOA SEM USAR LENTES CORRETORAS DE VISAO                                     163 c/c 162 * VI    GRAVISS                                           PRO7   19154    191,54
+51002ENTREGAR O VEICULO A PESSOA SEM USAR APARELHO AUXILIAR DE AUDICAO                                   163 c/c 162 * VI    GRAVISS                                           PRO7   19154    191,54
+51003ENTREGAR O VEICULO A PESSOA SEM APARELHO DE PROTESE FISICA                                          163 c/c 162 * VI    GRAVISS                                           PRO7   19154    191,54
+51004ENTREGAR VEIC PESSOA S/ ADAPTACOES IMPOSTAS CONCESSAO/RENOVACAO LICENCA CONDUZIR                    163 c/c 162 * VI    GRAVISS                                           PRO7   19154    191,54
+51180PERMITIR POSSE/CONDUCAO DO VEICULO A PESSOA SEM CNH OU PPD                                          164 c/c 162 * I     GRAVISS 3XPROPRIETARIO        ESTADUAL            PRO7   57462    574,62
+51261PERMITIR POSSE/CONDUCAO DO VEICULO A PESSOA COM CNH CASSADA                                         164 c/c 162 * II    GRAVISS 5X                                        PRO7   95770    957,70
+51262PERMITIR POSSE/CONDUCAO DO VEICULO A PESSOA COM PPD CASSADA                                         164 c/c 162 * II    GRAVISS 5X                                        PRO7   95770    957,70
+51263PERMITIR POSSE/CONDUCAO VEIC PESSOA COM CNH/PPD C/ SUSPENSAO DIREITO DE DIRIGIR                     164 c/c 162 * II    GRAVISS 5X                                        PRO7   95770    957,70
+51341PERMITIR POSSE/CONDUCAO VEIC A PESSOA COM CNH CATEGORIA DIFERENTE DA DO VEICULO                     164 c/c 162 * III   GRAVISS 3X                                        PRO7   57462    574,62
+51342PERMITIR POSSE/CONDUCAO VEIC A PESSOA COM PPD CATEGORIA DIFERENTE DA DO VEICULO                     164 c/c 162 * III   GRAVISS 3X                                        PRO7   57462    574,62
+51420PERMITIR POSSE/CONDUCAO DO VEICULO A PESSOA COM CNH VENCIDA HA MAIS DE 30 DIAS                      164 c/c 162 * V     GRAVISS   PROPRIETARIO        ESTADUAL            PRO7   19154    191,54
+51501PERMITIR POSSE/CONDUCAO DO VEICULO A PESSOA SEM USAR LENTES CORRETORAS DE VISAO                     164 c/c 162 * VI    GRAVISS                                           PRO7   19154    191,54
+51502PERMITIR POSSE/CONDUCAO DO VEICULO A PESSOA S/ USAR APARELHO AUXILIAR DE AUDICAO                    164 c/c 162 * VI    GRAVISS                                           PRO7   19154    191,54
+51503PERMITIR POSSE/CONDUCAO DO VEICULO A PESSOA SEM USAR APARELHO DE PROTESE FISICA                     164 c/c 162 * VI    GRAVISS                                           PRO7   19154    191,54
+51504PERMITIR POSSE/COND VEIC S/ ADAPTACOES IMPOSTAS CONCESSAO/RENOVACAO LICENCA COND                    164 c/c 162 * VI    GRAVISS                                           PRO7   19154    191,54
+51691DIRIGIR SOB A INFLUENCIA DE ALCOOL                                                                  165                 GRAVISS 5X                                        CON7   95770    957,70
+51692DIRIGIR SOB INFLUENCIA SUBST ENTORPECENTE OU Q DETERMINE DEPEND FISICA/PSIQUICA                     165                 GRAVISS 5X                                        CON7   95770    957,70
+51770CONFIAR/ENTREGAR VEIC PESS C/ ESTADO FISICO/PSIQUICO S/ CONDICOES DIRIGIR SEGUR                     166                 GRAVISS   PROPRIETARIO        ESTADUAL            PRO7   19154    191,54
+51851DEIXAR O CONDUTOR DE USAR O CINTO SEGURANCA                                                         167                 GRAVE                                             CON5   12769    127,69
+51852DEIXAR O PASSAGEIRO DE USAR O CINTO SEGURANCA                                                       167                 GRAVE                                             CON5   12769    127,69
+51930TRANSPORTAR CRIANCA SEM OBSERVANCIA DAS NORMAS DE SEGURANCA ESTABELECIDAS P/ CTB                    168                 GRAVISS   CONDUTOR            MUNICIPAL/ESTADUAL  CON7   19154    191,54
+52070DIRIGIR SEM ATENCAO OU SEM OS CUIDADOS INDISPENSAVEIS A SEGURANCA                                   169                 LEVE      CONDUTOR            MUNICIPAL/ESTADUAL  CON3    5320     53,20
+52151DIRIGIR AMEACANDO OS PEDESTRES QUE ESTEJAM ATRAVESSANDO A VIA PUBLICA                               170                 GRAVISS                                           CON7   19154    191,54
+52152DIRIGIR AMEACANDO OS DEMAIS VEICULOS                                                                170                 GRAVISS                                           CON7   19154    191,54
+52231USAR VEICULO PARA ARREMESSAR SOBRE OS PEDESTRES AGUA OU DETRITOS                                    171                 MEDIA                                             CON4    8513     85,13
+52232USAR VEICULO PARA ARREMESSAR SOBRE OS VEICULOS AGUA OU DETRITOS                                     171                 MEDIA                                             CON4    8513     85,13
+52311ATIRAR DO VEICULO OBJETOS OU SUBSTANCIAS                                                            172                 MEDIA                                             CON4    8513     85,13
+52312ABANDONAR NA VIA OBJETOS OU SUBSTANCIAS                                                             172                 MEDIA                                             CON4    8513     85,13
+52400DISPUTAR CORRIDA POR ESPIRITO DE EMULACAO                                                           173                 GRAVISS 3XCONDUTOR            MUNICIPAL/ESTADUAL  CON7   57462  1.915,40
+52581PROMOVER NA VIA COMPETICAO ESPORTIVA SEM PERMISSAO                                                  174                 GRAVISS 5X                                        PFJ7   95770  1.915,40
+52582PROMOVER NA VIA EVENTOS ORGANIZADOS SEM PERMISSAO                                                   174                 GRAVISS 5X                                        PFJ7   95770  1.915,40
+52583PROMOVER NA VIA EXIBICAO E DEMONSTRACAO DE PERICIA EM MANOBRA DE VEICULO                            174                 GRAVISS 5X                                        PFJ7   95770  1.915,40
+52661PARTICIPAR NA VIA COMO CONDUTOR EM COMPETICAO ESPORTIVA, SEM PERMISSAO                              174                 GRAVISS 5X                                        CON7   95770  1.915,40
+52662PARTICIPAR NA VIA COMO CONDUTOR EM EVENTO ORGANIZADO, SEM PERMISSAO                                 174                 GRAVISS 5X                                        CON7   95770  1.915,40
+52663PARTICIPAR COMO CONDUTOR EXIB/DEMONST PERICIA EM MANOBRA DE VEIC, S/ PERMISSAO                      174                 GRAVISS 5X                                        CON7   95770  1.915,40
+52741UTILIZAR-SE DE VEICULO PARA DEMONSTRAR OU EXIBIR MANOBRA PERIGOSA                                   175                 GRAVISS                                           CON7   19154  1.915,40
+52742UTILIZAR-SE DE VEICULO PARA DEMONSTRAR OU EXIBIR ARRANCADA BRUSCA                                   175                 GRAVISS                                           CON7   19154    191,54
+52743UTILIZAR-SE DE VEICULO PARA DEMONSTRAR OU EXIBIR DERRAPAGEM OU FRENAGEM                             175                 GRAVISS                                           CON7   19154    191,54
+52820DEIXAR O COND ENVOLVIDO EM ACIDENTE, DE PRESTAR OU PROVIDENCIAR SOCORRO A VITIMA                    176 * I             GRAVISS 5XCONDUTOR            ESTADUAL            CON7   95770    957,70
+52900DEIXAR O COND ENVOLVIDO EM ACID, DE ADOTAR PROVID P/ EVITAR PERIGO P/O TRANSITO                     176 * II            GRAVISS 5XCONDUTOR            ESTADUAL            CON7   95770    957,70
+53040DEIXAR O COND ENVOLVIDO EM ACIDENTE, DE PRESERVAR LOCAL P/ TRAB POLICIA/PERICIA                     176 * III           GRAVISS 5XCONDUTOR            ESTADUAL            CON7   95770    957,70
+53120DEIXAR O COND ENVOLVIDO EM ACID, DE REMOVER O VEIC LOCAL QDO DETERM POLIC/AGENTE                    176 * IV            GRAVISS 5XCONDUTOR            ESTADUAL            CON7   95770    957,70
+53200DEIXAR O COND ENVOLVIDO EM ACID, DE IDENTIFICAR-SE POLICIAL E PRESTAR INF P/O BO                    176 * V             GRAVISS 5XCONDUTOR            ESTADUAL            CON7   95770    957,70
+53390DEIXAR O COND DE PRESTAR SOCORRO VITIMA ACID DE TRANSITO, QDO SOLICIT P/ AGENTE                     177                 GRAVE     CONDUTOR            MUNICIPAL/ESTADUAL  CON5   12769    127,69
+53470DEIXAR O CONDUTOR ENVOLVIDO EM ACIDENTE S/ VITIMA, DE REMOVER O VEICULO DO LOCAL                    178                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+53550FAZER OU DEIXAR QUE SE FACA REPARO EM VEIC, EM RODOVIA E VIA DE TRANSITO RAPIDO                     179 * I             GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+53630FAZER/DEIXAR QUE SE FACA REPARO EM VEIC NAS VIAS (Q NAO RODOVIA/TRANSITO RAPIDO)                    179 * II            LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+53710TER SEU VEICULO IMOBILIZADO NA VIA POR FALTA DE COMBUSTIVEL                                         180                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+53800ESTACIONAR NAS ESQUINAS E A MENOS DE 5M DO ALINHAMENTO DA VIA TRANSVERSAL                           181 * I             MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+53980ESTACIONAR AFASTADO DA GUIA DA CALCADA (MEIO-FIO) DE 50CM A 1M                                      181 * II            LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+54010ESTACIONAR AFASTADO DA GUIA DA CALCADA (MEIO-FIO) A MAIS DE 1M                                      181 * III           GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+54100ESTACIONAR EM DESACORDO COM AS POSICOES ESTABELECIDAS NO CTB                                        181 * IV            MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+54281ESTACIONAR NA PISTA DE ROLAMENTO DAS ESTRADAS                                                       181 * V             GRAVISS                                           CON7   19154    191,54
+54282ESTACIONAR NA PISTA DE ROLAMENTO DAS RODOVIAS                                                       181 * V             GRAVISS                                           CON7   19154    191,54
+54283ESTACIONAR NA PISTA DE ROLAMENTO DAS VIAS DE TRANSITO RAPIDO                                        181 * V             GRAVISS                                           CON7   19154    191,54
+54284ESTACIONAR NA PISTA DE ROLAMENTO DAS VIAS DOTADAS DE ACOSTAMENTO                                    181 * V             GRAVISS                                           CON7   19154    191,54
+54360ESTACIONAR JUNTO/SOBRE HIDR DE INCENDIO, REG DE AGUA/TAMPA DE POCO VISIT GAL SUB                    181 * VI            MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+54440ESTACIONAR O VEICULO NOS ACOSTAMENTOS                                                               181 * VII           LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+54521ESTACIONAR NO PASSEIO                                                                               181 * VIII          GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+54522ESTACIONAR SOBRE FAIXA DESTINADA A PEDESTRE                                                         181 * VIII          GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+54523ESTACIONAR SOBRE CICLOVIA OU CICLOFAIXA                                                             181 * VIII          GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+54524ESTACIONAR NAS ILHAS OU REFUGIOS                                                                    181 * VIII          GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+54525ESTACIONAR AO LADO OU SOBRE CANTEIRO CENTRAL                                                        181 * VIII          GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+54526STACIONAR AO LADO/SOBRE DIVISORES DE PISTA DE ROLAMENTO/MARCAS DE CANALIZACAO                       181 * VIII          GRAVE                                             CON5   12769    127,69
+54527ESTACIONAR AO LADO OU SOBRE GRAMADO OU JARDIM PUBLICO                                               181 * VIII          GRAVE                                             CON5   12769    127,69
+54600ESTACIONAR EM GUIA DE CALCADA REBAIXADA DESTINADA A ENTRADA/SAIDA DE VEICULOS                       181 * IX            MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+54790ESTACIONAR IMPEDINDO A MOVIMENTACAO DE OUTRO VEICULO                                                181 * X             MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+54870ESTACIONAR AO LADO DE OUTRO VEICULO EM FILA DUPLA                                                   181 * XI            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+54950ESTACIONAR NA AREA DE CRUZAMENTO DE VIAS                                                            181 * XII           GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+55090ESTACIONAR NO PONTO DE EMBARQUE/DESEMBARQUE DE PASSAGEIROS TRANSPORTE COLETIVO                      181 * XIII          MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+55171ESTACIONAR NOS VIADUTOS                                                                             181 * XIV           GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+55172ESTACIONAR NAS PONTES                                                                               181 * XIV           GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+55173ESTACIONAR NOS TUNEIS                                                                               181 * XIV           GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+55250ESTACIONAR VEICULO NA CONTRAMAO DE DIRECAO                                                          181 * XV            MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+55330ESTACIONAR ACLIVE/DECLIVE N FREADO E SEM CALCO SEGURANCA, PBT SUPERIOR A 3500KG                     181 * XVI           GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+55411ESTACIONAR EM DESACORDO COM A REGULAMENTACAO ESPECIFICADA PELA SINALIZACAO                          181 * XVII          LEVE                                              CON3    5320     53,20
+55412ESTACIONAR EM DESACORDO COM A REGULAMENTACAO - ESTACIONAMENTO ROTATIVO                              181 * XVII          LEVE                                              CON3    5320     53,20
+55413ESTACIONAR EM DESACORDO COM A REGULAMENTACAO - PONTO OU VAGA DE TAXI                                181 * XVII          LEVE                                              CON3    5320     53,20
+55414ESTACIONAR EM DESACORDO COM A REGULAMENTACAO - VAGA DE CARGA/DESCARGA                               181 * XVII          LEVE                                              CON3    5320     53,20
+55415ESTACIONAR EM DESACORDO COM A REGULAMENTACAO - VAGA PORTADOR NECESSID ESPECIAIS                     181 * XVII          LEVE                                              CON3    5320     53,20
+55416ESTACIONAR EM DESACORDO COM A REGULAMENTACAO - VAGA IDOSO                                           181 * XVII          LEVE                                              CON3    5320     53,20
+55500ESTACIONAR EM LOCAL/HORARIO PROIBIDO ESPECIFICAMENTE PELA SINALIZACAO                               181 * XVIII         MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+55680ESTACIONAR LOCAL/HORARIO DE ESTACIONAMENTO E PARADA PROIBIDOS PELA SINALIZACAO                      181 * XIX           GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+55760PARAR NAS ESQUINAS E A MENOS 5M DO BORDO DO ALINHAMENTO DA VIA TRANSVERSAL                          182 * I             MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+55840PARAR AFASTADO DA GUIA DA CALCADA (MEIO-FIO) DE 50CM A 1M                                           182 * II            LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+55920PARAR AFASTADO DA GUIA DA CALCADA (MEIO-FIO) A MAIS DE 1M                                           182 * III           MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+56060PARAR EM DESACORDO COM AS POSICOES ESTABELECIDAS NO CTB                                             182 * IV            LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+56141PARAR NA PISTA DE ROLAMENTO DAS ESTRADAS                                                            182 * V             GRAVE                                             CON5   12769    127,69
+56142PARAR NA PISTA DE ROLAMENTO DAS RODOVIAS                                                            182 * V             GRAVE                                             CON5   12769    127,69
+56143PARAR NA PISTA DE ROLAMENTO DAS VIAS DE TRANSITO RAPIDO                                             182 * V             GRAVE                                             CON5   12769    127,69
+56144PARAR NA PISTA DE ROLAMENTO DAS DEMAIS VIAS DOTADAS ACOSTAMENTO                                     182 * V             GRAVE                                             CON5   12769    127,69
+56221PARAR NO PASSEIO/CALCADA                                                                            182 * VI            LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+56222PARAR SOBRE FAIXA DESTINADA A PEDESTRES                                                             182 * VI            LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+56223PARAR NAS ILHAS OU REFUGIOS                                                                         182 * VI            LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+56224PARAR NOS CANTEIROS CENTRAIS                                                                        182 * VI            LEVE                                              CON3    5320     53,20
+56225PARAR NOS DIVISORES DE PISTA DE ROLAMENTO E MARCAS DE CANALIZACAO                                   182 * VI            LEVE                                              CON3    5320     53,20
+56300PARAR NA AREA DE CRUZAMENTO DE VIAS                                                                 182 * VII           MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+56491PARAR NOS VIADUTOS                                                                                  182 * VIII          MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+56492PARAR NAS PONTES                                                                                    182 * VIII          MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+56493PARAR NOS TUNEIS                                                                                    182 * VIII          MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+56570PARAR NA CONTRA MAO DE DIRECAO                                                                      182 * IX            MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+56650PARAR EM LOCAL/HORARIO PROIBIDOS ESPECIFICAMENTE PELA SINALIZACAO                                   182 * X             MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+56731PARAR SOBRE FAIXA DE PEDESTRES NA MUDANCA DE SINAL LUMINOSO                                         183                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+56732PARAR SOBRE FAIXA DE PEDESTRES NA MUDANCA DE SINAL LUMINOSO (FISC ELETRÈNICA)                       183                 MEDIA                                             CON4    8513     85,13
+56810TRANSITAR NA FAIXA/PISTA DA DIREITA REGUL CIRCULACAO EXCLUSIVA DETERM VEICULO                       184 * I             LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+56900TRANSITAR NA FAIXA/PISTA DA ESQUERDA REGUL CIRCULACAO EXCLUSIVA DETERM VEICULO                      184 * II            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+57030DEIXAR DE CONSERVAR O VEICULO NA FAIXA A ELE DESTINADA PELA SINALIZACAO DE REGULAMENTACAO           185 * I             MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+57110DEIXAR DE CONSERVAR NAS FAIXAS DA DIREITA O VEICULO LENTO E DE MAIOR PORTE                          185 * II            MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+57200TRANSITAR PELA CONTRAMAO DE DIRECAO EM VIA COM DUPLO SENTIDO DE CIRCULACAO                          186 * I             GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+57380TRANSITAR PELA CONTRAMAO DE DIRECAO EM VIA C/ SINALIZACAO DE REGUL SENTIDO UNICO                    186 * II            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+57461TRANSITAR EM LOCAL/HORARIO NAO PERMITIDO PELA REGUL ESTABELECIDA PELA AUTORIDADE                    187 * I             MEDIA                                             CON4    8513     85,13
+57462TRANSITAR EM LOCAL/HORARIO NAO PERMITIDO PELA REGULAMENTACAO - RODIZIO                              187 * I             MEDIA                                             CON4    8513     85,13
+57463TRANSITAR EM LOCAL/HORARIO NAO PERMITIDO PELA REGULAMENTACAO - VEICULO DE CARGA                     187 * I             MEDIA                                             CON4    8513     85,13
+57620TRANSITAR AO LADO DE OUTRO VEICULO, INTERROMPENDO OU PERTURBANDO O TRANSITO                         188                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+57701DEIXAR DE DAR PASSAGEM A VEIC PRECEDIDO DE BATEDORES DEVIDAMENTE IDENTIFICADOS                      189                 GRAVISS   CONDUTOR            MUNICIPAL/ESTADUAL  CON7   19154    191,54
+57702DEIXAR DE DAR PASSAGEM A VEIC SOCORRO DE INCENDIO EM SERV URGENCIA DEVID IDENTIF                    189                 GRAVISS   CONDUTOR            MUNICIPAL/ESTADUAL  CON7   19154    191,54
+57703DEIXAR DE DAR PASSAGEM A VEIC DE POLICIA EM SERVICO DE URGENCIA DEVID IDENTIF                       189                 GRAVISS   CONDUTOR            MUNICIPAL/ESTADUAL  CON7   19154    191,54
+57704DEIXAR DE DAR PASSAGEM A VEIC DE OPERACAO E FISCALIZACAO DE TRANSITO DEVID IDENT                    189                 GRAVISS   CONDUTOR            MUNICIPAL/ESTADUAL  CON7   19154    191,54
+57705DEIXAR DE DAR PASSAGEM A AMBULANCIA EM SERVICO DE URGENCIA DEVID IDENTIFICADA                       189                 GRAVISS   CONDUTOR            MUNICIPAL/ESTADUAL  CON7   19154    191,54
+57890SEGUIR VEICULO EM SERV URGENCIA DEVID IDENTIFIC P/ ALARME SONORO/ILUM VERMELHA                      190                 GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+57970FORCAR PASSAGEM ENTRE VEICS TRANS SENT OPOSTOS NA IMINENCIA REALIZ ULTRAPASSAGEM                    191                 GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154  1.915,40
+58000DEIXAR GUARDAR DIST SEGURANCA LAT/FRONT ENTRE SEU VEIC E DEMAIS E AO BORDO PISTA                    192                 GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+58191TRANSITAR COM O VEICULO EM CALCADAS, PASSEIOS                                                       193                 GRAVISS 3XCONDUTOR            MUNICIPAL           CON7   57462    574,62
+58192TRANSITAR COM O VEICULO EM CICLOVIAS, CICLOFAIXAS                                                   193                 GRAVISS 3XCONDUTOR            MUNICIPAL           CON7   57462    574,62
+58193TRANSITAR COM O VEICULO EM AJARDINAMENTOS, GRAMADOS, JARDINS PUBLICOS                               193                 GRAVISS 3XCONDUTOR            MUNICIPAL           CON7   57462    574,62
+58194TRANSITAR COM O VEICULO EM CANTEIROS CENTRAIS                                                       193                 GRAVISS 3XCONDUTOR            MUNICIPAL           CON7   57462    574,62
+58195TRANSITAR COM O VEICULO EM ILHAS, REFUGIOS                                                          193                 GRAVISS 3X                                        CON7   57462    574,62
+58196TRANSITAR COM O VEICULO EM DIVISORES DE PISTA DE ROLAMENTO, MARCA DE CALIZACAO                      193                 GRAVISS 3X                                        CON7   57462    574,62
+58197TRANSITAR COM O VEICULO EM ACOSTAMENTOS                                                             193                 GRAVISS 3X                                        CON7   57462    574,62
+58198TRANSITAR COM O VEICULO EM PASSARELAS                                                               193                 GRAVISS 3X                                        CON7   57462    574,62
+58270TRANSITAR EM MARCHA RE, SALVO NA DISTANCIA NECESSARIA A PEQUENAS MANOBRAS                           194                 GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+58350DESOBEDECER AS ORDENS EMANADAS DA AUTORID COMPET DE TRANSITO OU DE SEUS AGENTES                     195                 GRAVE     CONDUTOR            MUNICIPAL/ESTADUAL  CON5   12769    127,69
+58431DEIXAR DE INDICAR C/ ANTEC, MED GESTO DE BRACO/LUZ INDICADORA, INICIO DA MARCHA                     196                 GRAVE     CONDUTOR            MUNICIPAL/ESTADUAL  CON5   12769    127,69
+58432DEIXAR DE INDICAR C/ ANTEC, MED GESTO DE BRACO/LUZ INDICADORA, MANOBRA DE PARAR                     196                 GRAVE     CONDUTOR            MUNICIPAL/ESTADUAL  CON5   12769    127,69
+58433DEIXAR DE INDICAR C/ ANTEC, MED GESTO DE BRACO/LUZ INDICADORA, MUDANCA DIRECAO                      196                 GRAVE     CONDUTOR            MUNICIPAL/ESTADUAL  CON5   12769    127,69
+58434DEIXAR DE INDICAR C/ ANTEC, MED GESTO DE BRACO/LUZ INDICADORA, MUDANCA DE FAIXA                     196                 GRAVE     CONDUTOR            MUNICIPAL/ESTADUAL  CON5   12769    127,69
+58511DEIXAR DE DESLOCAR C/ANTECEDENCIA VEIC P/ FAIXA MAIS A ESQUERDA QDO FOR MANOBRAR                    197                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+58512DEIXAR DE DESLOCAR C/ANTECEDENCIA VEIC P/ FAIXA MAIS A DIREITA QDO FOR MANOBRAR                     197                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+58600DEIXAR DE DAR PASSAGEM PELA ESQUERDA, QUANDO SOLICITADO.                                            198                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+58780ULTRAPASSAR PELA DIREITA, SALVO QUANDO O VEICULO DA FRENTE DER SINAL P/ ENTRAR ESQUERDA             199                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+58860ULTRAP PELA DIREITA VEIC DE TRANSP COLETIVO PARADO PARA EMB/DESEMB PASSAGEIROS                      200                 GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+58940DEIXAR DE GUARDAR A DISTANCIA LATERAL DE 1,50M AO PASSAR/ULTRAPASSAR BICICLETA                      201                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+59080ULTRAPASSAR PELO ACOSTAMENTO.                                                                       202 * I             GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    957,70
+59161ULTRAPASSAR EM INTERSECOES                                                                          202 * II            GRAVE                                             CON5   12769    957,70
+59162ULTRAPASSAR EM PASSAGEM DE NIVEL                                                                    202 * II            GRAVE                                             CON5   12769    957,70
+59241ULTRAPASSAR PELA CONTRAMAO NAS CURVAS SEM VISIBILIDADE SUFICIENTE                                   203 * I             GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,40
+59242ULTRAPASSAR PELA CONTRAMAO NOS ACLIVES OU DECLIVES, SEM VISIBILIDADE SUFICIENTE                     203 * I             GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,70
+59320ULTRAPASSAR PELA CONTRAMAO NAS FAIXAS DE PEDESTRE.                                                  203 * II            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,70
+59401ULTRAPASSAR PELA CONTRAMAO NAS PONTES                                                               203 * III           GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,70
+59402ULTRAPASSAR PELA CONTRAMAO NOS VIADUTOS                                                             203 * III           GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,70
+59403ULTRAPASSAR PELA CONTRAMAO NOS TUNEIS                                                               203 * III           GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,70
+59591ULTRAPASSAR PELA CONTRAMAO VEICULO PARADO EM FILA JUNTO SINAL LUMINOSO                              203 * IV            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,70
+59592ULTRAPASSAR PELA CONTRAMAO VEICULO PARADO EM FILA JUNTO A CANCELA/PORTEIRA                          203 * IV            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,70
+59593ULTRAPASSAR PELA CONTRAMAO VEICULO PARADO EM FILA JUNTO A CRUZAMENTO                                203 * IV            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,70
+59594ULTRAPASSAR PELA CONTRAMAO VEIC PARADO EM FILA JUNTO QQ IMPEDIMENTO A CIRCULACAO                    203 * IV            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,70
+59670ULTRAPASSAR PELA CONTRAMAO LINHA DE DIVISAO DE FLUXOS OPOSTOS, CONTINUA AMARELA                     203 * V             GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    957,70
+59750DEIXAR DE PARAR NO ACOSTAMENTO A DIREITA, P/ CRUZAR PISTA OU ENTRAR A ESQUERDA                      204                 GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+59830ULTRAPASSAR VEICULO EM MOVIMENTO QUE INTEGRE CORTEJO/DESFILE/FORMACAO MILITAR                       205                 LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+59910EXECUTAR OPERACAO DE RETORNO EM LOCAIS PROIBIDOS PELA SINALIZACAO                                   206 * I             GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+60091EXECUTAR OPERACAO DE RETORNO NAS CURVAS                                                             206 * II            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+60092EXECUTAR OPERACAO DE RETORNO NOS ACLIVES OU DECLIVES                                                206 * II            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+60093EXECUTAR OPERACAO DE RETORNO NAS PONTES                                                             206 * II            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+60094EXECUTAR OPERACAO DE RETORNO NOS VIADUTOS                                                           206 * II            GRAVISS                                           CON7   19154    191,54
+60095EXECUTAR OPERACAO DE RETORNO NOS TUNEIS                                                             206 * II            GRAVISS                                           CON7   19154    191,54
+60171EXECUTAR OPERACAO DE RETORNO PASSANDO POR CIMA DE CALCADA, PASSEIO                                  206 * III           GRAVISS                                           CON7   19154    191,54
+60172EXECUTAR OPERACAO DE RETORNO PASSANDO POR CIMA DE ILHA, REFUGIO                                     206 * III           GRAVISS                                           CON7   19154    191,54
+60173EXECUTAR OPERACAO DE RETORNO PASSANDO POR CIMA DE AJARDINAMENTO                                     206 * III           GRAVISS                                           CON7   19154    191,54
+60174EXECUTAR OPERACAO DE RETORNO PASSANDO POR CIMA DE CANTEIRO DE DIVISOR DE PISTA                      206 * III           GRAVISS                                           CON7   19154    191,54
+60175EXECUTAR OPERACAO DE RETORNO PASSANDO POR CIMA DE FAIXA DE PEDESTRES                                206 * III           GRAVISS                                           CON7   19154    191,54
+60176EXECUTAR OPERACAO DE RETORNO PASSANDO POR CIMA DE FAIXA DE VEIC NAO MOTORIZADOS                     206 * III           GRAVISS                                           CON7   19154    191,54
+60250EXECUTAR RETORNO NAS INTERSECOES, ENTRANDO NA CONTRAMAO DA VIA TRANSVERSAL                          206 * IV            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+60330EXECUTAR RETORNO C/PREJUIZO DA CIRCULACAO/SEGURANCA AINDA QUE EM LOCAL PERMITIDO                    206 * V             GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+60411EXECUTAR OPERACAO DE CONVERSAO A DIREITA EM LOCAL PROIBIDO PELA SINALIZACAO                         207                 GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+60412EXECUTAR OPERACAO DE CONVERSAO A ESQUERDA EM LOCAL PROIBIDO PELA SINALIZACAO                        207                 GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+60501AVANCAR O SINAL VERMELHO DO SEMAFORO                                                                208                 GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+60502AVANCAR O SINAL DE PARADA OBRIGATORIA                                                               208                 GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+60503AVANCAR O SINAL VERMELHO DO SEMAFORO - FISCALIZACAO ELETRONICA                                      208                 GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+60681TRANSPOR BLOQUEIO VIARIO COM OU SEM SINALIZACAO OU DISPOSITIVOS AUXILIARES                          209                 GRAVE     CONDUTOR            MUNICIPAL/ESTADUAL  CON5   12769    127,69
+60682DEIXAR DE ADENTRAR AS AREAS DESTINADAS A PESAGEM DE VEICULOS                                        209                 GRAVE     CONDUTOR            MUNICIPAL/ESTADUAL  CON5   12769    127,69
+60683EVADIR-SE PARA NAO EFETUAR O PAGAMENTO DO PEDAGIO                                                   209                 GRAVE     CONDUTOR            MUNICIPAL/ESTADUAL  CON5   12769    127,69
+60760TRANSPOR BLOQUEIO VIARIO POLICIAL                                                                   210                 GRAVISS   CONDUTOR            MUNICIPAL/ESTADUAL  CON7   19154    191,54
+60841ULTRAPASSAR VEICULOS MOTORIZADOS EM FILA, PARADOS EM RAZAO DE SINAL LUMINOSO                        211                 GRAVE                                             CON5   12769    127,69
+60842ULTRAPASSAR VEICULOS MOTORIZADOS EM FILA, PARADOS EM RAZAO DE CANCELA                               211                 GRAVE                                             CON5   12769    127,69
+60843ULTRAPASSAR VEIC MOTORIZADOS EM FILA PARADOS EM RAZAO DE BLOQUEIO VIARIO PARCIAL                    211                 GRAVE                                             CON5   12769    127,69
+60844ULTRAPASSAR VEICULOS MOTORIZADOS EM FILA, PARADOS EM RAZAO DE QUALQUER OBSTACULO                    211                 GRAVE                                             CON5   12769    127,69
+60920DEIXAR DE PARAR O VEICULO ANTES DE TRANSPOR LINHA FERREA.                                           212                 GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+61060DEIXAR DE PARAR SEMPRE QUE A MARCHA FOR INTERCEPTADA POR AGRUPAMENTO DE PESSOAS                     213 * I             GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+61140DEIXAR DE PARAR SEMPRE QUE A MARCHA FOR INTERCEPTADA POR AGRUPAMENTO DE VEICULOS                    213 * II            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+61220DEIXAR DE DAR PREFERENCIA A PEDESTRE/VEIC N MOTORIZADO NA FAIXA A ELE DESTINADA                     214 * I             GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+61300DEIXAR DE DAR PREFERENCIA A PEDESTRE/VEIC N MOT QUE N HAJA CONCLUIDO A TRAVESSIA                    214 * II            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+61490DEIXAR DE DAR PREFERENCIA A PEDESTRE PORT DEFICIENCIA FIS/CRIANCA/IDOSO/GESTANTE                    214 * III           GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+61570DEIXAR DE DAR PREFERENCIA A PEDESTRE/VEIC N MOT QDO INICIADA TRAVESSIA S/SINALIZ                    214 * IV            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+61650DEIXAR DE DAR PREFERENCIA A PEDESTRE/VEIC NAO MOT ATRAVESSANDO A VIA TRANSVERSAL                    214 * V             GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+61731DEIXAR DE DAR PREFERENCIA EM INTERSECAO N SINALIZ, A VEIC CIRCULANDO POR RODOVIA                    215 * I * A         GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+61732DEIXAR DE DAR PREFERENCIA EM INTERSECAO N SINALIZ, VEIC CIRCULANDO POR ROTATORIA                    215 * I * A         GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+61733DEIXAR DE DAR PREFER EM INTERSECAO NAO SINALIZADA, A VEICULO QUE VIER DA DIREITA                    215 * I * B         GRAVE                                             CON5   12769    127,69
+61810DEIXAR DE DAR PREFERENCIA EM INTERSECOES COM SINALIZACAO DE DE A PREFERENCIA                        215 * II            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+61900ENTRAR/SAIR AREA LINDEIRA SEM PRECAUCAO COM A SEGURANCA DE PEDESTRES E VEICULOS                     216                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+62540TRANSITAR EM VELOCIDADE INFERIOR A METADE DA MAXIMA DA VIA, SALVO FAIXA DIREITA                     219                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+62620DEIXAR DE REDUZIR A VELOC QDO SE APROXIMAR DE PASSEATA/AGLOMERACAO/DESFILE/ETC                      220 * I             GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+62700DEIXAR DE REDUZIR A VELOC ONDE O TRANSITO ESTEJA SENDO CONTROLADO PELO AGENTE                       220 * II            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+62891DEIXAR DE REDUZIR A VELOCIDADE DO VEICULO AO APROXIMAR-SE DA GUIA DA CALCADA                        220 * III           GRAVE                                             CON5   12769    127,69
+62892DEIXAR DE REDUZIR A VELOCIDADE DO VEICULO AO APROXIMAR-SE DO ACOSTAMENTO                            220 * III           GRAVE                                             CON5   12769    127,69
+62970DEIXAR DE REDUZIR VELOCIDADE DO VEICULO AO APROXIMAR-SE INTERSECAO N SINALIZADA                     220 * IV            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+63000DEIXAR REDUZIR VELOCIDADE NAS VIAS RURAIS CUJA FAIXA DOMINIO NAO ESTEJA CERCADA                     220 * V             GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+63190DEIXAR DE REDUZIR A VELOCIDADE NOS TRECHOS EM CURVA DE PEQUENO RAIO                                 220 * VI            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+63270DEIXAR DE REDUZIR VELOC AO APROXIMAR LOCAL SINALIZ ADVERT DE OBRAS/TRABALHADORES                    220 * VII           GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+63350DEIXAR DE REDUZIR A VELOCIDADE SOB CHUVA/NEBLINA/CERRACAO/VENTOS FORTES                             220 * VIII          GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+63430DEIXAR DE REDUZIR A VELOCIDADE QUANDO HOUVER MA VISIBILIDADE                                        220 * IX            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+63510DEIXAR DE REDUZIR VELOC QDO PAVIMENTO SE APRESENTAR ESCORREG/DEFEITUOSO/AVARIADO                    220 * X             GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+63600DEIXAR DE REDUZIR A VELOCIDADE + APROXIMACAO DE ANIMAIS NA PISTA                                    220 * XI            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+63780DEIXAR DE REDUZIR A VELOCIDADE DO VEICULO DE FORMA COMPATIVEL COM A SEGURANCA, EM DECLIVE.          220 * XII           GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+63860DEIXAR DE REDUZIR A VELOCIDADE DO VEICULO DE FORMA COMPATIVEL C/ SEGURANCA AO ULTRAPASSAR CICLISTA  220 * XIII          GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+63941DEIXAR DE REDUZIR A VELOCIDADE NAS PROXIMIDADES DE ESCOLAS                                          220 * XIV           GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+63942DEIXAR DE REDUZIR A VELOCIDADE NAS PROXIMIDADES DE HOSPITAIS                                        220 * XIV           GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+63943DEIXAR DE REDUZIR VELOC.NA PROXIM.ESTACAO EMBARQUE/DESEMBARQUE PASSAGEIROS                          220 * XIV           GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+63944DEIXAR DE REDUZIR VELOC.ONDE HAJA INTENSA MOVIMENTACAO DE PEDESTRES                                 220 * XIV           GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+64080PORTAR NO VEICULO PLACAS DE IDENTIFICACAO EM DESACORDO COM AS ESPECIF/MODELO CONTRAN                221                 MEDIA     PROPRIETARIO        ESTADUAL            PRO4    8513     85,13
+64160CONFEC/DISTRIBUIR/COLOCAR VEIC PROPRIO/TERCEIRO PLACA IDENTIF DESACORDO CONTRAN                     221 pr UNICO        MEDIA     PESSOA JURIDICA     ESTADUAL            PFJ4    8513     85,13
+64240DEIXAR DE MANTER LIGADO EM EMERG SIST ILUM VERMELHA INTERMITENTE AINDA Q PARADO                     222                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+64321TRANSITAR COM FAROL DESREGULADO PERTURBANDO A VISAO DE OUTRO CONDUTOR                               223                 GRAVE                                             CON5   12769    127,69
+64322TRANSITAR COM O FACHO DE LUZ ALTA PERTURBANDO A VISAO DE OUTRO CONDUTOR                             223                 GRAVE                                             CON5   12769    127,69
+64400FAZER USO DO FACHO DE LUZ ALTA DOS FAROIS EM VIAS PROVIDAS DE ILUMINACAO PUBLICA                    224                 LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+64591DEIXAR DE SINALIZAR VIA P/ TORNAR VISIVEL LOCAL QDO TIVER REMOVER VEIC DA PISTA                     225 * I             GRAVE                                             CON5   12769    127,69
+64592DEIXAR DE SINALIZAR A VIA P/ TORNAR VISIVEL O LOCAL QDO PERMANECER ACOSTAMENTO                      225 * I             GRAVE                                             CON5   12769    127,69
+64670DEIXAR DE SINALIZAR A VIA P/ TORNAR VISIVEL O LOCAL QDO A CARGA FOR DERRAMADA                       225 * II            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+64750DEIXAR DE RETIRAR QUALQUER OBJETO UTILIZADO PARA SINALIZACAO TEMPORARIA DA VIA                      226                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+64830USAR BUZINA QUE NAO A DE TOQUE BREVE COMO ADVERTENCIA A PEDESTRE OU CONDUTORES                      227 * I             LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+64910USAR BUZINA PROLONGADA E SUCESSIVAMENTE A QUALQUER PRETEXTO.                                        227 * II            LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+65050USAR BUZINA ENTRE AS VINTE E DUAS E AS SEIS HORAS                                                   227 * III           LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+65130USAR BUZINA EM LOCAIS E HORARIOS PROIBIDOS PELA SINALIZACAO                                         227 * IV            LEVE      CONDUTOR            MUNICIPAL           CON3    5320     53,20
+65210USAR BUZINA EM DESACORDO COM OS PADROES E FREQUENCIAS ESTABELECIDAS PELO CONTRAN                    227 * V             LEVE      CONDUTOR            MUNICIPAL           PRO3    5320     53,20
+65300USAR NO VEICULO EQUIPAMENTO C/ SOM EM VOLUME/FREQUENCIA NAO AUTORIZADOS PELO CONTRAN                228                 GRAVE     PROPRIETARIO        MUNICIPAL           PRO5   12769    127,69
+65481USAR NO VEIC ALARME Q PERTURBE O SOSSEGO PUBLICO, EM DESACORDO NORMAS DO CONTRAN                    229                 MEDIA                                             PRO4    8513     85,13
+65482USAR NO VEIC APARELHO PRODUZA SOM/RUIDO PERTURBE SOSSEGO PUBLIC DESAC C/ CONTRAN                    229                 MEDIA                                             PRO4    8513     85,13
+65561CONDUZIR O VEICULO COM O LACRE DE IDENTIFICACAO VIOLADO/FALSIFICADO                                 230 * I             GRAVISS                                           PRO7   19154    191,54
+65562CONDUZIR O VEICULO COM A INSCRICAO DO CHASSI VIOLADA/FALSIFICADA                                    230 * I             GRAVISS                                           PRO7   19154    191,54
+65563CONDUZIR O VEICULO COM O SELO VIOLADO/FALSIFICADO                                                   230 * I             GRAVISS                                           PRO7   19154    191,54
+65564CONDUZIR O VEICULO COM A PLACA VIOLADA/FALSIFICADA                                                  230 * I             GRAVISS                                           PRO7   19154    191,54
+65565CONDUZIR O VEICULO COM QUALQUER OUTRO ELEM DE IDENTIFICACAO VIOLADO/FALSIFICADO                     230 * I             GRAVISS                                           PRO7   19154    191,54
+65640CONDUZIR O VEICULO TRANSPORTANDO PASSAGEIROS EM COMPARTIMENTO DE CARGA                              230 * II            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+65720CONDUZIR O VEICULO COM DISPOSITIVO ANTI-RADAR                                                       230 * III           GRAVISS   CONDUTOR            ESTADUAL            PRO7   19154    191,54
+65800CONDUZIR O VEICULO SEM QUALQUER UMA DAS PLACAS DE IDENTIFICACAO                                     230 * IV            GRAVISS   PROPRIETARIO        ESTADUAL            PRO7   19154    191,54
+65991CONDUZIR O VEICULO QUE NAO ESTEJA REGISTRADO                                                        230 * V             GRAVISS                                           PRO7   19154    191,54
+65992CONDUZIR O VEICULO REGISTRADO QUE NAO ESTEJA DEVIDAMENTE LICENCIADO                                 230 * V             GRAVISS                                           PRO7   19154    191,54
+66020CONDUZIR O VEICULO COM QUALQUER UMA DAS PLACAS SEM LEGIBILIDADE E VISIBILIDADE                      230 * VI            GRAVISS   PROPRIETARIO        ESTADUAL            PRO7   19154    191,54
+66101CONDUZIR O VEICULO COM A COR ALTERADA                                                               230 * VII           GRAVE                                             PRO5   12769    127,69
+66102CONDUZIR O VEICULO COM CARACTERISTICA ALTERADA                                                      230 * VII           GRAVE                                             PRO5   12769    127,69
+66290CONDUZIR VEICULO SEM TER SIDO SUBMETIDO A INSPECAO DE SEG VEICULAR, QDO OBRIGATORIA                 230 * VIII          GRAVE     PROPRIETARIO        ESTADUAL            PRO5   12769    127,69
+66371CONDUZIR O VEICULO SEM EQUIPAMENTO OBRIGATORIO                                                      230 * IX            GRAVE                                             PRO5   12769    127,69
+66372CONDUZIR O VEICULO COM EQUIPAMENTO OBRIGATORIO INEFICIENTE/INOPERANTE                               230 * IX            GRAVE                                             PRO5   12769    127,69
+66450CONDUZIR VEICULO COM EQUIPAMENTO OBRIGATORIO EM DESACORDO COM O ESTABELECIDO PELO CONTRAN           230 * X             GRAVE     PROPRIETARIO        ESTADUAL            PRO5   12769    127,69
+66531CONDUZIR O VEICULO COM DESCARGA LIVRE                                                               230 * XI            GRAVE                                             PRO5   12769    127,69
+66532CONDUZIR O VEICULO COM SILENCIADOR DE MOTOR DEFEITUOSO/DEFICIENTE/INOPERANTE                        230 * XI            GRAVE                                             PRO5   12769    127,69
+66610CONDUZIR O VEICULO COM EQUIPAMENTO OU ACESSORIO PROIBIDO.                                           230 * XII           GRAVE     PROPRIETARIO        ESTADUAL            PRO5   12769    127,69
+66700CONDUZIR O VEICULO COM O EQUIPAMENTO DO SISTEMA DE ILUMINACAO E DE SINALIZACAO ALTERADOS            230 * XIII          GRAVE     PROPRIETARIO        ESTADUAL            PRO5   12769    127,69
+66880CONDUZIR VEIC C/ REGISTRADOR INSTAN INALT DE VELOCIDADE/TEMPO VICIADO/DEFEITUOSO                    230 * XIV           GRAVE     PROPRIETARIO        ESTADUAL            PRO5   12769    127,69
+66961CONDUZIR C/ INSCR/ADESIVO/LEGENDA/SIMBOLO AFIXADO PARA-BRISA E EXTENSAO TRASEIRA                    230 * XV            GRAVE                                             PRO5   12769    127,69
+66962CONDUZIR C/ INSCR/ADESIVO/LEGENDA/SIMBOLO PINTADO PARA-BRISA E EXTENSAO TRASEIRA                    230 * XV            GRAVE                                             PRO5   12769    127,69
+67001CONDUZIR O VEICULO COM VIDROS TOTALMENTE COBERTOS POR PELICULA, PAINEIS/PINTURA                     230 * XVI           GRAVE                                             PRO5   12769    127,69
+67002CONDUZIR O VEICULO C/ VIDROS PARCIALMENTE COBERTOS POR PELICULA, PAINEIS/PINTURA                    230 * XVI           GRAVE                                             PRO5   12769    127,69
+67180CONDUZIR O VEICULO COM CORTINAS OU PERSIANAS FECHADAS                                               230 * XVII          GRAVE     PROPRIETARIO        ESTADUAL            PRO5   12769    127,69
+67261CONDUZIR O VEICULO EM MAU ESTADO DE CONSERVACAO                                                     230 * XVIII         GRAVE                                             PRO5   12769    127,69
+67262CONDUZIR O VEICULO REPROVADO NA AVALIACAO DE INSPECAO DE SEGURANCA                                  230 * XVIII         GRAVE                                             PRO5   12769    127,69
+67263CONDUZIR O VEICULO REPROVADO NA AVALIACAO DE EMISSAO DE POLUENTES E RUIDO                           230 * XVIII         GRAVE                                             PRO5   12769    127,69
+67340CONDUZIR O VEICULO SEM ACIONAR O LIMPADOR DE PARA-BRISAS SOB CHUVA.                                 230 * XIX           GRAVE     CONDUTOR            ESTADUAL            CON5   12769    127,69
+67420CONDUZIR O VEICULO SEM PORTAR A AUTORIZACAO PARA CONDUCAO DE ESCOLARES                              230 * XX            GRAVE     PROPRIETARIO        ESTADUAL            PRO5   12769    127,69
+67500CONDUZIR O VEIC DE CARGA C/ FALTA INSCRICAO DA TARA E DEMAIS PREVISTAS NO CTB                       230 * XXI           MEDIA     PROPRIETARIO        ESTADUAL            PRO4    8513     85,13
+67691CONDUZIR O VEICULO COM DEFEITO NO SISTEMA DE ILUMINACAO                                             230 * XXII          MEDIA                                             PRO4    8513     85,13
+67692CONDUZIR O VEICULO COM DEFEITO NO SISTEMA DE SINALIZACAO                                            230 * XXII          MEDIA                                             PRO4    8513     85,13
+67693CONDUZIR O VEICULO COM LAMPADAS QUEIMADAS                                                           230 * XXII          MEDIA                                             PRO4    8513     85,13
+67770TRANSITAR COM O VEICULO DANIFICANDO A VIA, SUAS INSTALACOES E EQUIPAMENTOS                          231 * I             GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+67851TRANSITAR COM VEICULO DERRAMANDO A CARGA QUE ESTEJA TRANSPORTANDO                                   231 * II * A        GRAVISS                                           CON7   19154    191,54
+67852TRANSITAR COM VEICULO LANCANDO A CARGA QUE ESTEJA TRANSPORTANDO                                     231 * II * A        GRAVISS                                           CON7   19154    191,54
+67853TRANSITAR COM VEICULO ARRASTANDO A CARGA QUE ESTEJA TRANSPORTANDO                                   231 * II * A        GRAVISS                                           CON7   19154    191,54
+67930TRANSITAR COM O VEICULO DERRAMANDO/LANCANDO COMBUSTIVEL/LUBRIF QUE ESTEJA UTILIZANDO                231 * II * B        GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+68070TRANSITAR C/ VEIC DERRAMANDO/LANCANDO/ARRASTANDO QQ OBJETO COM RISCO DE ACIDENTE                    231 * II * C        GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+68150TRANSITAR COM VEICULO PRODUZINDO FUMACA, GASES OU PARTICULASEM DESAC C/ CONTRAN                     231 * III           GRAVE     PROPRIETARIO        MUNICIPAL           PRO5   12769    127,69
+68231TRANSITAR C/ VEIC E/OU CARGA C/ DIMENSOES SUPERIORES LIMITE LEGAL S/ AUTORIZACAO                    231 * IV            GRAVE     CONDUTOR            MUNICIPAL           PRO5   12769    127,69
+68232TRANSITAR C/ VEIC E/OU CARGA C/ DIMENSOES SUPERIORES EST P/SINALIZACAO S/AUTORIZ                    231 * IV            GRAVE     CONDUTOR            MUNICIPAL           CON5   12769    127,69
+68310TRANSITAR COM O VEICULO COM EXCESSO DE PESO                                                         231 * V             MEDIA     PESSOA JURIDICA     MUNICIPAL           TRA4    8513     85,13
+68401TRANSITAR EM DESACORDO C/ AUTORIZACAO EXPEDIDA P/VEICULO C/ DIMENSOES EXCEDENTES                    231 * VI            GRAVE                                             PRO5   12769    127,69
+68402TRANSITAR COM AUTORIZACAO VENCIDA, EXPEDIDA P/ VEICULO C/ DIMENSOES EXCEDENTES                      231 * VI            GRAVE                                             PRO5   12769    127,69
+68580TRANSITAR COM O VEICULO COM LOTACAO EXCEDENTE                                                       231 * VII           MEDIA     CONDUTOR            MUNICIPAL/ESTADUAL  CON4    8513     85,13
+68661TRANSITAR EFETUANDO TRANSPORTE REMUNERADO DE PESSOAS QDO N LICENCIADO P/ESSE FIM                    231 * VIII          MEDIA                                             PRO4    8513     85,13
+68662TRANSITAR EFETUANDO TRANSPORTE REMUNERADO DE BENS QDO NAO LICENCIADO P/ ESSE FIM                    231 * VIII          MEDIA                                             PRO4    8513     85,13
+68741TRANSITAR COM O VEICULO DESLIGADO EM DECLIVE                                                        231 * IX            MEDIA                                             CON4    8513     85,13
+68742TRANSITAR COM O VEICULO DESENGRENADO EM DECLIVE                                                     231 * IX            MEDIA                                             CON4    8513     85,13
+68820TRANSITAR COM O VEICULO EXCEDENDO A CAPACIDADE MAXIMA DE TRACAO - MEDIA                             231 * X             MEDIA     CONDUTOR            MUNICIPAL           PRO4    8513     85,13
+68900TRANSITAR COM O VEICULO EXCEDENDO A CAPACIDADE MAXIMA DE TRACAO - GRAVE                             231 * X             GRAVE     CONDUTOR            MUNICIPAL           PRO5   12769    127,69
+69040TRANSITAR COM O VEICULO EXCEDENDO A CAPACIDADE MAXIMA DE TRACAO - GRAVISSIMA                        231 * X             GRAVISS   CONDUTOR            MUNICIPAL           PRO7   19154    191,54
+69120CONDUZIR VEICULO SEM OS DOCUMENTOS DE PORTE OBRIGATORIO REFERIDOS NO CTB                            232                 LEVE      CONDUTOR            ESTADUAL            CON3    5320     53,20
+69200DEIXAR DE EFETUAR REGISTRO DE VEICULO NO PRAZO DE TRINTA DIAS                                       233                 GRAVE     PROPRIETARIO        ESTADUAL            PRO5   12769    127,69
+69391FALSIFICAR DOCUMENTO DE HABILITACAO                                                                 234                 GRAVISS                                           CON7   19154    191,54
+69392ADULTERAR DOCUMENTO DE HABILITACAO                                                                  234                 GRAVISS                                           CON7   19154    191,54
+69393FALSIFICAR DOCUMENTO DE IDENTIFICACAO DO VEICULO                                                    234                 GRAVISS                                           PRO7   19154    191,54
+69394ADULTERAR DOCUMENTO DE IDENTIFICACAO DO VEICULO                                                     234                 GRAVISS                                           PRO7   19154    191,54
+69471CONDUZIR PESSOAS NAS PARTES EXTERNAS DO VEICULO                                                     235                 GRAVE                                             CON5   12769    127,69
+69472CONDUZIR ANIMAIS NAS PARTES EXTERNAS DO VEICULO                                                     235                 GRAVE                                             CON5   12769    127,69
+69473CONDUZIR CARGA NAS PARTES EXTERNAS DO VEICULO                                                       235                 GRAVE                                             CON5   12769    127,69
+69550REBOCAR OUTRO VEICULO COM CABO FLEXIVEL OU CORDA                                                    236                 MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+69631TRANSITAR C/ VEIC EM DESACORDO C/ ESPECIFICACOES NECESSARIAS A SUA IDENTIFICACAO                    237                 GRAVE                                             PRO5   12769    127,69
+69632TRANSITAR COM VEICULO COM FALTA DE INSCRICAO NECESSARIA A SUA IDENTIFICACAO                         237                 GRAVE                                             PRO5   12769    127,69
+69633TRANSITAR COM VEICULO COM FALTA DE SIMBOLOGIA NECESSARIA A SUA IDENTIFICACAO                        237                 GRAVE                                             PRO5   12769    127,69
+69710RECUSAR-SE A ENTREGAR CNH/CRV/CRLV/ OUTROS DOCUMENTOS                                               238                 GRAVISS   CONDUTOR            ESTADUAL            CON7   19154    191,54
+69800RETIRAR DO LOCAL VEICULO LEGALMENTE RETIDO PARA REGULARIZACAO, SEM PERMISSAO                        239                 GRAVISS   CONDUTOR            MUNICIPAL/ESTADUAL  CON7   19154    191,54
+69980DEIXAR RESPONSAVEL DE PROMOVER BAIXA REGISTRO DE VEIC IRRECUPERAVEL/DESMONTADO                      240                 GRAVE     PROPRIETARIO        ESTADUAL            PRO5   12769    127,69
+70051DEIXAR DE ATUALIZAR O CADASTRO DE REGISTRO DO VEICULO                                               241                 LEVE                                              PRO3    5320     53,20
+70052DEIXAR DE ATUALIZAR O CADASTRO DE HABILITACAO DO CONDUTOR                                           241                 LEVE                                              CON3    5320     53,20
+70131FAZER FALSA DECLARACAO DE DOMICILIO PARA FINS DE REGISTRO/LICENCIAMENTO                             242                 GRAVISS                                           PRO7   19154    191,54
+70132FAZER FALSA DECLARACAO DE DOMICILIO PARA FINS DE HABILITACAO                                        242                 GRAVISS                                           CON7   19154    191,54
+70210DEIXAR SEGURADORA DE COMUNICAR OCORRENCIA PERDA TOTAL VEIC E DEVOLVER PLACAS/DOC                    243                 GRAVE     PESSOA JURIDICA     ESTADUAL            PJ 5   12769    127,69
+70301CONDUZIR MOTOCICLETA, MOTONETA E CICLOMOTOR SEM CAPACETE DE SEGURANCA                               244 * I             GRAVISS   CONDUTOR            MUNICIPAL/ESTADUAL  CON7   19154    191,54
+70302CONDUZIR MOTOCICLETA/MOTONETA/CICLOMOTOR C/ CAPACETE S/ VISEIRA/OCULOS PROTECAO                     244 * I             GRAVISS   CONDUTOR            MUNICIPAL/ESTADUAL  CON7   19154    191,54
+70303CONDUZIR MOTOCICLETA, MOTONETA E CICLOMOTOR SEM VESTUARIO APROVADO PELO CONTRAN                     244 * I             GRAVISS                                           CON7   19154    191,54
+70481CONDUZIR MOTOCICLETA, MOTONETA E CICLOMOTOR TRANSPORTANDO PASSAGEIRO S/ CAPACETE                    244 * II            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+70482CONDUZIR MOTOCICLETA/ MOTONETA/CICLOMOTOR TRANSP.PASSAG S/VISEIRA/OCULOS PROTECAO                   244 * II            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+70483CONDUZIR MOTOCICLETA/MOTONETA/CICLOMOTOR TRANSPORTANDO PAS. FORA DO ASSENTO                         244 *II             GRAVISS                                           CON7   19154    191,54
+70561CONDUZIR MOTOC/MOTON/CICLOMOTOR FAZENDO MALABARISMO/EQUILIBRANDOSE EM UMA RODA                      244 * III           GRAVISS                                           CON7   19154    191,54
+70562CONDUZIR CICLO FAZENDO MALABARISMO OU EQUILIBRANDO-SE EM UMA RODA                                   244 * III c/c pr 1  MEDIA                                             CON4    8513     85,13
+70640CONDUZIR MOTOCICLETA, MOTONETA E CICLOMOTOR COM OS FAROIS APAGADOS                                  244 * IV            GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+70721CONDUZIR MOTOCICLETA/MOTONETA/CICLOMOTOR TRANSPORTANDO CRIANCA MENOR DE 7 ANOS                      244 * V             GRAVISS                                           CON7   19154    191,54
+70722CONDUZIR MOTOC/MOTON/CICLOM TRANSP CRIANCA S/ CONDICAO CUIDAR PROPRIA SEGURANCA                     244 * V             GRAVISS                                           CON7   19154    191,54
+70800CONDUZIR MOTOCICLETA, MOTONETA E CICLOMOTOR REBOCANDO OUTRO VEICULO                                 244 VI              MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+70991CONDUZIR MOTOCICLETA/MOTONETA/CICLOMOTOR SEM SEGURAR O GUIDOM COM AMBAS AS MAOS                     244 * VII           MEDIA                                             CON4    8513     85,13
+70992CONDUZIR CICLO SEM SEGURAR O GUIDOM COM AMBAS AS MAOS                                               244 * VII c/c pr 1  MEDIA                                             CON4    8513     85,13
+71021CONDUZIR MOTOCICLETA, MOTONETA E CICLOMOTOR TRANSPORTANDO CARGA INCOMPATIVEL                        244 * VIII          MEDIA                                             CON4    8513     85,13
+71022CONDUZIR CICLO TRANSPORTANDO CARGA INCOMPATIVEL                                                     244 * VIII c/c pr 1 MEDIA                                             CON4    8513     85,13
+71100CONDUZIR CICLO TRANSPORTANDO PASSAGEIRO FORA DA GARUPA/ASSENTO A ELE DESTINADO                      244 * 1 pr 1 A      MEDIA     PROPRIETARIO        MUNICIPAL           CON4    8513     85,13
+71291CONDUZIR CICLO EM VIA DE TRANSITO RAPIDO/RODOVIA SEM ACOSTAMENTO/FAIXA PROPRIA                      244 pr1 * B         MEDIA                                             CON4    8513     85,13
+71292CONDUZIR CICLOMOTOR VIA DE TRANSITO RAPIDO/RODOVIA S/ ACOSTAMENTO/FAIXA PROPRIA                     244 pr1 *B c/c pr2  MEDIA                                             CON4    8513     85,13
+71370CONDUZIR CICLO TRANSPORTANDO CRIANCA S/ CONDICAO DE CUIDAR PROPRIA SEGURANCA                        244 pr1 * C         MEDIA     PROPRIETARIO        MUNICIPAL           CON4    8513     85,13
+71450UTILIZAR A VIA PARA DEPOSITO DE MERCADORIAS, MATERIAIS OU EQUIPAMENTOS                              245                 GRAVE     PESSOA JURIDICA     MUNICIPAL           PFJ5   12769    127,69
+71531DEIXAR DE SINALIZAR OBSTACULO A CIRCULACAO/SEGURANCA CALCADA/PISTAS/ AGRAVAMENTO                    246                 GRAVISS                                           PFJ7   19154    191,54
+71532OBSTACULIZAR A VIA INDEVIDAMENTE-S/AGRAVAMENTO                                                      246                 GRAVISS                                           PFJ7   19154    191,54
+71611DEIXAR DE SINALIZAR OBSTACULO CIRCULACAO/SEGURANCA CALCADA/PISTA AGRAVAMENTO 2X                     246                                                                   PFJ    38308    383,08
+71612OBSTACULIZAR A VIA INDEVIDAMENTE-AGRAVAMENTO 2X                                                     246                                                                   PFJ    38308    383,08
+71701DEIXAR DE SINALIZAR OBSTACULO CIRCULACAO/SEGURANCA CALCADA/PISTA AGRAVAMENTO 3X                     246                 GRAVISS 3X                                        PFJ7   57462    574,62
+71702OBSTACULIZAR A VIA INDEVIDAMENTE-AGRAVAMENTO 3X                                                     246                 GRAVISS 3X                                        PFJ7   57462    574,62
+71881DEIXAR DE SINALIZAR OBSTACULO CIRCULACAO/SEGURANCA CALCADA/PISTA AGRAVAMENTO 4X                     246                 GRAVISS 4X                                        PFJ7   76616    766,16
+71882OBSTACULIZAR A VIA INDEVIDAMENTE-AGRAVAMENTO 4X                                                     246                 GRAVISS 4X                                        PFJ7   76616    766,16
+71961DEIXAR DE SINALIZAR OBSTACULO CIRCULACAO/SEGURANCA CALCADA/PISTA AGRAVAMENTO 5X                     246                 GRAVISS 5X                                        PFJ7   95770    957,70
+71962OBSTACULIZAR A VIA INDEVIDAMENTE-AGRAVAMENTO 5X                                                     246                 GRAVISS 5X                                        PFJ7   95770    957,70
+72001DEIXAR DE CONDUZIR PELO BORDO PISTA EM FILA UNICA VEIC TRACAO/PROPULSAO HUMANA                      247                 MEDIA                                             CON4    8513     85,13
+72002DEIXAR DE CONDUZIR PELO BORDO DA PISTA EM FILA UNICA VEICULO DE TRACAO ANIMAL                       247                 MEDIA                                             CON4    8513     85,13
+72180TRANSPORTAR EM VEIC DESTINADO TRANSP PASSAGEIROS CARGA EXCEDENTE DESAC ART.109                      248                 GRAVE     CONDUTOR            ESTADUAL            PRO5   12769    127,69
+72261DEIXAR DE MANTER ACESAS A NOITE AS LUZES POSICAO QDO O VEICULO ESTIVER PARADO                       249                 MEDIA                                             CON4    8513     85,13
+72262DEIXAR DE MANTER ACESAS A NOITE AS LUZES DE POSICAO VEIC FAZENDO CARGA/DESCARGA                     249                 MEDIA                                             CON4    8513     85,13
+72340EM MOVIMENTO, DEIXAR DE MANTER ACESA A LUZ BAIXA DURANTE A NOITE                                    250 * I * A         MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+72420EM MOVIMENTO DE DIA, DEIXAR DE MANTER ACESA LUZ BAIXA TUNEL COM ILUMINACAO PUBL                     250 * I * B         MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+72500EM MOV, DEIXAR DE MANTER ACESA LUZ BAIXA VEIC TRANSP COLETIVO FAIXA/PISTA EXCL                      250 * I * C         MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+72690EM MOVIMENTO, DEIXAR DE MANTER ACESA LUZ BAIXA DO CICLOMOTOR                                        250 * I * D         MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+72770EM MOV DEIXAR DE MANTER ACESAS LUZES DE POSICAO SOB CHUVA FORTE/NEBLINA/CERRACAO                    250 * II            MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+72850EM MOVIMENTO, DEIXAR DE MANTER A PLACA TRASEIRA ILUMINADA A NOITE                                   250 * III           MEDIA     CONDUTOR            ESTADUAL            CON4    8513     85,13
+72930UTILIZAR O PISCA-ALERTA, EXCETO EM IMOBILIZACOES OU SITUACOES DE EMERGENCIA                         251 * I             MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+73070UTILIZAR LUZ ALTA E BAIXA INTERMITENTE, EXCETO QUANDO PERMITIDO PELO CTB                            251 * II            MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+73150DIRIGIR O VEICULO COM O BRACO DO LADO DE FORA                                                       252 * I             MEDIA     CONDUTOR            MUNICIPAL           CON4    8513     85,13
+73231DIRIGIR O VEICULO TRANSPORT PESSOAS A SUA ESQUERDA OU ENTRE OS BRACOS E PERNAS                      252 * II            MEDIA                                             CON4    8513     85,13
+73232DIRIGIR O VEICULO TRANSPORT ANIMAIS A SUA ESQUERDA OU ENTRE OS BRACOS E PERNAS                      252 * II            MEDIA                                             CON4    8513     85,13
+73233DIRIGIR O VEICULO TRANSPORT VOLUME A SUA ESQUERDA OU ENTRE OS BRACOS E PERNAS                       252 * II            MEDIA                                             CON4    8513     85,13
+73310DIRIGIR O VEICULO COM INCAPACIDADE FISICA OU MENTAL TEMPORARIA                                      252 * III           MEDIA     CONDUTOR            ESTADUAL            CON4    8513     85,13
+73400DIRIGIR O VEIC USANDO CALCADO QUE N SE FIRME NOS PES/COMPROMETA UTILIZ PEDAIS                       252 * IV            MEDIA     CONDUTOR            ESTADUAL            CON4    8513     85,13
+73580DIRIGIR O VEICULO COM APENAS UMA DAS MAOS, EXCETO QUANDO PERMITIDO PELO CTB                         252 * V             MEDIA     CONDUTOR            ESTADUAL            CON4    8513     85,13
+73661DIRIGIR O VEICULO UTILIZANDO-SE DE FONES NOS OUVIDOS CONEC A APARELHAGEM SONORA                     252 * VI            MEDIA     CONDUTOR            MUNICIPAL/ESTADUAL  CON4    8513     85,13
+73662DIRIGIR VEICULO UTILIZANDO-SE DE TELEFONE CELULAR                                                   252 * VI            MEDIA     CONDUTOR            MUNICIPAL/ESTADUAL  CON4    8513     85,13
+73740BLOQUEAR A VIA COM VEICULO                                                                          253                 GRAVISS   CONDUTOR            MUNICIPAL           CON7   19154    191,54
+73820E PROIB AO PEDESTRE PERMANECER/ANDAR PISTA, EXCETO P/ CRUZA-LAS ONDE PERMITIDO                      254 * I             LEVE 50%  PESSOA FISICA       MUNICIPAL           PED3    2660     26,60
+73901E PROIBIDO AO PEDESTRE CRUZAR PISTA DE ROLAMENTO DE VIADUTO EXC ONDE PERMITIDO                      254 * II            LEVE 50%                                          PED3    2660     26,60
+73902E PROIBIDO AO PEDESTRE CRUZAR PISTA DE ROLAMENTO DE PONTE EXCETO ONDE PERMITIDO                     254 * II            LEVE 50%                                          PED3    2660     26,60
+73903E PROIBIDO AO PEDESTRE CRUZAR PISTA DE ROLAMENTO DE TUNEIS EXCETO ONDE PERMITIDO                    254 * II            LEVE 50%                                          PED3    2660     26,60
+74040E PROIB AO PEDESTRE ATRAVESSAR VIA AREA CRUZAMENTO EXC ONDE PERMITIDO P/ SINALIZ                    254 * III           LEVE 50%  PESSOA FISICA       MUNICIPAL           PED3    2660     26,60
+74120E PROIB PEDESTRE UTILIZAR VIA EM AGRUPAM QUE PERTURBE TRANS/PRAT ESPORTE/DESFILE                    254 * IV            LEVE 50%  PESSOA FISICA       MUNICIPAL           PED3    2660     26,60
+74201E PROIBIDO AO PEDESTRE ANDAR FORA DA FAIXA PROPRIA                                                  254 * V             LEVE 50%                                          PED3    2660     26,60
+74202E PROIBIDO AO PEDESTRE ANDAR FORA DA PASSARELA                                                      254 * V             LEVE 50%                                          PED3    2660     26,60
+74203E PROIBIDO AO PEDESTRE ANDAR FORA DA PASSAGEM AEREA                                                 254 * V             LEVE 50%                                          PED3    2660     26,60
+74204E PROIBIDO AO PEDESTRE ANDAR FORA DA PASSAGEM SUBTERRANEA                                           254 * V             LEVE 50%                                          PED3    2660     26,60
+74390E PROIBIDO AO PEDESTRE DESOBEDECER A SINALIZACAO DE TRANSITO ESPECIFICA                             254 * VI            LEVE 50%  PESSOA FISICA       MUNICIPAL           PED3    2660     26,60
+74471CONDUZIR BICICLETA EM PASSEIOS ONDE NAO SEJA PERMITIDA A CIRCULACAO DESTA                           255                 MEDIA                                             CON4    8513     85,13
+74472CONDUZIR BICICLETA DE FORMA AGRESSIVA                                                               255                 MEDIA                                             CON4    8513     85,13
+74550TRANSITAR EM VELOCIDADE SUPERIOR A MAXIMA PERMITIDA EM ATE 20%                                      218 * I             MEDIA                                             CON4    8513     85,13
+74630TRANSITAR EM VELOCIDADE SUPERIOR A MAXIMA PERMITIDA EM MAIS DE 20% ATE 50%                          218 * II            GRAVE                                             CON5   12769    127,69
+74710TRANSITAR EM VELOCIDADE SUPERIOR A MAXIMA PERMITIDA EM MAIS DE 50%                                  218 * III           GRAVISS                                           CON7   57462    574,62
+90160TRANSPORTAR PRODUTO CUJO DESLOC. RODOV. SEJA PROIBIDO PELO MINISTERIO DO TRANSP.                    45 * I * A                    PESSOA JURIDICA     ESTADUAL            TRA    65454    654,54
+90240TRANSPORTAR PRODUTO PERIGOSO A GRANEL QUE NAO CONSTE DO CERTIFIC. DE CAPACITACAO                    45 * I * B                    PESSOA JURIDICA     ESTADUAL            TRA    65654    656,54
+90320TRANSPORTAR PRODUTO PERIGOSO A GRANEL DESPROV. DE CERTIFICADO DE CAPACIT. VALIDO                    45 * I * C                    PESSOA JURIDICA     ESTADUAL            TRA    65654    656,54
+90401TRANSPORTAR JUNTO C/ PRODUTO PERIGOSO, PESSOAS/EMBALAGENS DESTIN. A ESTES BENS                      45 * I * D                                                            TRA    65654    656,54
+90402TRANSPORTAR JUNTO C/ PRODUTO PERIGOSO, ANIMAIS/EMBALAGENS DESTIN. A ESTES BENS                      45 * I * D                                                            TRA    65654    656,54
+90403TRANSPORTAR JUNTO C/ PRODUTO PERIGOSO, ALIMENTOS DEST. AO CONSUMO HUMANO/ANIMAL                     45 * I * D                                                            TRA    65654    656,54
+90404TRANSPORTAR JUNTO C/ PRODUTO PERIGOSO, MEDICAM. DEST. AO CONSUMO HUMANO/ANIMAL                      45 * I * D                                                            TRA    65654    656,54
+90590TRANSPORTAR PRODUTOS INCOMPATIVEIS ENTRE SI, APESAR DE ADVERTIDO PELO EXPEDIDOR                     45 * I * E                    PESSOA JURIDICA     ESTADUAL            TRA    65654    656,54
+90671NAO DAR MANUTENCAO AO VEICULO                                                                       45 * II * A                                                           TRA    32827    328,27
+90672NAO DAR MANUTENCAO AO EQUIPAMENTO                                                                   45 * II * A                                                           TRA    32827    328,27
+90751ESTACIONAR COM INOBSERVANCIA AO ARTIGO 14                                                           45 * II * B                                                           TRA    32827    328,27
+90752PARAR COM INOBSERVANCIA AO ARTIGO 14                                                                45 * II * B                                                           TRA    32827    328,27
+90830TRANSPORTAR PRODUTOS CUJAS AS EMBALAGENS SE ENCONTREM EM MAS CONDICOES                              45 * II * C                   PESSOA JURIDICA     ESTADUAL            TRA    32827    328,27
+90911NAO ADOTAR EM ACIDENTE PROVIDENCIAS CONSTANTES DA FICHA DE EMERGENCIA/ENVELOPE                      45 * II * D                                                           TRA    32827    328,27
+90912NAO ADOTAR EM AVARIA AS PROVIDENCIAS CONSTANTES DA FICHA DE EMERGENCIA/ENVELOPE                     45 * II * D                                                           TRA    32827    328,27
+91051TRANSPORTAR PRODUTO A GRANEL SEM UTILIZAR O TACOGRAFO                                               45 * II * E                                                           TRA    32827    328,27
+91052TRANSPORTAR PRODUTO A GRANEL E NAO APRESENTAR DISCO A AUTORIDADE COMPETENTE                         45 * II * E                                                           TRA    32827    328,27
+91130TRANSPORTAR CARGA MAL ESTIVADA                                                                      45 * III * A                  PESSOA JURIDICA     ESTADUAL            TRA    13130    131,30
+91211TRANSPORTAR PRODUTO PERIGOSO EM VEICULO DESPROVIDO DE EQUIPAMENTO P/ EMERGENCIA                     45 * III * B                                                          TRA    13130    131,30
+91212TRANSPORTAR PRODUTO PERIGOSO EM VEICULO DESPROVIDO DE EQUIP. DE PROTECAO INDIV.                     45 * III * B                                                          TRA    13130    131,30
+91300TRANSPORTAR PROD. PERIG. DESACOMP. DE CERTIFIC. DE CAPAC. P/ TRANSPORTE A GRANEL                    45 * III * C                  PESSOA JURIDICA     ESTADUAL            TRA    13130    131,30
+91480TRANSPORTAR PROD. PERIG. DESACOMP. DE DECLARACAO DE RESPONSABILIDADE DO EXPEDID.                    45 * III * D                  PESSOA JURIDICA     ESTADUAL            TRA    13130    131,30
+91561TRANSPORTAR PRODUTO PERIGOSO DESACOMPANHADO DE FICHA DE EMERGENCIA                                  45 * III * E                                                          TRA    13130    131,30
+91562TRANSPORTAR PRODUTO PERIGOSO DESACOMPANHADO DE ENVELOPE PARA O TRANSPORTE                           45 * III * E                                                          TRA    13130    131,30
+91641TRANSPORTAR PRODUTO PERIGOSO S/ UTILIZAR NAS EMBALAGENS ROTULOS E PAINEIS                           45 * III * F                                                          TRA    13088    130,88
+91642TRANSPORTAR PRODUTO PERIGOSO S/ UTILIZAR NO VEICULO ROTULOS E PAINEIS DE SEGUR.                     45 * III * F                                                          TRA    13088    130,88
+91720CIRCULAR S/ PERMISSAO EM VIAS PUBLICAS TRANSPORTANDO PRODUTO PERIGOSO                               450 * III * G                 PESSOA JURIDICA     ESTADUAL            TRA    13130    131,30
+91801NAO DAR IMEDIATA CIENCIA DA IMOBILIZACAO DO VEICULO EM CASO DE EMERGENCIA                           45 * III * H                                                          TRA        0          
+91802NAO DAR IMEDIATA CIENCIA DA IMOBILIZACAO DO VEICULO EM CASO DE ACIDENTE                             45 * III * H                                                          TRA        0          
+91803NAO DAR IMEDIATA CIENCIA DA IMOBILIZACAO DO VEICULO EM CASO DE AVARIA                               45 * III * H                                                          TRA        0          
+91990EMBARCAR NO VEICULO PRODUTOS INCOMPATIVEIS ENTRE SI                                                 46 * I * A                    PESSOA JURIDICA     ESTADUAL            EXP    65654    656,54
+92021EMBARCAR PRODUTO PERIGOSO NAO CTE. DO CERTIFICADO DE CAPACITACAO DO VEICULO                         46 * I * B                                                            EXP    65654    656,54
+92022EMBARCAR PRODUTO PERIGOSO NAO CTE. DO CERTIFICADO DE CAPACITACAO DO EQUIPAMENTO                     46 * I * B                                                            EXP    65654    656,54
+92100NAO LANCAR NO DOCUMENTO FISCAL, AS INFORMACOES DE QUE TRATA O ITEM II DO ART. 22                    46 * I * C                    PESSOA JURIDICA     ESTADUAL            EXP    65654    656,54
+92291EXPEDIR PRODUTO PERIGOSO MAL ACONDICIONADO                                                          46 * I * D                                                            EXP    65654    656,54
+92292EXPEDIR PRODUTO PERIGOSO COM A EMBALAGEM EM MAS CONDICOES                                           46 * I * D                                                            EXP    65654    656,54
+92370NAO COMPARECER AO LOCAL DO ACIDENTE QUANDO EXPRES. CONVOCADO PELA AUTORID. COMP.                    46 * I * E                    PESSOA JURIDICA     ESTADUAL            EXP    65654    656,54
+92451EMBARCAR PRODUTO PERIGOSO EM VEICULO QUE NAO DISPONHA DE EQUIPAM. DE EMERGENCIA                     46 * II * A                                                           EXP    32827    328,27
+92452EMBARCAR PRODUTO PERIGOSO EM VEICULO QUE NAO DISPONHA DE EQUIPAM. DE PROT. IND.                     46 * II * A                                                           EXP    32827    328,27
+92531NAO FORNECER AO TRANSPORT A FICHA DE EMERGENCIA                                                     46 * II * B                                                           EXP    32827    328,27
+92532NAO FORNECER AO TRANSPORT O ENVELOPE PARA O TRANSPORTE                                              46 * II * B                                                           EXP    32827    328,27
+92610EMBARCAR PRODUTO PERIGOSO EM VEIC. QUE NAO ESTEJA UTILIZANDO ROTULOS E PAINEIS                      46 * II * C                   PESSOA JURIDICA     ESTADUAL            EXP    32827    328,27
+92700EXPEDIR CARGA FRACIONADA C/ EMBALAGEM EXTERNA DESPROVIDA DOS ROTULOS DE RISCO                       46 * II * D                   PESSOA JURIDICA     ESTADUAL            EXP    32827    328,27
+92880EMBARCAR PRODUTO PERIGOSO EM VEICULO OU EQUIPAMENTO S/ CONDICOES DE MANUTENCAO                      46 * II * E                   PESSOA JURIDICA     ESTADUAL            EXP    32827    328,27
+92961NAO PRESTAR OS NECESSARIOS ESCLARECIMENTOS TECNICOS EM SITUACAO DE EMERGENCIA                       46 * II * F                                                           EXP    32827    328,27
+92962NAO PRESTAR OS NECESSARIOS ESCLARECIMENTOS TECNICOS EM SITUACAO DE ACIDENTE                         46 * II * F                                                           EXP    32827    328,27
+

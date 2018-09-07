@@ -1,0 +1,204 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 xmlns:x="http://xpert.com/faces">
+
+    <h:form id="formCreateAcionamento">
+        <p:hotkey bind="esc" handler="PF('widgetObservacaoAcionamento').hide()"/>
+        <div class="panel-body">  
+            <fieldset>
+                <legend><i class="fa fa-fw fa-comment-o"></i>#{msg['suaMensagem']}</legend>
+
+                <x:modalMessages/>
+
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="form-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                            <h:outputLabel for="tipoMensagem" value="* #{msg['acionamento.tipoMensagem']}:" />
+                            <h:selectOneMenu id="tipoMensagem" value="#{acionamentoPublicoMB.entity.tipoMensagem}" converter="entityConverter" styleClass="form-control" >
+                                <f:selectItem itemLabel="#{xmsg['select']}" />
+                                <f:selectItems value="#{findAllBean.get(classMB.tipoMensagem)}" 
+                                               var="tipoMensagem"
+                                               itemLabel="#{tipoMensagem.descricao}"/>
+                            </h:selectOneMenu>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="form-group col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                            <h:outputLabel for="mensagem" value="* #{msg['acionamento.mensagem']}:" />
+                            <div>
+                                <p:inputTextarea id="mensagem" value="#{acionamentoPublicoMB.entity.mensagem}"
+                                                 maxlength="#{constantesMB.tamanhoMaximoAcionamento}" 
+                                                 counterTemplate="#{msg['aindaRestamCaracteres']}"
+                                                 counter="caracteresRestantes" autoResize="false" rows="6"
+                                                 styleClass="form-control"/>
+
+                                <h:outputText id="caracteresRestantes"/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <h:panelGroup layout="block" id="panelAnexos">
+                        <h:panelGroup rendered="#{empty acionamentoPublicoMB.anexo}" layout="block" styleClass="row">
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+
+                                <p:fileUpload mode="advanced" 
+                                              update="panelAnexos"
+                                              process="@this"
+                                              multiple="false"
+                                              auto="true"
+                                              fileLimit="1"
+                                              fileLimitMessage="#{msg['limiteDeArquivoUm']}"
+                                              fileUploadListener="#{acionamentoPublicoMB.uploadArquivo}"
+                                              sizeLimit="#{constantesMB.dadosUpload.tamanhoMaximo}"
+                                              allowTypes="#{constantesMB.dadosUpload.tiposPermitidos}"
+                                              label="#{msg['cliqueAnexar']}"
+                                              invalidFileMessage="#{msg['tipoArquivoInvalido']}"
+                                              invalidSizeMessage="#{msg['arquivoMuitoGrande']}"
+                                              cancelLabel="#{msg['cancelar']}"
+                                              uploadLabel="#{msg['enviar']}"/>  
+
+                                <h:outputText value="#{msg['tamanhoMaximoArquivo']}: #{constantesMB.dadosUpload.descricaoTamanho}. #{msg['tipoArquivoAceitos']}: #{constantesMB.dadosUpload.extencao}" styleClass="help-block"/>
+
+                            </div>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{not empty acionamentoPublicoMB.anexo}" layout="block" styleClass="row">
+
+                            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                <h:outputLabel for="anexo" value="#{msg['anexo']}:" />
+                                <div class="input-group">
+                                    <h:inputText id="anexo" value="#{acionamentoPublicoMB.anexo.nomeArquivo} - (#{acionamentoPublicoMB.anexo.descricaoTamanho})" readonly="true" styleClass="form-control"/> 
+                                    <span class="input-group-btn">
+                                        <p:commandButton title="#{msg['excluir']}" action="#{acionamentoPublicoMB.trocarAnexo}" icon="fa fa-times fa-inverse" styleClass="btn btn-info" process="panelAnexos" update="panelAnexos"/>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </h:panelGroup>
+                    </h:panelGroup>
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend><i class="fa fa-fw fa-male"></i>#{msg['requerente']}</legend>
+
+                <div class="row">
+                    <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <h:outputLabel for="nome" value="#{msg['requerente.nome']}:" />
+                        <p:inputText id="nome" value="#{acionamentoPublicoMB.entity.requerente.nomeRequerente}" maxlength="120"  styleClass="form-control"/>
+                    </div>
+                    <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <h:outputLabel for="email" value="#{msg['requerente.email']}:" />
+                        <p:inputText id="email" value="#{acionamentoPublicoMB.entity.requerente.email}" maxlength="120"  styleClass="form-control"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-2 col-md-3 col-sm-3 col-xs-6">
+                        <h:outputLabel for="telefone" value="#{msg['requerente.telefone']}:" />
+                        <p:inputMask id="telefone" value="#{acionamentoPublicoMB.entity.requerente.telefone}" mask="#{formatMB.format.telefone}" slotChar="" styleClass="form-control"/>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-3 col-sm-3 col-xs-6">
+                        <h:outputLabel for="celular" value="#{msg['requerente.celular']}:" />
+                        <p:inputMask id="celular" value="#{acionamentoPublicoMB.entity.requerente.celular}" mask="#{formatMB.format.telefone}" slotChar="" styleClass="form-control"  />
+                    </div>
+                    <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <h:outputLabel for="escolaridade" value="#{msg['requerente.escolaridade']}:" />
+                        <h:selectOneMenu id="escolaridade" value="#{acionamentoPublicoMB.entity.requerente.escolaridade}" converter="entityConverter" styleClass="form-control">
+                            <x:initializer/>
+                            <f:selectItem itemLabel="#{xmsg['select']}" />
+                            <f:selectItems value="#{findAllBean.get(classMB.escolaridade)}" 
+                                           var="escolaridade"
+                                           itemLabel="#{escolaridade.descricao}"/>
+                        </h:selectOneMenu>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-2 col-md-3 col-sm-6 col-xs-7">
+                        <h:outputLabel for="sexo" value="#{msg['requerente.sexo']}:" />
+                        <h:selectOneRadio id="sexo" value="#{acionamentoPublicoMB.entity.requerente.sexo}"  styleClass="radio">
+                            <f:selectItems value="#{findAllBean.get(classMB.sexo)}" 
+                                           var="sexo"
+                                           itemLabel="#{sexo.descricao}"/>
+                        </h:selectOneRadio>
+                    </div>
+                    <div class="form-group col-lg-2 col-md-3 col-sm-6 col-xs-5">
+                        <h:outputLabel for="faixaEtaria" value="#{msg['requerente.faixaEtaria']}:" />
+                        <h:selectOneMenu id="faixaEtaria" value="#{acionamentoPublicoMB.entity.requerente.faixaEtaria}"  styleClass="form-control" >
+                            <f:selectItem itemLabel="#{xmsg['select']}" />
+                            <f:selectItems value="#{findAllBean.get(classMB.faixaEtaria)}" 
+                                           var="faixaEtaria"
+                                           itemLabel="#{faixaEtaria.descricao}"/>
+                        </h:selectOneMenu>
+                    </div>
+                    <f:validateBean disabled="true">
+                        <div class="form-group col-lg-1 col-md-2 col-sm-6 col-xs-4">
+                            <h:outputLabel for="estado" value="#{msg['estado.uf']}:" />
+                            <h:selectOneMenu id="estado" value="#{acionamentoPublicoMB.entity.requerente.cidade.estado}" converter="entityConverter" styleClass="form-control" >
+                                <x:initializer/>
+                                <f:selectItem itemLabel="#{xmsg['select']}"/>
+                                <f:selectItems value="#{findAllBean.get(classMB.estado)}" 
+                                               var="estado"
+                                               itemLabel="#{estado.sigla}"/>
+                                <p:ajax process="@this" update="panelCidades"/>
+                            </h:selectOneMenu>
+                        </div>
+                    </f:validateBean>
+                    <h:panelGroup id="panelCidades" styleClass="form-group col-lg-3 col-md-4 col-sm-6 col-xs-8" layout="block">
+                        <h:outputLabel for="cidade" value="#{msg['requerente.cidade']}:" />
+                        <h:selectOneMenu id="cidade" value="#{acionamentoPublicoMB.entity.requerente.cidade}" converter="entityConverter" styleClass="form-control" >
+                            <x:initializer/>
+                            <f:selectItem itemLabel="#{xmsg['select']}" />
+                            <f:selectItems value="#{acionamentoPublicoMB.entity.requerente.cidade.estado.cidades}" 
+                                           var="cidade"
+                                           itemLabel="#{cidade.nome}">
+                                <x:initializer/>
+                            </f:selectItems>
+                        </h:selectOneMenu>
+                    </h:panelGroup>
+
+
+                </div>
+
+            </fieldset>
+
+            <div class="row">
+                <div class="form-group col-lg-2 col-md-3 col-sm-4 col-xs-8">
+                    <h:panelGroup id="capimg">
+                        <h:graphicImage style="border-radius:2px"
+                                        value="/Captcha.jpg?p=#{now}"/>
+                        <p:spacer width="7"/>
+                        <p:commandButton id="botaoRefresh" icon="fa fa-refresh" update="capimg" process="capimg" global="false" styleClass="btn-info"/>
+                    </h:panelGroup>
+                    <br/>
+                    <p:spacer width="10"/>
+                    <h:panelGroup>
+                        <p:inputText id="inputCaptcha" value="#{acionamentoPublicoMB.captcha}" maxlength="5"
+                                     styleClass="form-control"/>
+                        <p:spacer width="7"/>
+                    </h:panelGroup>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-footer text-center">
+
+            <div class="row">
+                <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2 text-left">
+                    <small><h:outputText value="#{xmsg['requiredFieldsForm']}"/></small>
+                </div>
+                <div class="col-lg-8 col-sm-8 col-md-8 col-xs-8 text-center">
+                    <p:commandButton process="@form" update="@form" icon="fa fa-paper-plane" action="#{acionamentoPublicoMB.save}" value="#{msg['enviar']}" styleClass="btn-info"/>
+                </div>
+            </div>
+        </div>
+    </h:form>
+
+</ui:composition>

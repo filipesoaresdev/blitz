@@ -1,0 +1,20 @@
+package br.gov.pi.detran.ouvidoria.modelo.geral;
+
+/**
+ *
+ * @author arnaldo
+ */
+public enum Sexo {
+
+    M("Masculino"), F("Feminino");
+    
+    private String descricao;
+
+    private Sexo(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+}

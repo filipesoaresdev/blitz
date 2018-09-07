@@ -1,0 +1,107 @@
+package br.gov.pi.detran.ouvidoria;
+
+import br.gov.pi.detran.ouvidoria.dao.geral.CidadeDAO;
+import br.gov.pi.detran.ouvidoria.dao.geral.EstadoDAO;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Cidade;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Estado;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
+@Stateless
+public class ImportTableTOM {
+
+    @EJB
+    private EstadoDAO estadoDAO;
+    @EJB
+    private CidadeDAO cidadeDAO;
+
+    public void generate() {
+
+        Map<String, String> mapAux = new HashMap<String, String>();
+        mapAux.put("RO", "RONDÔNIA");
+        mapAux.put("AC", "ACRE");
+        mapAux.put("AM", "AMAZONAS");
+        mapAux.put("RR", "RORAIMA");
+        mapAux.put("PA", "PARÁ");
+        mapAux.put("AP", "AMAPÁ");
+        mapAux.put("TO", "TOCANTINS");
+        mapAux.put("MA", "MARANHÃO");
+        mapAux.put("PI", "PIAUÍ");
+        mapAux.put("CE", "CEARÁ");
+        mapAux.put("RN", "RIO GRANDE DO NORTE");
+        mapAux.put("PB", "PARAÍBA");
+        mapAux.put("PE", "PERNAMBUCO");
+        mapAux.put("AL", "ALAGOAS");
+        mapAux.put("SE", "SERGIPE");
+        mapAux.put("BA", "BAHIA");
+        mapAux.put("MG", "MINAS GERAIS");
+        mapAux.put("ES", "ESPIRITO SANTO");
+        mapAux.put("RJ", "RIO DE JANEIRO");
+        mapAux.put("SP", "SÃO PAULO");
+        mapAux.put("PR", "PARANÁ");
+        mapAux.put("SC", "SANTA CATARINA");
+        mapAux.put("RS", "RIO GRANDE DO SUL");
+        mapAux.put("MS", "MATO GROSSO DO SUL");
+        mapAux.put("MT", "MATO GROSSO");
+        mapAux.put("GO", "GOIÁS");
+        mapAux.put("DF", "DISTRITO FEDERAL");
+
+        Map<String, Estado> mapEstados = new HashMap<String, Estado>();
+        List<Estado> estados = estadoDAO.listAll();
+        for (Estado e : estados) {
+            mapEstados.put(e.getSigla().toUpperCase(), e);
+        }
+
+        try {
+
+            BufferedReader input = new BufferedReader(new InputStreamReader(Thread.currentThread().getContextClassLoader().getResourceAsStream("/files/TOM.txt"), "UTF8"));
+            try {
+                String line = null;
+                while ((line = input.readLine()) != null) {
+
+                    String sigla = line.substring(55, 57);
+                    String nomeCidade = line.substring(5, 55).trim();
+                    Long codCidade = new Long(line.substring(0, 5));
+                    Estado estado = null;
+
+                    if (mapEstados.get(sigla) == null) {
+
+                        estado = new Estado();
+                        estado.setSigla(sigla);
+                        estado.setNome(mapAux.get(sigla));
+                        estadoDAO.saveOrUpdate(estado, false);
+
+                        mapEstados.put(sigla, estado);
+
+                    } else {
+                        estado = mapEstados.get(sigla);
+                    }
+
+                    Cidade cidade = cidadeDAO.unique("codigo", codCidade);
+                    if (cidade == null) {
+                        cidade = new Cidade();
+                        cidade.setCodigo(codCidade);
+                    }
+
+                    cidade.setNome(nomeCidade);
+                    cidade.setEstado(estado);
+
+                    cidadeDAO.saveOrUpdate(cidade, false);
+
+                    System.out.println(Integer.parseInt(line.substring(0, 5)) + "-" + line.substring(5, 55).trim() + "-" + line.substring(55, 57));
+                }
+            } finally {
+                input.close();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+    }
+}

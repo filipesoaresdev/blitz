@@ -1,0 +1,109 @@
+package br.gov.pi.detran.ouvidoria.modelo.geral;
+
+import com.xpert.core.validation.Validation;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import org.hibernate.annotations.Index;
+import org.hibernate.validator.constraints.NotBlank;
+
+@Entity
+public class Cidade implements Serializable {
+   
+    @Id
+    @GeneratedValue(generator = "cidade")
+    @SequenceGenerator(name = "cidade", allocationSize = 1, sequenceName = "cidade_id_seq")
+    private Long id;
+    
+    @Index(name = "IDX_CIDADE_UF")
+    @NotNull
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Estado estado;
+   
+    @NotBlank
+    @Size(max = 80)
+    private String nome;
+    
+    @NotNull
+    private boolean capital;
+    
+    private Long codigo;
+
+    public Cidade() {
+        this.capital = false;
+        this.estado = new Estado();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = !Validation.isBlank(nome) ? nome.toUpperCase().trim() : nome;
+    }
+
+    public boolean isCapital() {
+        return capital;
+    }
+
+    public void setCapital(boolean capital) {
+        this.capital = capital;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + (this.id != null ? this.id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cidade other = (Cidade) obj;
+        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public String toString() {
+        return nome;
+    }
+
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
+    }
+}

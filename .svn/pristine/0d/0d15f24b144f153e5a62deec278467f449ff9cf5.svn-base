@@ -1,0 +1,14 @@
+package br.gov.pi.detran.ouvidoria.dao.geral.impl;
+
+import br.gov.pi.detran.ouvidoria.application.BaseDAOImpl;
+import br.gov.pi.detran.ouvidoria.dao.geral.TipoMensagemDAO;
+import br.gov.pi.detran.ouvidoria.modelo.geral.TipoMensagem;
+import javax.ejb.Stateless;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Stateless
+public class TipoMensagemDAOImpl extends BaseDAOImpl<TipoMensagem> implements TipoMensagemDAO {
+}

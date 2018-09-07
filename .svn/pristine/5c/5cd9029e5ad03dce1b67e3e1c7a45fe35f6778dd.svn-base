@@ -1,0 +1,14 @@
+package br.gov.pi.detran.ouvidoria.dao.geral;
+
+import com.xpert.persistence.dao.BaseDAO;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Escolaridade;
+import javax.ejb.Local;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Local
+public interface EscolaridadeDAO extends BaseDAO<Escolaridade> {
+    
+}

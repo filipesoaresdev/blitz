@@ -1,0 +1,14 @@
+package br.gov.pi.detran.ouvidoria.dao.geral;
+
+import br.gov.pi.detran.ouvidoria.modelo.geral.Parametro;
+import com.xpert.persistence.dao.BaseDAO;
+import javax.ejb.Local;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Local
+public interface ParametroDAO extends BaseDAO<Parametro> {
+    
+}

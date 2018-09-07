@@ -1,0 +1,17 @@
+package br.gov.pi.detran.ouvidoria.dao.controleacesso;
+
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.Perfil;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.Usuario;
+import com.xpert.persistence.dao.BaseDAO;
+import java.util.List;
+import javax.ejb.Local;
+
+/**
+ *
+ * @author #Author
+ */
+@Local
+public interface PerfilDAO extends BaseDAO<Perfil> {
+    
+     public List<Perfil> getPerfis(Usuario usuario);
+}

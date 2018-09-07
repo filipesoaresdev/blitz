@@ -1,0 +1,278 @@
+package br.gov.pi.detran.ouvidoria;
+
+import br.gov.pi.detran.ouvidoria.dao.DAO;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.*;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Escolaridade;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Parametro;
+import br.gov.pi.detran.ouvidoria.modelo.geral.TipoMensagem;
+import com.xpert.core.exception.StackException;
+import com.xpert.core.exception.UniqueFieldException;
+import com.xpert.i18n.I18N;
+import com.xpert.persistence.dao.BaseDAO;
+import com.xpert.persistence.query.Restriction;
+import com.xpert.utils.Encryption;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
+/**
+ * Classe para geracao inicial dos dados do sistema, como perfil ADMINISTRADOR
+ * usuario ADMIN, e outros
+ *
+ * @author Ayslan
+ */
+@Stateless
+public class GeracaoDadosSistema {
+
+    private static final Logger logger = Logger.getLogger(GeracaoDadosSistema.class.getName());
+    @EJB
+    private DAO dao;
+    @EJB
+    private GeracaoPermissao geracaoPermissao;
+    @EJB
+    private GeracaoModeloEmail geracaoModeloEmail;
+
+    public <T> BaseDAO<T> getDAO(Class<T> entity) {
+        return dao.getDAO(entity);
+    }
+
+    public List<Restriction> getRestrictions(Restriction... restrictions) {
+        return Arrays.asList(restrictions);
+    }
+
+    public void generate() {
+
+        try {
+            //gerar modelos de email
+            geracaoModeloEmail.generate();
+            //gerar permissões
+            geracaoPermissao.generate();
+
+            Parametro parametro = getDAO(Parametro.class).unique("ativo", true);
+            if (parametro == null) {
+                parametro = new Parametro();
+                parametro.setTamanhoAnexo(5L);
+                parametro.setTiposArquivoPermitido("pdf,png,jpeg,doc,docx,txt,xls,xlsx");
+            }
+            parametro = getDAO(Parametro.class).merge(parametro, false);
+
+
+            TipoMensagem tipoMensagem1 = getDAO(TipoMensagem.class).unique("descricao", "ELOGIO");
+            if (tipoMensagem1 == null) {
+                tipoMensagem1 = new TipoMensagem();
+                tipoMensagem1.setDescricao("ELOGIO");
+                tipoMensagem1.setAtivo(true);
+                tipoMensagem1.setId(0L);
+            }
+            tipoMensagem1 = getDAO(TipoMensagem.class).merge(tipoMensagem1, false);
+
+            TipoMensagem tipoMensagem2 = getDAO(TipoMensagem.class).unique("descricao", "RECLAMAÇÃO");
+            if (tipoMensagem2 == null) {
+                tipoMensagem2 = new TipoMensagem();
+                tipoMensagem2.setDescricao("RECLAMAÇÃO");
+                tipoMensagem2.setAtivo(true);
+                tipoMensagem2.setId(0L);
+            }
+            tipoMensagem2 = getDAO(TipoMensagem.class).merge(tipoMensagem2, false);
+
+            TipoMensagem tipoMensagem3 = getDAO(TipoMensagem.class).unique("descricao", "SUGESTÃO");
+            if (tipoMensagem3 == null) {
+                tipoMensagem3 = new TipoMensagem();
+                tipoMensagem3.setDescricao("SUGESTÃO");
+                tipoMensagem3.setAtivo(true);
+                tipoMensagem3.setId(0L);
+            }
+            tipoMensagem3 = getDAO(TipoMensagem.class).merge(tipoMensagem3, false);
+
+            TipoMensagem tipoMensagem4 = getDAO(TipoMensagem.class).unique("descricao", "DÚVIDA");
+            if (tipoMensagem4 == null) {
+                tipoMensagem4 = new TipoMensagem();
+                tipoMensagem4.setDescricao("DÚVIDA");
+                tipoMensagem4.setAtivo(true);
+                tipoMensagem4.setId(0L);
+            }
+            tipoMensagem4 = getDAO(TipoMensagem.class).merge(tipoMensagem4, false);
+
+            TipoMensagem tipoMensagem5 = getDAO(TipoMensagem.class).unique("descricao", "DENÚNCIA");
+            if (tipoMensagem5 == null) {
+                tipoMensagem5 = new TipoMensagem();
+                tipoMensagem5.setDescricao("DENÚNCIA");
+                tipoMensagem5.setAtivo(true);
+                tipoMensagem5.setId(0L);
+            }
+            tipoMensagem5 = getDAO(TipoMensagem.class).merge(tipoMensagem5, false);
+
+            Escolaridade escolaridade0 = getDAO(Escolaridade.class).unique("descricao", "ALFABETIZADO");
+            if (escolaridade0 == null) {
+                escolaridade0 = new Escolaridade();
+                escolaridade0.setDescricao("ALFABETIZADO");
+                escolaridade0.setAtivo(true);
+            }
+            escolaridade0 = getDAO(Escolaridade.class).merge(escolaridade0, false);
+
+            Escolaridade escolaridade1 = getDAO(Escolaridade.class).unique("descricao", "FUNDAMENTAL - INCOMPLETO");
+            if (escolaridade1 == null) {
+                escolaridade1 = new Escolaridade();
+                escolaridade1.setDescricao("FUNDAMENTAL - INCOMPLETO");
+                escolaridade1.setAtivo(true);
+            }
+            escolaridade1 = getDAO(Escolaridade.class).merge(escolaridade1, false);
+
+            Escolaridade escolaridade2 = getDAO(Escolaridade.class).unique("descricao", "FUNDAMENTAL - COMPLETO");
+            if (escolaridade2 == null) {
+                escolaridade2 = new Escolaridade();
+                escolaridade2.setDescricao("FUNDAMENTAL - COMPLETO");
+                escolaridade2.setAtivo(true);
+            }
+            escolaridade2 = getDAO(Escolaridade.class).merge(escolaridade2, false);
+
+            Escolaridade escolaridade3 = getDAO(Escolaridade.class).unique("descricao", "MÉDIO - INCOMPLETO");
+            if (escolaridade3 == null) {
+                escolaridade3 = new Escolaridade();
+                escolaridade3.setDescricao("MÉDIO - INCOMPLETO");
+                escolaridade3.setAtivo(true);
+            }
+            escolaridade3 = getDAO(Escolaridade.class).merge(escolaridade3, false);
+
+            Escolaridade escolaridade4 = getDAO(Escolaridade.class).unique("descricao", "MÉDIO - COMPLETO");
+            if (escolaridade4 == null) {
+                escolaridade4 = new Escolaridade();
+                escolaridade4.setDescricao("MÉDIO - COMPLETO");
+                escolaridade4.setAtivo(true);
+            }
+            escolaridade4 = getDAO(Escolaridade.class).merge(escolaridade4, false);
+
+            Escolaridade escolaridade5 = getDAO(Escolaridade.class).unique("descricao", "SUPERIOR - INCOMPLETO");
+            if (escolaridade5 == null) {
+                escolaridade5 = new Escolaridade();
+                escolaridade5.setDescricao("SUPERIOR - INCOMPLETO");
+                escolaridade5.setAtivo(true);
+            }
+            escolaridade5 = getDAO(Escolaridade.class).merge(escolaridade5, false);
+
+            Escolaridade escolaridade6 = getDAO(Escolaridade.class).unique("descricao", "SUPERIOR - COMPLETO");
+            if (escolaridade6 == null) {
+                escolaridade6 = new Escolaridade();
+                escolaridade6.setDescricao("SUPERIOR - COMPLETO");
+                escolaridade6.setAtivo(true);
+            }
+            escolaridade6 = getDAO(Escolaridade.class).merge(escolaridade6, false);
+
+            Escolaridade escolaridade7 = getDAO(Escolaridade.class).unique("descricao", "PÓS-GRADUAÇÃO - INCOMPLETO");
+            if (escolaridade7 == null) {
+                escolaridade7 = new Escolaridade();
+                escolaridade7.setDescricao("PÓS-GRADUAÇÃO - INCOMPLETO");
+                escolaridade7.setAtivo(true);
+            }
+            escolaridade7 = getDAO(Escolaridade.class).merge(escolaridade7, false);
+
+            Escolaridade escolaridade8 = getDAO(Escolaridade.class).unique("descricao", "PÓS-GRADUAÇÃO - COMPLETO");
+            if (escolaridade8 == null) {
+                escolaridade8 = new Escolaridade();
+                escolaridade8.setDescricao("PÓS-GRADUAÇÃO - COMPLETO");
+                escolaridade8.setAtivo(true);
+            }
+            escolaridade8 = getDAO(Escolaridade.class).merge(escolaridade8, false);
+
+            Escolaridade escolaridade9 = getDAO(Escolaridade.class).unique("descricao", "MESTRADO");
+            if (escolaridade9 == null) {
+                escolaridade9 = new Escolaridade();
+                escolaridade9.setDescricao("MESTRADO");
+                escolaridade9.setAtivo(true);
+            }
+            escolaridade9 = getDAO(Escolaridade.class).merge(escolaridade9, false);
+
+            Escolaridade escolaridade10 = getDAO(Escolaridade.class).unique("descricao", "DOUTORADO");
+            if (escolaridade10 == null) {
+                escolaridade10 = new Escolaridade();
+                escolaridade10.setDescricao("DOUTORADO");
+                escolaridade10.setAtivo(true);
+            }
+            escolaridade10 = getDAO(Escolaridade.class).merge(escolaridade10, false);
+
+
+            //adicionar todas as permissoes para o admin
+            Perfil perfil = getDAO(Perfil.class).unique("descricao", "ADMINISTRADOR");
+            if (perfil == null) {
+                perfil = new Perfil();
+                perfil.setDescricao("ADMINISTRADOR");
+                perfil.setAtivo(true);
+            }
+            perfil.setPermissoes(getDAO(Permissao.class).listAll());
+            if (perfil.getId() == null) {
+                BaseDAO permissaoDAO = getDAO(Permissao.class);
+                List<Permissao> atalhos = new ArrayList<Permissao>();
+                atalhos.add((Permissao) permissaoDAO.unique("key", "usuario.list"));
+                atalhos.add((Permissao) permissaoDAO.unique("key", "usuario.create"));
+                atalhos.add((Permissao) permissaoDAO.unique("key", "acessoSistema.list"));
+                atalhos.add((Permissao) permissaoDAO.unique("key", "usuario.alterarSenha"));
+                atalhos.add((Permissao) permissaoDAO.unique("key", "erroSistema.list"));
+                atalhos.add((Permissao) permissaoDAO.unique("key", "perfil.list"));
+                perfil.setPermissoesAtalho(atalhos);
+            }
+            perfil = getDAO(Perfil.class).merge(perfil, false);
+
+
+            Usuario usuario = getDAO(Usuario.class).unique("userLogin", "ADMIN");
+            if (usuario == null) {
+
+
+                //usuario
+                usuario = new Usuario();
+                usuario.setSituacaoUsuario(SituacaoUsuario.ATIVO);
+                usuario.setMatricula("123");
+                usuario.setRg("123");
+                usuario.setCpf("12345678909");
+                usuario.setEmail("admin@xpertsistemas.com.br");
+                usuario.setNome("ADMINISTRADOR DO SISTEMA");
+                List<Perfil> perfis = new ArrayList<Perfil>();
+                perfis.add(perfil);
+                usuario.setPerfis(perfis);
+                usuario.setUserLogin("ADMIN");
+                try {
+                    usuario.setUserPassword(Encryption.getSHA256("1"));
+                } catch (NoSuchAlgorithmException ex) {
+                    throw new RuntimeException(ex);
+                }
+                usuario.setSuperUsuario(true);
+                usuario = getDAO(Usuario.class).merge(usuario, false);
+
+                //historico como ativo
+                HistoricoSituacaoUsuario historicoSituacaoUsuario = new HistoricoSituacaoUsuario();
+                historicoSituacaoUsuario.setDataSituacao(new Date());
+                historicoSituacaoUsuario.setSituacaoUsuario(SituacaoUsuario.ATIVO);
+                historicoSituacaoUsuario.setUsuario(usuario);
+                historicoSituacaoUsuario = getDAO(HistoricoSituacaoUsuario.class).merge(historicoSituacaoUsuario, false);
+
+            }
+
+
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, ex.getMessage(), ex);
+        }
+    }
+
+    public static void log(StackException stackException) {
+        boolean i18n = true;
+
+        if (stackException instanceof UniqueFieldException) {
+            if (((UniqueFieldException) stackException).isI18n() == false) {
+                i18n = false;
+            }
+        }
+
+        if (stackException.getExceptions() == null || stackException.getExceptions().isEmpty()) {
+            logger.log(Level.INFO, I18N.get(stackException.getMessage(), stackException.getParametros()));
+        } else {
+            for (StackException re : stackException.getExceptions()) {
+                logger.log(Level.INFO, I18N.get(re.getMessage(), re.getParametros()));
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/admin/template/mainTemplate.xhtml"
+                 xmlns:x="http://xpert.com/faces">
+    <ui:param name="title" value="#{msg['escolaridade.list']}" />
+    <ui:define name="menuPanel">
+        <ui:include src="menuEscolaridade.xhtml" />
+    </ui:define>
+    <ui:define name="body">
+        <h:form id="formListEscolaridade">
+            <x:modalMessages/>
+
+            <x:dataTableActions fileName="escolaridade_export" target=":formListEscolaridade:dataTableEscolaridade"
+                                widgetVar="dataTableEscolaridadeWidget"  />
+
+            <p:dataTable paginator="true" rows="10" rowsPerPageTemplate="10,20,30" paginatorPosition="bottom" emptyMessage="#{xmsg['noRecordFound']}"
+                         var="escolaridade" rowIndexVar="index" id="dataTableEscolaridade" widgetVar="dataTableEscolaridadeWidget" styleClass="table-responsive"
+                         currentPageReportTemplate="#{escolaridadeMB.dataModel.currentPageReportTemplate}"
+                         paginatorTemplate="#{escolaridadeMB.dataModel.paginatorTemplate}"
+                         value="#{escolaridadeMB.dataModel}" lazy="true" >
+                <p:column styleClass="uix-datatable-index">
+                    <h:outputText value="#{index+1}"/>
+                </p:column>
+                <p:column headerText="#{msg['escolaridade.descricao']}" sortBy="#{escolaridade.descricao}"
+                          filterBy="#{escolaridade.descricao}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['escolaridade.descricao']}" />
+                    </f:facet>
+                    <h:outputText value="#{escolaridade.descricao}"/>
+                </p:column>
+                <p:column styleClass="uix-datatable-actions" exportable="false" headerText="#{xmsg['actions']}">
+                    <f:facet name="header">
+                        <h:outputText value="#{xmsg['actions']}"/>
+                    </f:facet>
+                    <p:commandButton oncomplete="PF('widgetEscolaridadeDetail').show();"  icon="fa fa-fw fa-search-plus" 
+                                     process="@form" update=":formDetailEscolaridade" title="#{xmsg['detail']}" >
+                        <f:setPropertyActionListener value="#{escolaridade}" target="#{escolaridadeMB.entity}" />
+                    </p:commandButton>
+                    <x:securityArea rolesAllowed="escolaridade.create">
+                        <p:button icon="fa fa-fw fa-edit" outcome="createEscolaridade" title="#{xmsg['edit']}">
+                            <f:param name="id" value="#{escolaridade.id}" />
+                        </p:button>
+                    </x:securityArea>
+                    <x:securityArea rolesAllowed="escolaridade.delete">
+                        <p:commandButton icon="fa fa-trash-o" title="#{xmsg['delete']}" process="@form" update="@form" 
+                                         action="#{escolaridadeMB.delete}" >
+                            <f:setPropertyActionListener value="#{escolaridade.id}" target="#{escolaridadeMB.id}" />
+                            <x:confirmation message="#{xmsg['confirmDelete']} - #{escolaridade}" />
+                        </p:commandButton>
+                    </x:securityArea>
+                </p:column>
+            </p:dataTable>
+            <div class="uix-audit-delete">
+                <x:securityArea rolesAllowed="escolaridade.audit">
+                    <x:auditDelete for="#{escolaridadeMB.entityClass}"/>
+                </x:securityArea>
+            </div>  
+        </h:form>
+
+        <p:dialog widgetVar="widgetEscolaridadeDetail" header="#{msg['escolaridade.detail']}" appendTo="@(body)" 
+                  modal="true" styleClass="uix-dialog-fluid" >
+            <ui:include src="detailEscolaridade.xhtml" />
+        </p:dialog>
+    </ui:define>
+</ui:composition>

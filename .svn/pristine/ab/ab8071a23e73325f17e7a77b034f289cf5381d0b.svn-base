@@ -1,0 +1,32 @@
+package br.gov.pi.detran.ouvidoria.mb.geral;
+
+
+import java.io.Serializable;
+import com.xpert.core.crud.AbstractBaseBean;
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import br.gov.pi.detran.ouvidoria.bo.geral.EscolaridadeBO;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Escolaridade;
+
+/**
+ *
+ * @author arnaldo
+ */
+@ManagedBean
+@ViewScoped
+public class EscolaridadeMB extends AbstractBaseBean<Escolaridade> implements Serializable {
+
+    @EJB
+    private EscolaridadeBO escolaridadeBO;
+
+    @Override
+    public EscolaridadeBO getBO() {
+        return escolaridadeBO;
+    }
+
+    @Override
+    public String getDataModelOrder() {
+        return "id";
+    }
+}

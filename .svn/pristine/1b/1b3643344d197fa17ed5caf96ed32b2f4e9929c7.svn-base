@@ -1,0 +1,146 @@
+package br.gov.pi.detran.ouvidoria.modelo.geral;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import org.apache.commons.io.FileUtils;
+import org.hibernate.annotations.Index;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Entity
+public class Anexo implements Serializable{
+
+    @Id
+    @SequenceGenerator(name = "Anexos", allocationSize = 1, sequenceName = "anexos_id_seq")
+    @GeneratedValue(generator = "Anexos")
+    private Long id;
+    
+    @NotNull
+    @Size(max = 200)
+    private String nomeArquivo;
+
+    private Long tamanho;
+
+    @Size(max = 150)
+    private String contentType;
+
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataEnvio;
+    
+    @Lob
+    private byte[] bytes;
+
+    @Index(name = "idx_anexo_acionamento")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Acionamento acionamento;
+
+    public Anexo() {
+    
+    }
+
+    public String getDescricaoTamanho(){
+        if(tamanho != null){
+            return FileUtils.byteCountToDisplaySize(tamanho);
+        }else{
+            return FileUtils.byteCountToDisplaySize(0L);
+        }
+    }
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNomeArquivo() {
+        return nomeArquivo;
+    }
+
+    public void setNomeArquivo(String nomeArquivo) {
+        this.nomeArquivo = nomeArquivo;
+    }
+
+    public Long getTamanho() {
+        return tamanho;
+    }
+
+    public void setTamanho(Long tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    public Date getDataEnvio() {
+        return dataEnvio;
+    }
+
+    public void setDataEnvio(Date dataEnvio) {
+        this.dataEnvio = dataEnvio;
+    }
+
+    public byte[] getBytes() {
+        return bytes;
+    }
+
+    public void setBytes(byte[] bytes) {
+        this.bytes = bytes;
+    }
+
+    public Acionamento getAcionamento() {
+        return acionamento;
+    }
+
+    public void setAcionamento(Acionamento acionamento) {
+        this.acionamento = acionamento;
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + (this.id != null ? this.id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Anexo other = (Anexo) obj;
+        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return nomeArquivo+" ("+getDescricaoTamanho()+")";
+    }
+    
+}

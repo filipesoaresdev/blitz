@@ -1,0 +1,14 @@
+package br.gov.pi.detran.ouvidoria.dao.geral.impl;
+
+import br.gov.pi.detran.ouvidoria.application.BaseDAOImpl;
+import br.gov.pi.detran.ouvidoria.dao.geral.EscolaridadeDAO;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Escolaridade;
+import javax.ejb.Stateless;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Stateless
+public class EscolaridadeDAOImpl extends BaseDAOImpl<Escolaridade> implements EscolaridadeDAO {
+}

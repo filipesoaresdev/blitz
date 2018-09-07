@@ -1,0 +1,89 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/admin/template/mainTemplate.xhtml"
+                 xmlns:x="http://xpert.com/faces">
+    <ui:param name="title" value="#{msg['parametro.list']}" />
+    <ui:define name="menuPanel">
+        <ui:include src="menuParametro.xhtml"/>
+    </ui:define>
+    <ui:define name="body">
+        <h:form id="formListParametro">
+            <x:modalMessages/>
+
+            <x:dataTableActions fileName="parametro_export" target=":formListParametro:dataTableParametro"
+                                widgetVar="dataTableParametroWidget"  />
+
+            <p:dataTable paginator="true" rows="10" rowsPerPageTemplate="10,20,30" paginatorPosition="bottom" emptyMessage="#{xmsg['noRecordFound']}"
+                         var="parametro" rowIndexVar="index" id="dataTableParametro" widgetVar="dataTableParametroWidget" styleClass="table-responsive"
+                         currentPageReportTemplate="#{parametroMB.dataModel.currentPageReportTemplate}"
+                         paginatorTemplate="#{parametroMB.dataModel.paginatorTemplate}"
+                         value="#{parametroMB.dataModel}" lazy="true" >
+                <p:column styleClass="uix-datatable-index">
+                    <h:outputText value="#{index+1}"/>
+                </p:column>
+                <p:column headerText="#{msg['parametro.observacaoAcionamento']}" sortBy="#{parametro.observacaoAcionamento}"
+                          filterBy="#{parametro.observacaoAcionamento}">
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['parametro.observacaoAcionamento']}" />
+                    </f:facet>
+                    <h:outputText escape="false" value="#{parametro.resumoMensagem}"/>
+                </p:column>
+                <p:column headerText="#{msg['parametro.tiposArquivoPermitido']}" sortBy="#{parametro.tiposArquivoPermitido}"
+                          filterBy="#{parametro.tiposArquivoPermitido}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['parametro.tiposArquivoPermitido']}" />
+                    </f:facet>
+                    <h:outputText value="#{parametro.tiposArquivoPermitido}"/>
+                </p:column>
+                <p:column headerText="#{msg['parametro.tamanhoAnexo']}" sortBy="#{parametro.tamanhoAnexo}"
+                          filterBy="#{parametro.tamanhoAnexo}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['parametro.tamanhoAnexo']}" />
+                    </f:facet>
+                    <h:outputText value="#{parametro.tamanhoAnexo}"/>
+                </p:column>
+                <p:column headerText="#{msg['parametro.ativo']}" sortBy="#{parametro.ativo}"
+                          filterBy="#{parametro.ativo}" filterOptions="#{booleanSelectItensEmptyOption}" style="text-align: center;">
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['parametro.ativo']}" />
+                    </f:facet>
+                    <h:outputText value="#{parametro.ativo}" converter ="yesNoConverter" />
+                </p:column>
+                <p:column styleClass="uix-datatable-actions" exportable="false" headerText="#{xmsg['actions']}">
+                    <f:facet name="header">
+                        <h:outputText value="#{xmsg['actions']}"/>
+                    </f:facet>
+                    <p:commandButton oncomplete="PF('widgetParametroDetail').show();"  icon="fa fa-fw fa-search-plus"
+                                     process="@form" update=":formDetailParametro" title="#{xmsg['detail']}" styleClass="btn btn-info">
+                        <f:setPropertyActionListener value="#{parametro}" target="#{parametroMB.entity}" />
+                    </p:commandButton>
+                    <x:securityArea rolesAllowed="parametro.create">
+                        <p:button icon="fa fa-fw fa-edit" outcome="createParametro" title="#{xmsg['edit']}" styleClass="btn btn-info">
+                            <f:param name="id" value="#{parametro.id}" />
+                        </p:button>
+                    </x:securityArea>
+                    <x:securityArea rolesAllowed="parametro.delete">
+                        <p:commandButton icon="fa fa-trash-o" title="#{xmsg['delete']}" process="@form" update="@form" 
+                                         action="#{parametroMB.delete}" styleClass="btn btn-info">
+                            <f:setPropertyActionListener value="#{parametro.id}" target="#{parametroMB.id}" />
+                            <x:confirmation message="#{xmsg['confirmDelete']} - #{parametro}" />
+                        </p:commandButton>
+                    </x:securityArea>
+                </p:column>
+            </p:dataTable>
+            <div class="uix-audit-delete">
+                <x:securityArea rolesAllowed="parametro.audit">
+                    <x:auditDelete for="#{parametroMB.entityClass}"/>
+                </x:securityArea>
+            </div>  
+        </h:form>
+
+        <p:dialog widgetVar="widgetParametroDetail" header="#{msg['parametro.detail']}" appendTo="@(body)" 
+                  modal="true" styleClass="uix-dialog-fluid" >
+            <ui:include src="detailParametro.xhtml" />
+        </p:dialog>
+    </ui:define>
+</ui:composition>

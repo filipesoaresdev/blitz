@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      dir="ltr" lang="en-US" xml:lang="en"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:x="http://xpert.com/faces"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:xc="http://java.sun.com/jsf/composite/xpert/components">
+
+    <f:view locale="#{localeBean.locale}">
+        <h:head>
+            <!-- METAS AND TITLE -->
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+            <meta http-equiv="content-type" content="text/html" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta charset="utf-8"/>
+            <title>RENACH<h:outputText rendered="#{not empty title}" value=" - #{title}"/></title>
+            <!-- END METAS AND TITLE -->
+
+            <!-- CSS -->
+            <link rel="stylesheet" media="screen" href="#{request.contextPath}/css/bootstrap.min.css"/>
+            <link rel="stylesheet" media="screen" href="#{request.contextPath}/font-awesome/css/font-awesome.min.css"/>
+            <o:conditionalComment if="lt IE 7">
+                <link rel="stylesheet" media="screen" href="#{request.contextPath}/font-awesome/css/font-awesome-ie7.min.css"/>
+            </o:conditionalComment>    
+            <link rel="stylesheet" media="screen" href="#{request.contextPath}/css/login.css"/>
+            <o:conditionalComment if="lt IE 9">
+                <link rel="stylesheet" media="screen" href="#{request.contextPath}/font-awesome/css/font-awesome-ie7.min.css"/>
+                <script src="#{request.contextPath}/js/html5.js"></script>
+                <script src="#{request.contextPath}/js/respond.min.js"></script>
+            </o:conditionalComment>             
+            <!-- END CSS -->        
+            
+            <!-- FAVICON -->        
+            <o:conditionalComment if="IE">
+                <link rel="shortcut icon" href="#{request.contextPath}/images/favicon.ico"/>
+            </o:conditionalComment>
+            <!-- END FAVICON -->        
+            <link rel="icon" href="#{request.contextPath}/images/favicon.ico" />
+        </h:head>
+        <h:body>
+            <ui:include src="/template/ajaxStatus.xhtml" /> 
+            <header>
+               
+            </header>
+            <section class="container">  
+                <div class="row">
+                    <div class="col-xs-12">                        
+                        <div class="login-wraper">
+                            <ui:insert name="body"/>                   
+                        </div>
+                    </div>
+                </div>
+            </section>    
+            <footer class="navbar-fixed-bottom">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>RENACH v1.6| Desenvolvido por <a href="http://www.detran.pi.gov.br" title="DETRAN-PI">DETRAN-PI</a></p>
+                    </div>
+                </div>
+            </footer>            
+            <ui:include src="/template/js.xhtml"/>
+        </h:body>
+    </f:view>
+
+</html>

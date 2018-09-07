@@ -1,0 +1,83 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/admin/template/mainTemplate.xhtml"
+                 xmlns:x="http://xpert.com/faces">
+
+    <ui:param name="title" value="Sincronização" />
+    <ui:define name="body">
+        <h:form id="formSincroniza" >
+            <p:fieldset legend="#{xmsg['generalData']}">
+                <x:modalMessages/>
+                <p:progressBar id="progress" widgetVar="pbAjax" ajax="true" value="#{sincronizacaoTabelasMB.progress}" labelTemplate="{value}%" styleClass="animated" global="false">
+                    <p:ajax event="complete" listener="#{sincronizacaoTabelasMB.onComplete}" oncomplete="PF('botaoSincronizar').enable()"/>
+                </p:progressBar>
+
+            </p:fieldset>
+            <h:outputText value="#{xmsg['requiredFieldsForm']}"/>
+            <h:panelGroup id="botoes">
+                <div class="uix-center">
+
+                    <p:commandButton process="@form" update="@form" 
+                                     onclick="PF('pbAjax').start();
+                                             PF('botaoSincronizar').disable();" widgetVar="botaoSincronizar"
+                                     action="#{sincronizacaoTabelasMB.sincronizarTabelas()}" value="#{msg['sincronizar']}" />
+
+
+                    <p:commandButton process="@form" update="@form" 
+                                     onclick="PF('pbAjax').start();
+                                             PF('botaoSincronizar').disable();" widgetVar="botaoSincronizarCor"
+                                     action="#{sincronizacaoTabelasMB.sincronizarCor()}" value="#{msg['sincronizar.cor']}" />
+
+
+                    <p:commandButton process="@form" update="@form" 
+                                     onclick="PF('pbAjax').start();
+                                             PF('botaoSincronizar').disable();" widgetVar="botaoSincronizarModelo"
+                                     action="#{sincronizacaoTabelasMB.sincronizarMarcaModelos()}" value="#{msg['sincronizar.marcaModelo']}" />
+
+
+                    <p:commandButton process="@form" update="@form" 
+                                     onclick="PF('pbAjax').start();
+                                             PF('botaoSincronizar').disable();" widgetVar="botaoSincronizarEspecie"
+                                     action="#{sincronizacaoTabelasMB.sincronizarEspecies()}" value="#{msg['sincronizar.especie']}" />
+
+
+                    <p:commandButton process="@form" update="@form" 
+                                     onclick="PF('pbAjax').start();
+                                             PF('botaoSincronizar').disable();" widgetVar="botaoSincronizarCategoria"
+                                     action="#{sincronizacaoTabelasMB.sincronizarCategorias()}" value="#{msg['sincronizar.categoria']}" />
+
+                    <p:commandButton process="@form" update="@form" 
+                                     onclick="PF('pbAjax').start();
+                                             PF('botaoSincronizar').disable();" widgetVar="botaoSincronizarEstado"
+                                     action="#{sincronizacaoTabelasMB.sincronizarEstadosMunicipios()}" value="#{msg['sincronizar.estado']}" />
+
+                    <p:commandButton process="@form" update="@form" 
+                                     onclick="PF('pbAjax').start();
+                                             PF('botaoSincronizar').disable();" widgetVar="botaoSincronizarTipoVeiculo"
+                                     action="#{sincronizacaoTabelasMB.sincronizarTipoVeiculos()}" value="#{msg['sincronizar.tipoVeiculos']}" />
+
+                    <p:commandButton process="@form" update="@form"
+                                     onclick="PF('pbAjax').start();
+                                             PF('botaoSincronizarInfracoes').disable();" widgetVar="botaoSincronizarInfracoes"
+                                     action="#{sincronizacaoTabelasMB.sincronizarInfracoes()}" value="#{msg['sincronizar.infracoes']}" />
+
+                    <p:commandButton process="@form" update="@form" 
+                                     onclick="PF('pbAjax').start();
+                                             PF('botaoSincronizar').disable();" widgetVar="botaoSincronizarVeiculo"
+                                     action="#{sincronizacaoTabelasMB.sincronizarVeiculos()}" value="#{msg['sincronizar.veiculos']}" />
+
+                    <p:commandButton process="@form" update="@form" 
+                                     onclick="PF('pbAjax').start();
+                                             PF('botaoImportar').disable();" widgetVar="botaoImportar"
+                                     action="#{sincronizacaoTabelasMB.importarInfracoes()}" value="Importar Infrações" >
+
+                    </p:commandButton>
+                </div>
+            </h:panelGroup>
+        </h:form>
+
+    </ui:define>
+</ui:composition>

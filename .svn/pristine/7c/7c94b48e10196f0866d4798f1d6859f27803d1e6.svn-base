@@ -1,0 +1,132 @@
+package br.gov.pi.detran.ouvidoria.bo.geral;
+
+import br.gov.pi.detran.ouvidoria.bo.email.EmailBO;
+import br.gov.pi.detran.ouvidoria.constante.ConstantesURL;
+import com.xpert.core.crud.AbstractBusinessObject;
+import br.gov.pi.detran.ouvidoria.dao.geral.AcionamentoDAO;
+import br.gov.pi.detran.ouvidoria.dao.geral.HistoricoAcionamentoDAO;
+import br.gov.pi.detran.ouvidoria.modelo.email.TipoAssuntoEmail;
+import com.xpert.core.validation.UniqueField;
+import com.xpert.core.exception.BusinessException;
+import java.util.List;
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Acionamento;
+import br.gov.pi.detran.ouvidoria.modelo.geral.HistoricoAcionamento;
+import br.gov.pi.detran.ouvidoria.modelo.geral.StatusAcionamento;
+import com.xpert.core.validation.Validation;
+import com.xpert.persistence.query.Restrictions;
+import com.xpert.utils.Encryption;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang.StringUtils;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Stateless
+public class AcionamentoPublicoBO extends AbstractBusinessObject<Acionamento> {
+
+    @EJB
+    private AcionamentoDAO acionamentoDAO;
+    @EJB
+    private HistoricoAcionamentoDAO historicoAcionamentoDAO;
+    @EJB
+    private EmailBO emailBO;
+
+    @Override
+    public void save(Acionamento acionamento) throws BusinessException {
+
+        acionamento.setStatus(StatusAcionamento.INCLUIDO);
+        acionamento.setDataAcionamento(new Date());
+        acionamento.setAno(Calendar.getInstance().get(Calendar.YEAR));
+        acionamento.setNumero(acionamentoDAO.getNextProtocolo());
+        acionamento.setNumeroProtocolo(StringUtils.leftPad(acionamento.getNumero().toString(), 6, "0") + "/" + (Calendar.getInstance().get(Calendar.YEAR) + "").substring(2));
+        acionamento.setSenhaAcesso(gerarSenhaAcesso(acionamento.getNumeroProtocolo()));
+
+        // pulo do gato, lol..., 
+        // com o combo alinhado de cidade e estado pra funcionar tem que ta instanciado
+        if (acionamento.getRequerente() != null && acionamento.getRequerente().getCidade() != null && acionamento.getRequerente().getCidade().getId() == null) {
+            acionamento.getRequerente().setCidade(null);
+        }
+
+        super.save(acionamento);
+
+        HistoricoAcionamento historicoAcionamento = new HistoricoAcionamento();
+        historicoAcionamento.setStatus(StatusAcionamento.INCLUIDO);
+        historicoAcionamento.setData(new Date());
+        historicoAcionamento.setAcionamento(acionamento);
+
+        historicoAcionamentoDAO.saveOrMerge(historicoAcionamento, false);
+
+        if (acionamento.getHistoricosAcionamento() == null) {
+            acionamento.setHistoricosAcionamento(new ArrayList<HistoricoAcionamento>());
+        }
+        acionamento.getHistoricosAcionamento().add(historicoAcionamento);
+
+        if (!Validation.isBlank(acionamento.getRequerente().getEmail())) {
+            Map<String, Object> parametros = new HashMap<String, Object>();
+            parametros.put("acionamento", acionamento);
+            parametros.put("url", ConstantesURL.URL_APLICACAO);
+            emailBO.enviarAssincrono(TipoAssuntoEmail.ACIONAMENTO_CADASTRADO, parametros, acionamento.getRequerente().getEmail());
+        }
+    }
+
+    public Acionamento loginAcionamento(String protocolo, String senha) throws BusinessException {
+
+        BusinessException exception = new BusinessException();
+        if (Validation.isBlank(protocolo)) {
+            exception.add("required.protocolo");
+        }
+        if (Validation.isBlank(senha)) {
+            exception.add("required.codigoAcesso");
+        }
+        exception.check();
+
+        Acionamento acionamento = acionamentoDAO.unique(new Restrictions().add("numeroProtocolo", protocolo).add("senhaAcesso", senha));
+        if (acionamento == null) {
+            throw new BusinessException("business.protocoloSenhaInvalido");
+        }
+
+        return acionamento;
+    }
+
+    public String gerarSenhaAcesso(String protocolo) {
+
+        String senha = "";
+        try {
+            senha = Encryption.getSHA256(RandomStringUtils.random(10));
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(AcionamentoPublicoBO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return senha.substring(0, 5);
+    }
+
+    @Override
+    public AcionamentoDAO getDAO() {
+        return acionamentoDAO;
+    }
+
+    @Override
+    public List<UniqueField> getUniqueFields() {
+        return null;
+    }
+
+    @Override
+    public void validate(Acionamento acionamento) throws BusinessException {
+    }
+
+    @Override
+    public boolean isAudit() {
+        return false;
+    }
+}

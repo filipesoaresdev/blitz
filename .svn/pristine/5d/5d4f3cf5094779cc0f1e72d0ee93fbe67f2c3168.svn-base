@@ -1,0 +1,31 @@
+package br.gov.pi.detran.ouvidoria.modelo.geral;
+
+/**
+ *
+ * @author arnaldo
+ */
+public enum FaixaEtaria {
+
+    ATE_18("Até 18 anos"),
+    DE_19_25("De 19 até 25"),
+    DE_26_30("De 26 até 30"),
+    DE_31_35("De 31 até 35"),
+    DE_36_40("De 36 até 40"),
+    DE_41_45("De 41 até 45"),
+    DE_46_50("De 46 até 50"),
+    DE_51_55("De 51 até 55"),
+    DE_56_65("De 56 até 65"),
+    ACIMA_65("Acima de 65 anos");
+    private String descricao;
+
+    private FaixaEtaria(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getDescricao() {
+        if (descricao != null) {
+            descricao = descricao.trim().toUpperCase();
+        }
+        return descricao;
+    }
+}

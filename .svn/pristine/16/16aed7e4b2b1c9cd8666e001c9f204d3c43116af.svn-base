@@ -1,0 +1,246 @@
+package br.gov.pi.detran.ouvidoria.modelo.geral;
+
+import br.gov.pi.detran.ouvidoria.constante.Constantes;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import org.hibernate.annotations.Index;
+import org.hibernate.validator.constraints.NotBlank;
+import org.jsoup.Jsoup;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Entity
+public class Acionamento implements Serializable{
+    
+    @Id
+    @SequenceGenerator(name = "Acionamento", allocationSize = 1, sequenceName = "acionamento_id_seq")
+    @GeneratedValue(generator = "Acionamento")
+    private Long id;
+    
+    @Column(unique = true)
+    @Index(name = "idx_acionamento_protocolo")
+    @Size(max = 10)
+    @NotBlank
+    private String numeroProtocolo;
+    
+    @Index(name = "idx_acionamento_numero_ano", columnNames = {"numero","ano"})
+    @NotNull
+    private Long numero;
+    
+    @Index(name = "idx_acionamento_ano")
+    @NotNull
+    private Integer ano;
+    
+    @Size(max = 30)
+    private String senhaAcesso;
+    
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataAcionamento;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataAtualizacao;
+    
+    @NotBlank
+    @Size(min = 5, max = 1000)
+    private String mensagem;
+    
+    @Column(columnDefinition = Constantes.TIPO_TEXTO_BANCO)
+    private String resposta;
+    
+    @Embedded
+    private Requerente requerente;
+    
+    @Index(name = "idx_acionamento_tp_mensagem")
+    @NotNull
+    @ManyToOne
+    private TipoMensagem tipoMensagem;
+    
+    @Index(name = "idx_acionamento_status")
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private StatusAcionamento status;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "acionamento", fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<Anexo> anexos;
+    
+    @OrderBy(value = "data")
+    @OneToMany(mappedBy = "acionamento", fetch = FetchType.LAZY)
+    private List<HistoricoAcionamento> historicosAcionamento;
+
+    public Acionamento() {
+        this.requerente = new Requerente();
+    }
+
+    public String getResumoMensagem() {
+        if (getMensagemClean() != null && getMensagemClean().length() > 500) {
+            return getMensagemClean().substring(0, 500) + "...";
+        }
+        return getMensagemClean();
+    }
+
+    public String getMensagemClean() {
+        if (mensagem != null) {
+            return Jsoup.clean(mensagem, Constantes.DEFAULT_WHITE_LIST);
+        }
+        return mensagem;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNumeroProtocolo() {
+        return numeroProtocolo;
+    }
+
+    public void setNumeroProtocolo(String numeroProtocolo) {
+        this.numeroProtocolo = numeroProtocolo;
+    }
+
+    public Date getDataAcionamento() {
+        return dataAcionamento;
+    }
+
+    public void setDataAcionamento(Date dataAcionamento) {
+        this.dataAcionamento = dataAcionamento;
+    }
+
+    public Date getDataAtualizacao() {
+        return dataAtualizacao;
+    }
+
+    public void setDataAtualizacao(Date dataAtualizacao) {
+        this.dataAtualizacao = dataAtualizacao;
+    }
+
+    public String getMensagem() {
+        return mensagem;
+    }
+
+    public void setMensagem(String mensagem) {
+        if(mensagem!=null){
+            mensagem = mensagem.trim().toUpperCase();
+        }
+        this.mensagem = mensagem;
+    }
+    
+    public Requerente getRequerente() {
+        return requerente;
+    }
+
+    public void setRequerente(Requerente requerente) {
+        this.requerente = requerente;
+    }
+
+    public TipoMensagem getTipoMensagem() {
+        return tipoMensagem;
+    }
+
+    public void setTipoMensagem(TipoMensagem tipoMensagem) {
+        this.tipoMensagem = tipoMensagem;
+    }
+
+    public List<Anexo> getAnexos() {
+        return anexos;
+    }
+
+    public void setAnexos(List<Anexo> anexos) {
+        this.anexos = anexos;
+    }
+
+    public List<HistoricoAcionamento> getHistoricosAcionamento() {
+        return historicosAcionamento;
+    }
+
+    public void setHistoricosAcionamento(List<HistoricoAcionamento> historicosAcionamento) {
+        this.historicosAcionamento = historicosAcionamento;
+    }
+
+    public Long getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Long numero) {
+        this.numero = numero;
+    } 
+
+    public String getSenhaAcesso() {
+        return senhaAcesso;
+    }
+
+    public String getResposta() {
+        return resposta;
+    }
+
+    public void setResposta(String resposta) {
+        this.resposta = resposta;
+    }
+
+    public void setSenhaAcesso(String senhaAcesso) {
+        this.senhaAcesso = senhaAcesso;
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 53 * hash + (this.id != null ? this.id.hashCode() : 0);
+        return hash;
+    }
+
+    public Integer getAno() {
+        return ano;
+    }
+
+    public void setAno(Integer ano) {
+        this.ano = ano;
+    }
+
+    public StatusAcionamento getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusAcionamento status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Acionamento other = (Acionamento) obj;
+        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+    
+}

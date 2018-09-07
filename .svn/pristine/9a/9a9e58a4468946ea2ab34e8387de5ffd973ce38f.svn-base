@@ -1,0 +1,14 @@
+package br.gov.pi.detran.ouvidoria.dao.geral.impl;
+
+import br.gov.pi.detran.ouvidoria.application.BaseDAOImpl;
+import br.gov.pi.detran.ouvidoria.dao.geral.ParametroDAO;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Parametro;
+import javax.ejb.Stateless;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Stateless
+public class ParametroDAOImpl extends BaseDAOImpl<Parametro> implements ParametroDAO {
+}

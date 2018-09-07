@@ -1,0 +1,94 @@
+package br.gov.pi.detran.ouvidoria.mb.geral;
+
+import java.io.Serializable;
+import com.xpert.core.crud.AbstractBaseBean;
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import br.gov.pi.detran.ouvidoria.bo.geral.AcionamentoBO;
+import br.gov.pi.detran.ouvidoria.dao.geral.AnexoDAO;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Acionamento;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Anexo;
+import br.gov.pi.detran.ouvidoria.modelo.geral.StatusAcionamento;
+import com.xpert.core.exception.BusinessException;
+import com.xpert.faces.utils.FacesMessageUtils;
+import com.xpert.faces.utils.FacesUtils;
+import com.xpert.persistence.query.Restriction;
+import com.xpert.persistence.query.Restrictions;
+import java.util.List;
+
+/**
+ *
+ * @author arnaldo
+ */
+@ManagedBean
+@ViewScoped
+public class AcionamentoMB extends AbstractBaseBean<Acionamento> implements Serializable {
+
+    @EJB
+    private AcionamentoBO acionamentoBO;
+    @EJB
+    private AnexoDAO anexoDAO;
+    private Anexo anexo;
+
+    @Override
+    public void init() {
+        carregarAnexos();
+    }
+
+    public void responder() {
+        try {
+            acionamentoBO.responder(getEntity());
+            FacesMessageUtils.info("Mensagem respondida com sucesso!");
+        } catch (BusinessException ex) {
+            FacesMessageUtils.error(ex);
+        }
+    }
+
+    public void desconsiderar() {
+        try {
+            acionamentoBO.desconsiderar(getEntity());
+            FacesMessageUtils.info("Mensagem desconsiderada com sucesso!");
+        } catch (BusinessException ex) {
+            FacesMessageUtils.error(ex);
+        }
+    }
+
+    public void carregarAnexos() {
+        if (getEntity() != null && getEntity().getId() != null) {
+            getEntity().setAnexos(anexoDAO.getInitialized(getEntity().getAnexos()));
+            if (getEntity().getAnexos() != null && !getEntity().getAnexos().isEmpty()) {
+                anexo = getEntity().getAnexos().get(0);
+            }
+        }
+    }
+
+    public void downloadArquivo() {
+        if (anexo != null) {
+            FacesUtils.download(anexo.getBytes(), anexo.getContentType(), anexo.getNomeArquivo());
+        }
+    }
+
+    @Override
+    public AcionamentoBO getBO() {
+        return acionamentoBO;
+    }
+
+    @Override
+    public List<Restriction> getDataModelRestrictions() {
+        return new Restrictions().add("status", StatusAcionamento.INCLUIDO);
+    }
+
+    @Override
+    public String getDataModelOrder() {
+        return "dataAcionamento ASC";
+    }
+
+    public Anexo getAnexo() {
+        return anexo;
+    }
+
+    public void setAnexo(Anexo anexo) {
+        this.anexo = anexo;
+    }
+}

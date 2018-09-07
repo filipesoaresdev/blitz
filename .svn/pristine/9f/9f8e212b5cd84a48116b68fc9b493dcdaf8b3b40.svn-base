@@ -1,0 +1,5 @@
+package br.gov.pi.detran.ouvidoria.util;
+
+public class Utils {
+
+}

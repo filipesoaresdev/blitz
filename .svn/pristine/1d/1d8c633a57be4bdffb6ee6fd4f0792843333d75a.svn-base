@@ -1,0 +1,43 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 xmlns:x="http://xpert.com/faces"
+                 template="/template/loginTemplate.xhtml"
+                 xmlns:xc="http://java.sun.com/jsf/composite/xpert/components">
+
+    
+    <ui:param name="title" value="#{msg['login']}" />
+    <ui:define name="body">
+        <h:form prependId="false">
+
+            <div class="login-logo">
+                <img src="#{request.contextPath}/images/logodetran.png"/>
+            </div>
+            <div class="login-body">
+
+                <span>
+                    <xc:modalMessages autoUpdate="true"/>
+                </span>
+                <label for="user">#{msg['usuario.login']}: </label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon-user"></i></span>
+                    <p:inputText id="user" value="#{loginMB.userLogin}" 
+                                 required="true" requiredMessage="#{msg['required.usuario']}" styleClass="form-control"/>
+                </div>
+                
+                <label for="password">#{msg['usuario.userPassword']}</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon-unlock-alt"></i></span>
+                    <p:password id="password" feedback="false" autocomplete="false" value="#{loginMB.userPassword}" required="true" maxlength="20" requiredMessage="#{msg['required.password']}" styleClass="form-control"/>
+                </div>
+            </div>
+
+            <p:commandButton value="#{msg['entrar']}" styleClass="btn btn-cc btn-lg btn-block" action="#{loginMB.login}"/> 
+            <p:focus/>
+            
+            <h:link outcome="/esqueciSenha.jsf" value="#{msg['solicitacaoRecuperacaoSenha.esqueciMinhaSenha']}" styleClass="esqueceu-senha"/>
+        </h:form>
+    </ui:define>
+</ui:composition>

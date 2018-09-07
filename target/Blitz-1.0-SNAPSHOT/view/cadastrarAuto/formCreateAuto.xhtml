@@ -1,0 +1,51 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 xmlns:x="http://xpert.com/faces"
+                 xmlns:custom="http://java.sun.com/jsf/composite/components"
+                 xmlns:of="http://omnifaces.org/functions"
+                 xmlns:xc="http://java.sun.com/jsf/composite/xpert/components">
+    <h:form>
+        <xc:modalMessages/>
+        <h:panelGroup id="groupVeiculo" >
+            <div class="row">
+                <div class="col-md-2">
+                    <h:outputLabel value="* #{msg['veiculo.placa']}:" />
+                    <p:inputMask mask="aaa-9999" onmouseover="#{autoMB.consultaVeiculo()}" value="#{autoMB.placaConsulta}"  >
+                        <p:ajax event="mouseover" update="groupVeiculo"   />
+                    </p:inputMask>
+                </div>
+                <div class="col-md-2">
+                    <h:outputLabel value="* #{msg['estado.uf']}:" />
+                    <p:inputText  value="#{autoMB.entity.veiculoBlitz.municipioBlitz.estadoBlitz.sigla}"   >
+                        <x:initializer />
+                    </p:inputText>
+                </div>
+                <div class="col-md-6">
+                    <h:outputLabel value="* #{msg['veiculo.municipio']}:" />
+                    <p:inputText  value="#{autoMB.entity.veiculoBlitz.municipioBlitz.descricao}"   >
+                        <x:initializer />
+                    </p:inputText>
+                </div>
+                <div class="col-md-2">
+                    <h:outputLabel value="* #{msg['veiculo.codMunicipio']}:" />
+                    <p:inputText  value="#{autoMB.entity.veiculoBlitz.municipioBlitz.id}"   >
+                        <x:initializer />
+                    </p:inputText>
+                </div>
+
+            </div>
+        </h:panelGroup>  
+        <h:outputText value="#{xmsg['requiredFieldsForm']}"/>
+        <div style="text-align: center;">
+            <x:securityArea rolesAllowed="perfil.create">
+                <p:commandButton process="@form" update="@form" action="#{perfilMB.save}" value="#{xmsg['save']}" />
+            </x:securityArea>
+            <x:securityArea rolesAllowed="perfil.audit">
+                <xc:audit for="#{perfilMB.entity}"/>
+            </x:securityArea>
+        </div>
+    </h:form>
+</ui:composition>

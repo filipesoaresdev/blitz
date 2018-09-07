@@ -1,0 +1,211 @@
+package br.gov.pi.detran.ouvidoria.mb.geral;
+
+import java.io.Serializable;
+import com.xpert.core.crud.AbstractBaseBean;
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import br.gov.pi.detran.ouvidoria.bo.geral.AcionamentoPublicoBO;
+import br.gov.pi.detran.ouvidoria.bo.geral.ParametroBO;
+import br.gov.pi.detran.ouvidoria.dao.geral.AnexoDAO;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Acionamento;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Anexo;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Cidade;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Parametro;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Requerente;
+import br.gov.pi.detran.ouvidoria.servlet.CaptchaServlet;
+import com.xpert.core.exception.BusinessException;
+import com.xpert.core.validation.Validation;
+import com.xpert.faces.primefaces.PrimeFacesUtils;
+import com.xpert.faces.utils.FacesMessageUtils;
+import com.xpert.utils.Encryption;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.faces.context.FacesContext;
+import javax.faces.event.PhaseId;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
+import org.primefaces.event.FileUploadEvent;
+
+/**
+ *
+ * @author arnaldo
+ */
+@ManagedBean
+@ViewScoped
+public class AcionamentoPublicoMB extends AbstractBaseBean<Acionamento> implements Serializable {
+
+    @EJB
+    private AcionamentoPublicoBO acionamentoPublicoBO;
+    @EJB
+    private AnexoDAO anexoDAO;
+    private Anexo anexo;
+    @Size(max = 10)
+    private String protocolo;
+    @Size(max = 10)
+    private String senha;
+    @NotBlank
+    @Size(min = 0, max = 5)
+    private String captcha;
+    private String observacao;
+    @EJB
+    private ParametroBO parametroBO;
+
+    @Override
+    public boolean isLoadEntityOnPostConstruct() {
+        return false;
+    }
+
+    @Override
+    public void init() {
+        carregarAnexos();
+        if (getEntity() != null && getEntity().getId() == null) {
+            Parametro parametro = parametroBO.getParametro();
+            if (parametro != null) {
+                observacao = parametro.getObservacaoAcionamento();
+                if (!Validation.isBlank(observacao)) {
+                    PrimeFacesUtils.showDialog("widgetObservacaoAcionamento");
+                }
+            }
+        }
+    }
+
+    public void loginAcionamento() {
+        try {
+            setEntity(acionamentoPublicoBO.loginAcionamento(protocolo, senha));
+            carregarAnexos();
+            PrimeFacesUtils.update("panelAcionamentoMain");
+        } catch (BusinessException ex) {
+            FacesMessageUtils.error(ex);
+        }
+    }
+
+    public void carregarAnexos() {
+        if (getEntity() != null && getEntity().getId() != null) {
+            getEntity().setAnexos(anexoDAO.getInitialized(getEntity().getAnexos()));
+            if (getEntity().getAnexos() != null && !getEntity().getAnexos().isEmpty()) {
+                anexo = getEntity().getAnexos().get(0);
+            }
+        }
+    }
+
+    @Override
+    public void save() {
+        try {
+            // pulo do gato, lol..., 
+            // o combo alinhado de cidade e estado volta null para pagina e gera erro
+            if (getEntity().getRequerente() == null) {
+                getEntity().setRequerente(new Requerente());
+            }
+            if (getEntity().getRequerente().getCidade() == null) {
+                getEntity().getRequerente().setCidade(new Cidade());
+            }
+            
+            validarCaptcha();
+            acionamentoPublicoBO.save(getEntity());
+            FacesMessageUtils.info("Mensagem enviada com sucesso!");
+            FacesMessageUtils.info("Protocolo: " + getEntity().getNumeroProtocolo());
+            FacesMessageUtils.info("Senha: " + getEntity().getSenhaAcesso());
+            PrimeFacesUtils.update("panelAcionamentoMain");
+            
+        } catch (BusinessException ex) {
+            FacesMessageUtils.error(ex);
+        }
+    }
+
+    public void validarCaptcha() throws BusinessException {
+        captcha = captcha != null ? captcha.trim() : null;
+        if (Validation.isBlank(captcha)) {
+            throw new BusinessException("Informe as letras exibidas na imagem.");
+        }
+        HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        javax.servlet.http.HttpSession session = request.getSession();
+        try {
+            captcha = Encryption.getSHA256(captcha);
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(AcionamentoPublicoMB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String c = (String) session.getAttribute(CaptchaServlet.CAPTCHA_KEY);
+        if (!captcha.equals(c)) {
+            captcha = "";
+            throw new BusinessException("Letras informadas não conferem com a imagem.");
+        }
+    }
+
+    public void uploadArquivo(FileUploadEvent event) {
+        if (!PhaseId.INVOKE_APPLICATION.equals(event.getPhaseId())) {
+            event.setPhaseId(PhaseId.INVOKE_APPLICATION);
+            event.queue();
+        } else {
+            anexo = new Anexo();
+            anexo.setNomeArquivo(event.getFile().getFileName());
+            anexo.setDataEnvio(new Date());
+            anexo.setBytes(event.getFile().getContents());
+            anexo.setTamanho(new Long(event.getFile().getContents().length));
+            anexo.setContentType(event.getFile().getContentType());
+            anexo.setAcionamento(getEntity());
+
+            getEntity().setAnexos(new ArrayList<Anexo>());
+            getEntity().getAnexos().add(anexo);
+        }
+    }
+
+    public void trocarAnexo() {
+        anexo = null;
+        getEntity().setAnexos(new ArrayList<Anexo>());
+    }
+
+    @Override
+    public AcionamentoPublicoBO getBO() {
+        return acionamentoPublicoBO;
+    }
+
+    @Override
+    public String getDataModelOrder() {
+        return "id";
+    }
+
+    public Anexo getAnexo() {
+        return anexo;
+    }
+
+    public void setAnexo(Anexo anexo) {
+        this.anexo = anexo;
+    }
+
+    public String getProtocolo() {
+        return protocolo;
+    }
+
+    public void setProtocolo(String protocolo) {
+        this.protocolo = protocolo;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getCaptcha() {
+        return captcha;
+    }
+
+    public void setCaptcha(String captcha) {
+        this.captcha = captcha;
+    }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+}

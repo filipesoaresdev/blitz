@@ -1,0 +1,141 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 xmlns:x="http://xpert.com/faces">
+    <h:form id="formDetailAcionamento" styleClass="uix-form-detail">
+        <div class="container-fluid">
+            <fieldset>
+                <legend><i class="fa fa-fw fa-comment-o"></i>#{msg['suaMensagem']}</legend>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                        <h:outputLabel value="#{msg['acionamento.numProtocolo']}:" styleClass="control-label" /><br/>
+                        <h:outputText value="#{acionamentoMB.entity.numeroProtocolo}" styleClass="uix-content-detail"/>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                        <h:outputLabel value="#{msg['acionamento.dataHora']}:" styleClass="control-label" /><br/>
+                        <h:outputText value="#{acionamentoMB.entity.dataAcionamento}" styleClass="uix-content-detail">
+                            <f:convertDateTime pattern="#{formatMB.format.dataHora}"/>
+                        </h:outputText>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <h:outputLabel value="#{msg['acionamento.tipoMensagem']}:" styleClass="control-label" /><br/>
+                        <h:outputText value="#{acionamentoMB.entity.tipoMensagem}" styleClass="uix-content-detail"/>
+                    </div>
+                    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                        <h:outputLabel value="#{msg['acionamento.mensagem']}:" styleClass="control-label" /><br/>
+                        <h:outputText value="#{acionamentoMB.entity.mensagemClean}" styleClass="uix-content-detail"/>
+                    </div>
+
+                </div>
+                <h:panelGroup rendered="#{not empty acionamentoMB.anexo.id}" layout="block" styleClass="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                        <h:outputLabel for="anexo" value="#{msg['anexo']}:" styleClass="control-label" /><br/>
+                        <h:outputText id="anexo" value="#{acionamentoMB.anexo.nomeArquivo} - (#{acionamentoMB.anexo.descricaoTamanho})" styleClass="uix-content-detail"/> 
+                    </div>
+                </h:panelGroup>
+
+            </fieldset>
+            <fieldset>
+                <legend><i class="fa fa-fw fa-male"></i>#{msg['requerente']}</legend>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <h:outputLabel for="nome" value="#{msg['requerente.nome']}:" styleClass="control-label"/><br/>
+                        <h:outputText id="nome" value="#{acionamentoMB.entity.requerente.nomeRequerente}" styleClass="uix-content-detail"/>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <h:outputLabel for="email" value="#{msg['requerente.email']}:" styleClass="control-label"/><br/>
+                        <h:outputText id="email" value="#{acionamentoMB.entity.requerente.email}" styleClass="uix-content-detail"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+                        <h:outputLabel for="telefone" value="#{msg['requerente.telefone']}:" styleClass="control-label"/><br/>
+                        <h:outputText id="telefone" value="#{acionamentoMB.entity.requerente.telefone}"  styleClass="uix-content-detail"/>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+                        <h:outputLabel for="celular" value="#{msg['requerente.celular']}:" styleClass="control-label"/><br/>
+                        <h:outputText id="celular" value="#{acionamentoMB.entity.requerente.celular}" styleClass="uix-content-detail"/>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <h:outputLabel for="escolaridade" value="#{msg['requerente.escolaridade']}:" styleClass="control-label"/><br/>
+                        <h:outputText id="escolaridade" value="#{acionamentoMB.entity.requerente.escolaridade.descricao}" styleClass="uix-content-detail">
+                            <x:initializer/>
+                        </h:outputText>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6">
+                        <h:outputLabel for="sexo" value="#{msg['requerente.sexo']}:" styleClass="control-label"/><br/>
+                        <h:outputText id="sexo" value="#{acionamentoMB.entity.requerente.sexo.descricao}"  styleClass="uix-content-detail"/>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                        <h:outputLabel value="#{msg['requerente.faixaEtaria']}:" styleClass="control-label"/><br/>
+                        <h:outputText id="faixaEtaria" value="#{acionamentoMB.entity.requerente.faixaEtaria.descricao}" styleClass="uix-content-detail"/>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <h:outputLabel for="cidade" value="#{msg['requerente.cidade']}:" styleClass="control-label"/><br/>
+                        <h:outputText id="cidade" value="#{acionamentoMB.entity.requerente.cidade}" styleClass="uix-content-detail">
+                            <x:initializer/>
+                        </h:outputText>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <p:dataTable emptyMessage="#{xmsg['noRecordFound']}" var="historicoAcionamento" 
+                         rowIndexVar="index" id="dataTableHistoricoAcionamento" widgetVar="dataTableHistoricoAcionamentoWidget" 
+                         styleClass="table-responsive" value="#{acionamentoMB.entity.historicosAcionamento}">
+
+                <x:initializer/>
+
+                <p:column styleClass="uix-datatable-index">
+                    <h:outputText value="#{index+1}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['historicoAcionamento.dataHora']}" style="text-align: center;">
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['historicoAcionamento.dataHora']}" />
+                    </f:facet>
+                    <h:outputText value="#{historicoAcionamento.data}">
+                        <f:convertDateTime pattern="#{formatMB.format.dataHora}"/>
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="#{msg['historicoAcionamento.status']}" sortBy="#{historicoAcionamento.status}">
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['historicoAcionamento.status']}" />
+                    </f:facet>
+                    <h:outputText value="#{historicoAcionamento.status}">
+                        <x:initializer/>
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="#{msg['historicoAcionamento.usuario']}">
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['historicoAcionamento.usuario']}" />
+                    </f:facet>
+                    <h:outputText value="#{historicoAcionamento.usuario}">
+                        <x:initializer/>
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="#{msg['historicoAcionamento.motivo']}">
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['historicoAcionamento.motivo']}" />
+                    </f:facet>
+                    <h:outputText value="#{historicoAcionamento.motivo}"/>
+                </p:column>
+
+            </p:dataTable>
+        </div>
+        <p:separator/>
+        <div class="uix-center">
+            <p:commandButton type="button" value="#{xmsg['close']}" onclick="PF('widgetAcionamentoDetail').hide()" />
+            <x:securityArea rolesAllowed="acionamento.audit">
+                <x:audit for="#{acionamentoMB.entity}"/>
+            </x:securityArea>
+        </div>
+    </h:form>
+</ui:composition>

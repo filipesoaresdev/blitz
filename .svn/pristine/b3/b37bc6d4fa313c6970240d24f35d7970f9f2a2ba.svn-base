@@ -1,0 +1,13 @@
+
+<xpert-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <auditing>
+        <auditing-impl>br.gov.pi.detran.ouvidoria.modelo.audit.Auditing</auditing-impl>
+        <metadata-impl>br.gov.pi.detran.ouvidoria.modelo.audit.Metadata</metadata-impl>
+        <auditing-listener>br.gov.pi.detran.blitz.application.AuditingListenerImpl</auditing-listener>
+    </auditing>
+    
+    <entity-manager-factory>br.gov.pi.detran.blitz.application.EntityManagerFactoryImpl</entity-manager-factory>
+    <resource-bundle>bundles.messages</resource-bundle>
+
+</xpert-config>

@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:o="http://omnifaces.org/ui"
+                xmlns:p="http://primefaces.org/ui">
+
+    <!-- METAS AND TITLE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8"/>
+    <title>eCFC<h:outputText rendered="#{not empty title}" value=" - #{title}"/></title>
+    <!-- END METAS AND TITLE -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" media="screen" href="#{request.contextPath}/css/normalize.css"/>
+    <link rel="stylesheet" media="screen" href="#{request.contextPath}/css/bootstrap.min.united.css"/>
+    <link rel="stylesheet" media="screen" href="#{request.contextPath}/font-awesome/css/font-awesome.min.css"/>
+    <o:conditionalComment if="lt IE 7">
+        <link rel="stylesheet" media="screen" href="#{request.contextPath}/font-awesome/css/font-awesome-ie7.min.css"/>
+    </o:conditionalComment>    
+    <link rel="stylesheet" media="screen" href="#{request.contextPath}/css/default.css"/>
+    <o:conditionalComment if="lt IE 9">
+        <link rel="stylesheet" media="screen" href="#{request.contextPath}/font-awesome/css/font-awesome-ie7.min.css"/>
+        <script src="#{request.contextPath}/js/html5.js"></script>
+        <script src="#{request.contextPath}/js/respond.min.js"></script>
+    </o:conditionalComment> 
+    <script src="#{request.contextPath}/js/calendar.js"></script>
+    <!-- END CSS -->            
+
+    <!-- FAVICON -->        
+    <o:conditionalComment if="IE">
+        <link rel="shortcut icon" href="#{request.contextPath}/images/favicon.ico"/>
+    </o:conditionalComment>
+    <!-- END FAVICON -->        
+    <link rel="icon" href="#{request.contextPath}/images/favicon.ico" />    
+</ui:composition>

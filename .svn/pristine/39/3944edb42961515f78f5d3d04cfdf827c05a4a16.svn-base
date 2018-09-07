@@ -1,0 +1,66 @@
+package br.gov.pi.detran.ouvidoria.vo;
+
+import org.apache.commons.io.FileUtils;
+
+/**
+ *
+ * @author arnaldo
+ */
+public class DadosUpload {
+
+    private String extencao;
+    
+    private String tiposPermitidos;
+    /**
+     * tamanho nas propriedades eh em bytes
+     */
+    private Integer tamanhoMaximo;
+
+    /**
+     * passar tamanho em MB, extenções separado por "," ou "*"
+     *
+     * @param tamanho
+     * @param extencao
+     */
+    public DadosUpload(Integer tamanhoMaximo, String tiposPermitidos) {
+        this.tamanhoMaximo = tamanhoMaximo;
+        this.tiposPermitidos = tiposPermitidos;
+        this.extencao = tiposPermitidos;
+    }
+
+    /**
+     * o primefaces pede que o tipo de arquivo seja em expressao regular, sendo
+     * assim esse tipo deve ser formatado
+     *
+     * @param tipo
+     * @return
+     */
+    public String getTiposPermitidos() {
+        if (tiposPermitidos.equals("*")) {
+            return "/.*/";
+        }
+        //remover espacos em branco e substituir o "," por "|"
+        String tipoFormatado = tiposPermitidos.trim().replace(" ", "").replace(",", "|");
+        return "/(\\.|\\/)(" + tipoFormatado + ")$/";
+    }
+
+    public String getDescricaoTamanho() {
+        Integer tamanhoBytes = getTamanhoMaximo();
+        if (tamanhoBytes != null) {
+            return FileUtils.byteCountToDisplaySize(tamanhoBytes);
+        } else {
+            return FileUtils.byteCountToDisplaySize(0L);
+        }
+    }
+
+    public String getExtencao() {
+        return extencao;
+    }
+    
+    public Integer getTamanhoMaximo() {
+        if (tamanhoMaximo != null) {
+            return tamanhoMaximo * 1048576;
+        }
+        return null;
+    }
+}

@@ -1,0 +1,75 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/admin/template/mainTemplate.xhtml"
+                 xmlns:x="http://xpert.com/faces">
+    <ui:param name="title" value="#{msg['tipoMensagem.list']}" />
+    <ui:define name="menuPanel">
+        <ui:include src="menuTipoMensagem.xhtml"/>
+    </ui:define>
+    <ui:define name="body">
+        <h:form id="formListTipoMensagem">
+            <x:modalMessages/>
+
+            <x:dataTableActions fileName="tipoMensagem_export" target=":formListTipoMensagem:dataTableTipoMensagem"
+                                widgetVar="dataTableTipoMensagemWidget"  />
+
+            <p:dataTable paginator="true" rows="10" rowsPerPageTemplate="10,20,30" paginatorPosition="bottom" emptyMessage="#{xmsg['noRecordFound']}"
+                         var="tipoMensagem" rowIndexVar="index" id="dataTableTipoMensagem" widgetVar="dataTableTipoMensagemWidget" styleClass="table-responsive"
+                         currentPageReportTemplate="#{tipoMensagemMB.dataModel.currentPageReportTemplate}"
+                         paginatorTemplate="#{tipoMensagemMB.dataModel.paginatorTemplate}"
+                         value="#{tipoMensagemMB.dataModel}" lazy="true" >
+                <p:column styleClass="uix-datatable-index">
+                    <h:outputText value="#{index+1}"/>
+                </p:column>
+                <p:column headerText="#{msg['tipoMensagem.descricao']}" sortBy="#{tipoMensagem.descricao}"
+                          filterBy="#{tipoMensagem.descricao}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['tipoMensagem.descricao']}" />
+                    </f:facet>
+                    <h:outputText value="#{tipoMensagem.descricao}"/>
+                </p:column>
+                <p:column headerText="#{msg['tipoMensagem.tempoResposta']}" sortBy="#{tipoMensagem.tempoResposta}"
+                          filterBy="#{tipoMensagem.tempoResposta}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['tipoMensagem.tempoResposta']}" />
+                    </f:facet>
+                    <h:outputText value="#{tipoMensagem.tempoResposta}"/>
+                </p:column>
+                <p:column styleClass="uix-datatable-actions" exportable="false" headerText="#{xmsg['actions']}">
+                    <f:facet name="header">
+                        <h:outputText value="#{xmsg['actions']}"/>
+                    </f:facet>
+                    <p:commandButton oncomplete="PF('widgetTipoMensagemDetail').show();"  icon="fa fa-fw fa-search-plus" 
+                                     process="@form" update=":formDetailTipoMensagem" title="#{xmsg['detail']}" >
+                        <f:setPropertyActionListener value="#{tipoMensagem}" target="#{tipoMensagemMB.entity}" />
+                    </p:commandButton>
+                    <x:securityArea rolesAllowed="tipoMensagem.create">
+                        <p:button icon="fa fa-fw fa-edit" outcome="createTipoMensagem" title="#{xmsg['edit']}">
+                            <f:param name="id" value="#{tipoMensagem.id}" />
+                        </p:button>
+                    </x:securityArea>
+                    <x:securityArea rolesAllowed="tipoMensagem.delete">
+                        <p:commandButton icon="fa fa-trash-o" title="#{xmsg['delete']}" process="@form" update="@form" 
+                                         action="#{tipoMensagemMB.delete}" >
+                            <f:setPropertyActionListener value="#{tipoMensagem.id}" target="#{tipoMensagemMB.id}" />
+                            <x:confirmation message="#{xmsg['confirmDelete']} - #{tipoMensagem}" />
+                        </p:commandButton>
+                    </x:securityArea>
+                </p:column>
+            </p:dataTable>
+            <div class="uix-audit-delete">
+                <x:securityArea rolesAllowed="tipoMensagem.audit">
+                    <x:auditDelete for="#{tipoMensagemMB.entityClass}"/>
+                </x:securityArea>
+            </div>  
+        </h:form>
+
+        <p:dialog widgetVar="widgetTipoMensagemDetail" header="#{msg['tipoMensagem.detail']}" appendTo="@(body)" 
+                  modal="true" styleClass="uix-dialog-fluid" >
+            <ui:include src="detailTipoMensagem.xhtml" />
+        </p:dialog>
+    </ui:define>
+</ui:composition>

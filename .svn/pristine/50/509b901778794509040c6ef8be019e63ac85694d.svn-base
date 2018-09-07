@@ -1,0 +1,67 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                dir="ltr" lang="en-US" xml:lang="en"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:x="http://xpert.com/faces"
+                xmlns:xc="http://java.sun.com/jsf/composite/xpert/components">
+
+    <header class="navbar header-top">
+        <div class="navbar-header">  
+            <div class="navbar-brand">
+                <a href="#">
+                    <img style="height: 70px;" src="#{request.contextPath}/images/logo_detran.png"/>
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-comments-o fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span>
+                        <strong>Ouvidoria</strong>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="nav navbar-nav navbar-right user-nav">
+
+            <ul class="nav navbar-nav navbar-right user-nav pull-right a-acesso">
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="fa fa-fw fa-lock fa-2x fa-inverse"></i>
+                        <h:outputText value="Acompanhe seu protocolo"/>
+                        <i class="fa fa-fw fa-caret-down fa-inverse"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <p:panel header="Login">
+                            <h:form>
+                                <p:focus for="protocolo"/>
+                                <div class="panel-body">  
+                                    <x:modalMessages/>
+                                    <div class="row">
+
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <h:outputLabel for="protocolo" value="* #{msg['protocolo']}:" />
+                                            <p:inputMask id="protocolo" mask="999999/99" slotChar="" value="#{acionamentoPublicoMB.protocolo}" styleClass="form-control"/>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <h:outputLabel for="senha" value="* #{msg['acionamento.codigoAcesso']}:" />
+                                            <p:password id="senha" feedback="false" autocomplete="false" value="#{acionamentoPublicoMB.senha}" maxlength="20" styleClass="form-control"/>
+                                        </div>
+
+                                    </div>
+                                    <p:commandButton process="@form" update="@form" styleClass="btn btn-info btn-sm" action="#{acionamentoPublicoMB.loginAcionamento}" value="#{msg['entrar']}" />
+                                </div>
+                            </h:form>
+                        </p:panel>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+    </header>
+</ui:composition>

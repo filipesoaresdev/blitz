@@ -1,0 +1,117 @@
+package br.gov.pi.detran.ouvidoria.modelo.geral;
+
+import br.gov.pi.detran.ouvidoria.constante.Constantes;
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import org.jsoup.Jsoup;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Entity
+public class Parametro implements Serializable {
+
+    @Id
+    @SequenceGenerator(name = "Parametro", allocationSize = 1, sequenceName = "parametro_id_seq")
+    @GeneratedValue(generator = "Parametro")
+    private Long id;
+    
+    @Column(columnDefinition = "text")
+    private String observacaoAcionamento;
+    
+    /*
+     * separado por virgula ex: pdf, png, txt
+     */
+    private String tiposArquivoPermitido;
+    /**
+     * em MB
+     */
+    private Long tamanhoAnexo;
+    
+    private boolean ativo;
+
+    public Parametro() {
+        this.ativo = true;
+    }
+
+    public String getResumoMensagem() {
+        if (getMensagemClean() != null && getMensagemClean().length() > 500) {
+            return getMensagemClean().substring(0, 500) + "...";
+        }
+        return getMensagemClean();
+    }
+
+    public String getMensagemClean() {
+        if (observacaoAcionamento != null) {
+            return Jsoup.clean(observacaoAcionamento, Constantes.DEFAULT_WHITE_LIST);
+        }
+        return observacaoAcionamento;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getObservacaoAcionamento() {
+        return observacaoAcionamento;
+    }
+
+    public void setObservacaoAcionamento(String observacaoAcionamento) {
+        this.observacaoAcionamento = observacaoAcionamento;
+    }
+
+    public String getTiposArquivoPermitido() {
+        return tiposArquivoPermitido;
+    }
+
+    public void setTiposArquivoPermitido(String tiposArquivoPermitido) {
+        this.tiposArquivoPermitido = tiposArquivoPermitido;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    public Long getTamanhoAnexo() {
+        return tamanhoAnexo;
+    }
+
+    public void setTamanhoAnexo(Long tamanhoAnexo) {
+        this.tamanhoAnexo = tamanhoAnexo;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + (this.id != null ? this.id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Parametro other = (Parametro) obj;
+        if (this.id != other.id && (this.id == null || !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+}

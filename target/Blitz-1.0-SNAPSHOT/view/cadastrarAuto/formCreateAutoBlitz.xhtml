@@ -1,0 +1,502 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 xmlns:x="http://xpert.com/faces">
+
+
+    <h:form id="formCreateAutoBlitz" 
+            onkeypress="if (event.keyCode === 13) {
+                        if (document.getElementById(':formCreateAutoBlitz:groupAgente:matricula').is(':focus')) {
+                            document.getElementById(':formCreateAutoBlitz:groupAgente:agenteButton').click();
+                            return false;
+                        }
+                        if (document.getElementById(':formCreateAutoBlitz:groupVeiculo:placa').is(':focus')) {
+                            document.getElementById(':formCreateAutoBlitz:groupVeiculo:veiculoButton').click();
+                            return false;
+                        }
+                        return false;
+
+                    }" >
+        <p:fieldset legend="#{xmsg['generalData']}">
+            <x:modalMessages />
+
+            <div class="container-fluid">
+                <p:fieldset legend="#{msg['autoBlitz.agente']}" style="border-color: #444444">
+                    <h:panelGroup id="groupAgente" >
+                        <div class="row">
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['usuario.matricula']}:" />
+                                <p:inputMask id="matricula" mask="9?99999" value="#{autoMB.matricula}" styleClass="form-control" >
+
+                                </p:inputMask>
+
+                            </div>
+                            <div class="form-group col-lg-1 col-md-1 col-sm-1 col-xs-1">
+
+                                <label>&#160;</label>
+                                <p:commandButton id="agenteButton" styleClass="btn btn-sucess" update=":formCreateAutoBlitz:groupAgente" process=":formCreateAutoBlitz:groupAgente"
+                                                 action="#{autoMB.consultaAgente}"   title="#{xmsg['search']}" icon="ui-icon-search" />
+                            </div>
+                            <div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                <h:outputLabel value="* #{msg['usuario.nome']}:" />
+                                <p:inputText readonly="true"  value="#{autoMB.entity.agente.nome}" styleClass="form-control"  >
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </p:inputText>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.orgaoAutuador']}:" />
+                                <p:inputText readonly="true" value="#{autoMB.entity.agente.autuador.descricao}" styleClass="form-control"  >
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.codOrgaoAutuador']}:" />
+                                <p:inputText readonly="true" value="#{autoMB.entity.codOrgaoAutuador}" styleClass="form-control"  >
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </p:inputText>
+                            </div>
+                        </div>
+
+                    </h:panelGroup>
+                </p:fieldset>
+
+                <p:fieldset legend="#{msg['veiculo']}" style="border-color: #444444">
+                    <div class="row">
+                        <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                            <h:outputLabel value=" Ação:" />
+                            <h:selectOneRadio value="#{autoMB.numeroVeiculoMudar}">
+                                <f:selectItem itemLabel="Consultar Veículo" itemValue="#{autoMB.numeroVeiculo}" />
+                                <f:selectItem itemLabel="Cadastrar Veículo Externo" itemValue="#{autoMB.numeroVeiculoExterno}" />
+                                <p:ajax  listener="#{autoMB.mudarVeiculo()}" event="click" 
+                                         update=":formCreateAutoBlitz" />
+                            </h:selectOneRadio>
+
+                        </div>
+                    </div>
+                    <h:panelGroup id="groupVeiculo" rendered="#{autoMB.entity.veiculoExternoBlitz == null}" >
+                        <div class="row">
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.placa']}:" />
+                                <p:inputMask id="placa" mask="aaa-9999" value="#{autoMB.placaConsulta}" styleClass="form-control" >
+
+                                </p:inputMask>
+
+                            </div>
+                            <div class="form-group col-lg-1 col-md-1 col-sm-1 col-xs-1">
+
+                                <label>&#160;</label>
+                                <p:commandButton id="veiculoButton" styleClass="btn" update=":formCreateAutoBlitz:groupVeiculo dataInfracao" process=":formCreateAutoBlitz:groupVeiculo dataInfracao"
+                                                 action="#{autoMB.consultaVeiculo}"   title="#{xmsg['search']}" icon="ui-icon-search" />
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['estado.uf']}:" />
+                                <p:inputText  value="#{autoMB.entity.veiculoBlitz.municipioBlitz.estadoBlitz.sigla}" styleClass="form-control"   >
+                                    <x:initializer  />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.municipio']}:" />
+                                <p:inputText  value="#{autoMB.entity.veiculoBlitz.municipioBlitz.descricao}" styleClass="form-control"  >
+                                    <x:initializer />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.codMunicipio']}:" />
+                                <p:inputText  value="#{autoMB.entity.veiculoBlitz.municipioBlitz.id}" styleClass="form-control"   >
+                                    <x:initializer   />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.renavam']}:" />
+                                <p:inputText  value="#{autoMB.entity.veiculoBlitz.renavam}" styleClass="form-control"   >
+                                    <x:initializer   />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.chassi']}:" />
+                                <p:inputText  value="#{autoMB.entity.veiculoBlitz.chassi}" styleClass="form-control"   >
+                                    <x:initializer  />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.marcaModelo']}:" />
+                                <p:autoComplete value="#{autoMB.entity.veiculoBlitz.marcaModelo}" completeMethod="#{autoMB.completeMarcaModelo}"
+                                                var="marcaModelo"  styleClass="form-control"  itemLabel="#{marcaModelo.descricao}" itemValue="#{marcaModelo.descricao}" 
+                                                converter="entityConverter" forceSelection="true"  >
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </p:autoComplete>
+                            </div> 
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.especie']}:" />
+                                <h:selectOneMenu id="especies"  value="#{autoMB.entity.veiculoBlitz.especie}" styleClass="form-control" converter="entityConverter"  >
+                                    <f:selectItems value="#{autoMB.especieBlitzs}" var="especie" itemValue="#{especie}" itemLabel="#{especie.descricao}" />
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </h:selectOneMenu>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.tipoVeiculo']}:" />
+                                <h:selectOneMenu value="#{autoMB.entity.veiculoBlitz.tipoVeiculoBlitz}" styleClass="form-control" converter="entityConverter"  >
+                                    <f:selectItems value="#{autoMB.tipoVeiculoBlitzs}" var="tipoVeiculo" itemLabel="#{tipoVeiculo.descricao}" />
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </h:selectOneMenu>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.cor']}:" />
+                                <h:selectOneMenu value="#{autoMB.entity.veiculoBlitz.cor}" styleClass="form-control" converter="entityConverter"  >
+                                    <f:selectItems value="#{autoMB.corBlitzs}" var="cor" itemLabel="#{cor.descricao}" />
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        <p:fieldset legend="Proprietário" style="border-color: #444444">
+                            <div class="row">
+                                <div class="form-group col-lg-9 col-md-6 col-sm-6 col-xs-12">
+                                    <h:outputLabel value="Nome:" />
+                                    <p:inputText readonly="true" value="#{autoMB.entity.veiculoBlitz.nomeProprietario}" styleClass="form-control"   >
+                                        <x:initializer   />
+                                    </p:inputText>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-2 col-sm-2 col-xs-12">
+                                    <h:outputLabel value="CPF:" />
+                                    <p:inputText readonly="true" value="#{autoMB.entity.veiculoBlitz.cpf}" styleClass="form-control"   >
+                                        <x:initializer   />
+                                    </p:inputText>
+                                </div>
+                                <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                    <h:outputLabel value="RG:" />
+                                    <p:inputText readonly="true" value="#{autoMB.entity.veiculoBlitz.rgProprietario}" styleClass="form-control"   >
+                                        <x:initializer   />
+                                    </p:inputText>
+                                </div>
+                                <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <h:outputLabel value="Logradouro:" />
+                                    <p:inputText readonly="true" value="#{autoMB.entity.veiculoBlitz.logradouroProprietario}" styleClass="form-control"   >
+                                        <x:initializer   />
+                                    </p:inputText>
+                                </div>
+                                <div class="form-group col-lg-1 col-md-1 col-sm-1 col-xs-12">
+                                    <h:outputLabel value="Nº:" />
+                                    <p:inputText readonly="true" value="#{autoMB.entity.veiculoBlitz.numeroImovelProprietario}" styleClass="form-control"   >
+                                        <x:initializer   />
+                                    </p:inputText>
+                                </div>
+                                <div class="form-group col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                                    <h:outputLabel value="Bairro:" />
+                                    <p:inputText readonly="true" value="#{autoMB.entity.veiculoBlitz.bairroProprietario}" styleClass="form-control"   >
+                                        <x:initializer   />
+                                    </p:inputText>
+                                </div>
+                                <div class="form-group col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                                    <h:outputLabel value="CEP:" />
+                                    <p:inputText readonly="true" value="#{autoMB.entity.veiculoBlitz.cepProprietario}" styleClass="form-control"   >
+                                        <x:initializer   />
+                                    </p:inputText>
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h:outputLabel value="Complemento:" />
+                                    <p:inputText readonly="true" value="#{autoMB.entity.veiculoBlitz.complementoProprietario}" styleClass="form-control"   >
+                                        <x:initializer   />
+                                    </p:inputText>
+                                </div>
+                            </div>
+                        </p:fieldset>
+                    </h:panelGroup>
+
+                    <h:panelGroup id="groupVeiculoExterno" rendered="#{autoMB.entity.veiculoExternoBlitz != null}" >
+                        <div class="row">
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.placa']}:" />
+                                <p:inputMask id="placaExterno" mask="aaa-9999" value="#{autoMB.entity.veiculoExternoBlitz.placa}" styleClass="form-control" >
+                                </p:inputMask>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['estado.uf']}:" />
+                                <p:inputText  value="#{autoMB.entity.veiculoExternoBlitz.municipioBlitz.estadoBlitz.sigla}" styleClass="form-control"  >
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.municipio']}:" />
+                                <p:inputText  value="#{autoMB.entity.veiculoExternoBlitz.municipioBlitz.descricao}" styleClass="form-control"  >
+                                    <x:initializer entityManager="#{autoMB.BO.DAO.entityManager}"  />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.codMunicipio']}:" />
+                                <p:inputText  value="#{autoMB.entity.veiculoExternoBlitz.municipioBlitz.id}" styleClass="form-control"   >
+                                    <x:initializer entityManager="#{autoMB.BO.DAO.entityManager}"  />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.renavam']}:" />
+                                <p:inputText  value="#{autoMB.entity.veiculoExternoBlitz.renavam}" styleClass="form-control"   >
+                                    <x:initializer  />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.chassi']}:" />
+                                <p:inputText  value="#{autoMB.entity.veiculoExternoBlitz.chassi}" styleClass="form-control"   >
+                                    <x:initializer />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.marcaModelo']}:" />
+                                <p:autoComplete value="#{autoMB.entity.veiculoExternoBlitz.marcaModelo}" completeMethod="#{autoMB.completeMarcaModelo}"
+                                                var="marcaModelo"  styleClass="form-control"  itemLabel="#{marcaModelo.descricao}" itemValue="#{marcaModelo.descricao}" 
+                                                converter="entityConverter" forceSelection="true"   >
+
+                                </p:autoComplete>
+                            </div> 
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.especie']}:" />
+                                <h:selectOneMenu id="especiesExterno"  value="#{autoMB.entity.veiculoExternoBlitz.especie}" styleClass="form-control" converter="entityConverter"  >
+                                    <f:selectItems value="#{autoMB.especieBlitzs}" var="especie" itemValue="#{especie}" itemLabel="#{especie.descricao}" />
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </h:selectOneMenu>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.tipoVeiculo']}:" />
+                                <h:selectOneMenu value="#{autoMB.entity.veiculoExternoBlitz.tipoVeiculoBlitz}" styleClass="form-control" converter="entityConverter"  >
+                                    <f:selectItems value="#{autoMB.tipoVeiculoBlitzs}" var="tipoVeiculo" itemLabel="#{tipoVeiculo.descricao}" />
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </h:selectOneMenu>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['veiculo.cor']}:" />
+                                <h:selectOneMenu value="#{autoMB.entity.veiculoExternoBlitz.cor}" styleClass="form-control" converter="entityConverter"  >
+                                    <f:selectItems value="#{autoMB.corBlitzs}" var="cor" itemLabel="#{cor.descricao}" />
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+
+                    </h:panelGroup>
+
+                </p:fieldset>
+                <p:fieldset legend="#{msg['autoBlitz.identCondutor']}" style="border-color: #444444">
+
+                    <h:panelGroup id="groupCondutor" >
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-6 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.nomeCondutor']}:" />
+                                <p:inputText value="#{autoMB.entity.nomeCondutor}" styleClass="form-control" >
+
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.rgCondutor']}:" />
+                                <p:inputText  value="#{autoMB.entity.rgCondutor}" styleClass="form-control"  >
+
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.orgaoExpedidorCondutor']}:" />
+                                <p:inputText  value="#{autoMB.entity.orgaoExpedidorCondutor}" styleClass="form-control"  >
+
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.ufCondutor']}:" />
+                                <p:inputText  value="#{autoMB.entity.ufCondutor}" styleClass="form-control"  >
+
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['usuario.cpf']}:" />
+
+                                <p:inputMask id="cpfCondutor" mask="999.999.999-99" value="#{autoMB.entity.cpfCnpjCondutor}"
+                                             styleClass="form-control" >
+
+                                </p:inputMask>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.numeroCNH']}:" />
+                                <p:inputMask mask="9?9999999999" value="#{autoMB.entity.numeroCNHCondutor}" styleClass="form-control"   >
+
+                                </p:inputMask>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.cepCondutor']}:" />
+                                <p:inputMask mask="99999-999"  value="#{autoMB.entity.cepCondutor}" styleClass="form-control"   >
+
+                                </p:inputMask>
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.logradouroCondutor']}:" />
+                                <p:inputText  value="#{autoMB.entity.logradouroCondutor}" styleClass="form-control"   >
+
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.numeroResidencia']}:" />
+                                <p:inputText  value="#{autoMB.entity.numeroCondutor}" styleClass="form-control"   >
+
+                                </p:inputText>
+                            </div> 
+                            <div class="form-group col-lg-4 col-md-4 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.complemento']}:" />
+                                <p:inputText  value="#{autoMB.entity.complemento}" styleClass="form-control"   >
+
+                                </p:inputText>
+                            </div> 
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.bairro']}:" />
+                                <p:inputText  value="#{autoMB.entity.bairroCondutor}" styleClass="form-control"   >
+
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.estado']}:" />
+                                <h:selectOneMenu value="#{autoMB.entity.estadoCondutor}" styleClass="form-control" converter="entityConverter"  >
+                                    <f:selectItem value="#{null}" itemLabel="#{xmsg['select']}" />
+                                    <f:selectItems value="#{autoMB.estados}" var="estado" itemLabel="#{estado.descricao}" />
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </h:selectOneMenu>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.municipioCondutor']}:" />
+                                <p:inputText  value="#{autoMB.entity.municipioCondutor}" styleClass="form-control"   >
+
+                                </p:inputText>
+                            </div>
+                        </div>
+                    </h:panelGroup>
+                </p:fieldset>
+
+                <p:fieldset legend="#{msg['autoBlitz.localCometimentoInfracao']}" style="border-color: #444444">
+                    <h:panelGroup id="groupInfracao" >
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-4 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.localInfracao']}:" />
+                                <p:inputText value="#{autoMB.entity.localInfracao}" styleClass="form-control" >
+
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.dataInfracao']}:" />
+                                <p:inputText id="dataInfracao" readonly="true"  value="#{autoMB.entity.dataInfracao}" styleClass="form-control"  >
+                                    <f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.municipioInfracao']}:" />
+                                <h:selectOneMenu  value="#{autoMB.entity.municipioInfracao}" styleClass="form-control" converter="entityConverter" >
+                                    <f:selectItems value="#{autoMB.municipios}" var="municipio" 
+                                                   itemLabel="#{municipio.descricao}" >
+                                    </f:selectItems>
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                    <p:ajax event="change" update="ufInfracao, codigoTOM " />
+                                </h:selectOneMenu>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.ufInfracao']}:" />
+
+                                <p:inputText id="ufInfracao" readonly="true" value="#{autoMB.entity.municipioInfracao.estadoBlitz.sigla}"
+                                             styleClass="form-control" >
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.codMunicipioInfracao']}:" />
+                                <p:inputText id="codigoTOM" readonly="true" 
+                                             value="#{autoMB.entity.municipioInfracao.id}" styleClass="form-control"   >
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </p:inputText>
+                            </div>
+                        </div>
+                    </h:panelGroup>
+                </p:fieldset>
+
+                <p:fieldset legend="#{msg['autoBlitz.autuacaoBlitz']}" style="border-color: #444444">
+                    <h:panelGroup id="groupAutuacao" >
+                        <div class="row">
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.codigoAutuacao']}:" />
+                                <p:inputMask id="codInfra" mask="99999" value="#{autoMB.codInfracao}" styleClass="form-control" >
+
+                                </p:inputMask>
+                            </div>
+                            <div class="form-group col-lg-1 col-md-1 col-sm-1 col-xs-1">
+
+                                <label>&#160;</label>
+
+                                <p:commandButton  update=":formCreateAutoBlitz:groupAutuacao" process=":formCreateAutoBlitz:groupAutuacao"
+                                                  action="#{autoMB.consultaInfracao}"  title="#{xmsg['search']}" icon="ui-icon-search" />
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.enquadramento']}:" />
+                                <p:inputText readonly="true"  value="#{autoMB.entity.infracaoBlitz.enquadramento}" styleClass="form-control"  >
+                                    <x:initializer entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.descricaoAutuacao']}:" />
+
+                                <p:inputText readonly="true" value="#{autoMB.entity.infracaoBlitz.descricao}"
+                                             styleClass="form-control" >
+                                    <x:initializer />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.medicao']}:" />
+                                <p:inputText value="#{autoMB.entity.medicao}" styleClass="form-control"   >
+
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.limiteLegalPermitido']}:" />
+                                <p:inputText value="#{autoMB.entity.limiteLegalPermitido}" styleClass="form-control"   >
+
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.valorConsiderado']}:" />
+                                <p:inputText value="#{autoMB.entity.infracaoBlitz.valor}" styleClass="form-control"   >
+                                    <f:convertNumber type="currency" currencySymbol="R$" maxFractionDigits="2" minFractionDigits="2"  />
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.equipamentoMedicao']}:" />
+                                <p:inputText value="#{autoMB.entity.equipamentoMedicao}" styleClass="form-control"   >
+
+                                </p:inputText>
+                            </div>
+                            <div class="form-group col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.procedimentoAdotado']}:" />
+                                <p:selectOneMenu value="#{autoMB.entity.procedimentoAdotado}" styleClass="form-control"   >
+                                    <f:selectItems value="#{enumMB.procedimentos}" var="procedimento" itemLabel="#{procedimento.descricao}" />
+                                    <x:initializer  entityManager="#{autoMB.BO.DAO.entityManager}" />
+                                </p:selectOneMenu>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <h:outputLabel value="* #{msg['autoBlitz.observacoes']}:" />
+                                <p:inputTextarea value="#{autoMB.entity.observacoes}" styleClass="form-control"   />
+                            </div>
+                        </div>
+                    </h:panelGroup>
+                </p:fieldset>
+            </div>
+
+        </p:fieldset>
+        <h:outputText value="#{xmsg['requiredFieldsForm']}"/>
+        <div class="uix-center">
+            <x:securityArea rolesAllowed="autoBlitz.create">
+                <p:commandButton process="@form" update="@form" action="#{autoMB.save}" value="#{xmsg['save']}" />
+            </x:securityArea>
+            <x:securityArea rolesAllowed="autoBlitz.create">
+                <p:commandButton ajax="false" rendered="#{autoMB.entity.id != null}" update="@form" action="#{autoMB.gerarRelatorio}" value="#{xmsg['print']}" />
+            </x:securityArea>
+            <x:securityArea rolesAllowed="autoBlitz.audit">
+                <x:audit for="#{autoMB.entity}"/>
+            </x:securityArea>
+        </div>
+    </h:form>
+
+</ui:composition>

@@ -1,0 +1,128 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 xmlns:x="http://xpert.com/faces">
+    <h:form id="formDetailAutoBlitz" styleClass="uix-form-detail">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.orgaoAutuador']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.orgaoAutuador}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.codOrgaoAutuador']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.codOrgaoAutuador}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.numAuto']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.numAuto}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.veiculoBlitz']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.veiculoBlitz}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.nomeInfrator']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.nomeInfrator}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.enderecoInfrator']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.enderecoInfrator}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.municipioInfrator']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.municipioInfrator}" styleClass="uix-content-detail">
+                        <x:initializer/>
+                    </h:outputText>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.cepInfrator']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.cepInfrator}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.rgInfrator']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.rgInfrator}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.orgaoExpedidorInfrator']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.orgaoExpedidorInfrator}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.ufInfrator']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.ufInfrator}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.cpfCnpjInfrator']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.cpfCnpjInfrator}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.localInfracao']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.localInfracao}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.dataInfracao']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.dataInfracao}" styleClass="uix-content-detail">
+                        <f:convertDateTime />
+                    </h:outputText>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.municipioInfracao']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.municipioInfracao}" styleClass="uix-content-detail">
+                        <x:initializer/>
+                    </h:outputText>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.infracaoBlitz']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.infracaoBlitz}" styleClass="uix-content-detail">
+                        <x:initializer/>
+                    </h:outputText>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.medicao']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.medicao}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.limiteLegalPermitido']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.limiteLegalPermitido}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.valorConsiderado']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.valorConsiderado}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.tipoMedicao']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.tipoMedicao}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.equipamentoMedicao']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.equipamentoMedicao}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.observacoes']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.observacoes}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.procedimentoAdotado']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.procedimentoAdotado}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.matriculaAgente']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.matriculaAgente}" styleClass="uix-content-detail"/>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <h:outputLabel value="#{msg['autoBlitz.assinaturaInfrator']}:" styleClass="control-label" /><br/>
+                    <h:outputText value="#{autoBlitzMB.entity.assinaturaInfrator}" styleClass="uix-content-detail"/>
+                </div>
+           </div>
+         </div>
+        <p:separator/>
+        <div class="uix-center">
+            <p:commandButton type="button" value="#{xmsg['close']}" onclick="PF('widgetAutoBlitzDetail').hide()" />
+            <x:securityArea rolesAllowed="autoBlitz.audit">
+                <x:audit for="#{autoBlitzMB.entity}"/>
+            </x:securityArea>
+        </div>
+    </h:form>
+</ui:composition>

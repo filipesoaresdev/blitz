@@ -1,0 +1,46 @@
+package br.gov.pi.detran.ouvidoria.bo.geral;
+
+import br.gov.pi.detran.ouvidoria.dao.geral.ParametroDAO;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Parametro;
+import com.xpert.core.crud.AbstractBusinessObject;
+import com.xpert.core.validation.UniqueField;
+import com.xpert.core.exception.BusinessException;
+import com.xpert.core.validation.UniqueFields;
+import java.util.List;
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Stateless
+public class ParametroBO extends AbstractBusinessObject<Parametro> {
+    
+    @EJB
+    private ParametroDAO parametroDAO;
+    
+    public Parametro getParametro() {
+        return parametroDAO.unique("ativo", true);
+    }
+    
+    @Override
+    public ParametroDAO getDAO() {
+        return parametroDAO;
+    }
+    
+    @Override
+    public List<UniqueField> getUniqueFields() {
+        
+        return new UniqueFields().add("ativo");
+    }
+    
+    @Override
+    public void validate(Parametro parametro) throws BusinessException {
+    }
+    
+    @Override
+    public boolean isAudit() {
+        return true;
+    }
+}

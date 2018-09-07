@@ -1,0 +1,14 @@
+package br.gov.pi.detran.ouvidoria.dao.email.impl;
+
+import br.gov.pi.detran.ouvidoria.application.BaseDAOImpl;
+import br.gov.pi.detran.ouvidoria.dao.email.ModeloEmailDAO;
+import br.gov.pi.detran.ouvidoria.modelo.email.ModeloEmail;
+import javax.ejb.Stateless;
+
+/**
+ *
+ * @author ayslan
+ */
+@Stateless
+public class ModeloEmailDAOImpl extends BaseDAOImpl<ModeloEmail> implements ModeloEmailDAO {
+}

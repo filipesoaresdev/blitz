@@ -1,0 +1,14 @@
+package br.gov.pi.detran.ouvidoria.dao.configuracao.impl;
+
+import br.gov.pi.detran.ouvidoria.application.BaseDAOImpl;
+import br.gov.pi.detran.ouvidoria.dao.configuracao.ErroSistemaDAO;
+import br.gov.pi.detran.ouvidoria.modelo.configuracao.ErroSistema;
+import javax.ejb.Stateless;
+
+/**
+ *
+ * @author
+ */
+@Stateless
+public class ErroSistemaDAOImpl extends BaseDAOImpl<ErroSistema> implements ErroSistemaDAO {
+}

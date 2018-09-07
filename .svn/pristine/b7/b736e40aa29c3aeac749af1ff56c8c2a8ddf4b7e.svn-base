@@ -1,0 +1,14 @@
+package br.gov.pi.detran.ouvidoria.dao.controleacesso.impl;
+
+import br.gov.pi.detran.ouvidoria.application.BaseDAOImpl;
+import br.gov.pi.detran.ouvidoria.dao.controleacesso.HistoricoSituacaoUsuarioDAO;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.HistoricoSituacaoUsuario;
+import javax.ejb.Stateless;
+
+/**
+ *
+ * @author ayslan
+ */
+@Stateless
+public class HistoricoSituacaoUsuarioDAOImpl extends BaseDAOImpl<HistoricoSituacaoUsuario> implements HistoricoSituacaoUsuarioDAO {
+}

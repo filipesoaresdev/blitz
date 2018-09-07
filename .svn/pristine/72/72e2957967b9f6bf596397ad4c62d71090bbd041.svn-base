@@ -1,0 +1,14 @@
+package br.gov.pi.detran.ouvidoria.dao.geral.impl;
+
+import br.gov.pi.detran.ouvidoria.application.BaseDAOImpl;
+import br.gov.pi.detran.ouvidoria.dao.geral.HistoricoAcionamentoDAO;
+import br.gov.pi.detran.ouvidoria.modelo.geral.HistoricoAcionamento;
+import javax.ejb.Stateless;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Stateless
+public class HistoricoAcionamentoDAOImpl extends BaseDAOImpl<HistoricoAcionamento> implements HistoricoAcionamentoDAO {
+}

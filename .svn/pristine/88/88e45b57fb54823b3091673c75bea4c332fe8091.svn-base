@@ -1,0 +1,20 @@
+package br.gov.pi.detran.ouvidoria.modelo.geral;
+
+/**
+ *
+ * @author arnaldo
+ */
+public enum StatusAcionamento {
+
+    INCLUIDO("Incluído"), DIRECIONADO("Direcionado"), RESPONDIDO("Respondido"), DESCONSIDERADO("Desconsidero");
+    
+    private String descricao;
+
+    private StatusAcionamento(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+}

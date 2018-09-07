@@ -1,0 +1,127 @@
+package br.gov.pi.detran.ouvidoria.mb.padrao;
+
+import br.gov.pi.detran.ouvidoria.modelo.geral.Parametro;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.Permissao;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.Usuario;
+import br.gov.pi.detran.ouvidoria.modelo.configuracao.ErroSistema;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.SituacaoUsuario;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.AcessoSistema;
+import br.gov.pi.detran.ouvidoria.modelo.email.ConfiguracaoEmail;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.Perfil;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.HistoricoSituacaoUsuario;
+import br.gov.pi.detran.ouvidoria.modelo.email.ModeloEmail;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.SolicitacaoRecuperacaoSenha;
+import br.gov.pi.detran.ouvidoria.modelo.email.TipoAssuntoEmail;
+import br.gov.pi.detran.ouvidoria.modelo.controleacesso.TipoRecuperacaoSenha;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Acionamento;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Anexo;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Cidade;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Escolaridade;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Estado;
+import br.gov.pi.detran.ouvidoria.modelo.geral.FaixaEtaria;
+import br.gov.pi.detran.ouvidoria.modelo.geral.HistoricoAcionamento;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Requerente;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Sexo;
+import br.gov.pi.detran.ouvidoria.modelo.geral.StatusAcionamento;
+import br.gov.pi.detran.ouvidoria.modelo.geral.TipoMensagem;
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
+public class ClassMB {
+
+    public Class getAcessoSistema() {
+        return AcessoSistema.class;
+    }
+
+    public Class getErroSistema() {
+        return ErroSistema.class;
+    }
+
+    public Class getHistoricoSituacaoUsuario() {
+        return HistoricoSituacaoUsuario.class;
+    }
+
+    public Class getPerfil() {
+        return Perfil.class;
+    }
+
+    public Class getPermissao() {
+        return Permissao.class;
+    }
+
+    public Class getSituacaoUsuario() {
+        return SituacaoUsuario.class;
+    }
+
+    public Class getUsuario() {
+        return Usuario.class;
+    }
+
+    public Class getTipoAssuntoEmail() {
+        return TipoAssuntoEmail.class;
+    }
+
+    public Class getModeloEmail() {
+        return ModeloEmail.class;
+    }
+
+    public Class getSolicitacaoRecuperacaoSenha() {
+        return SolicitacaoRecuperacaoSenha.class;
+    }
+
+    public Class getTipoRecuperacaoSenha() {
+        return TipoRecuperacaoSenha.class;
+    }
+
+    public Class getConfiguracaoEmail() {
+        return ConfiguracaoEmail.class;
+    }
+
+    public Class getEstado() {
+        return Estado.class;
+    }
+
+    public Class getAnexos() {
+        return Anexo.class;
+    }
+
+    public Class getSexo() {
+        return Sexo.class;
+    }
+
+    public Class getTipoMensagem() {
+        return TipoMensagem.class;
+    }
+
+    public Class getHistoricoAcionamento() {
+        return HistoricoAcionamento.class;
+    }
+
+    public Class getRequerente() {
+        return Requerente.class;
+    }
+
+    public Class getStatusAcionamento() {
+        return StatusAcionamento.class;
+    }
+
+    public Class getEscolaridade() {
+        return Escolaridade.class;
+    }
+
+    public Class getCidade() {
+        return Cidade.class;
+    }
+
+    public Class getAcionamento() {
+        return Acionamento.class;
+    }
+
+    public Class getFaixaEtaria() {
+        return FaixaEtaria.class;
+    }
+    public Class getParametro() {
+        return Parametro.class;
+    }
+
+}

@@ -1,0 +1,77 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 xmlns:x="http://xpert.com/faces"
+                 xmlns:pe="http://primefaces.org/ui/extensions">
+
+
+    <h:form id="formCreateParametro" >
+        <fieldset>
+            <legend><i class="fa fa-fw fa-globe"></i>#{xmsg['generalData']}</legend>
+
+            <x:modalMessages/>
+
+            <div class="container-fluid">
+
+                <p:tabView>
+
+                    <p:tab title="#{msg['mensagem']}">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <h:outputLabel for="observacaoAcionamento" value="* #{msg['parametro.observacaoAcionamento']}:" />
+                                <pe:ckEditor id="observacaoAcionamento" width="100%" value="#{parametroMB.entity.observacaoAcionamento}" customConfig="#{request.contextPath}/js/ckeditor.js" height="200"/>
+                            </div>
+                        </div>
+                    </p:tab>
+
+                    <p:tab title="#{msg['anexo']}">
+                        <div class="row">
+                            <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                <h:outputLabel for="tiposArquivoPermitido" value="#{msg['parametro.tiposArquivoPermitido']}:" />
+                                <p:inputText id="tiposArquivoPermitido" value="#{parametroMB.entity.tiposArquivoPermitido}" maxlength="255"  styleClass="form-control"/>
+                            </div>
+                            <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                <h:outputLabel for="tamanhoAnexo" value="#{msg['parametro.tamanhoAnexo']}:" />
+                                <p:inputMask mask="9?99" slotChar="" id="tamanhoAnexo" value="#{parametroMB.entity.tamanhoAnexo}" styleClass="form-control"/>
+                            </div>
+                        </div>
+                    </p:tab>
+
+
+
+                </p:tabView>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="checkbox">
+                                <label>
+                                    <h:selectBooleanCheckbox id="ativo" value="#{parametroMB.entity.ativo}" />
+                                    #{msg['parametro.ativo']}
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> 
+
+            </div>
+
+        </fieldset>
+        
+        <h:outputText value="#{xmsg['requiredFieldsForm']}"/>
+        
+        <div class="uix-center">
+            <x:securityArea rolesAllowed="parametro.create">
+                <p:commandButton process="@form" update="@form" action="#{parametroMB.save}" value="#{xmsg['save']}" styleClass="btn-info" icon="fa fa-floppy-o"/>
+            </x:securityArea>
+            <x:securityArea rolesAllowed="parametro.audit">
+                <x:audit for="#{parametroMB.entity}"/>
+            </x:securityArea>
+        </div>
+        
+    </h:form>
+
+</ui:composition>

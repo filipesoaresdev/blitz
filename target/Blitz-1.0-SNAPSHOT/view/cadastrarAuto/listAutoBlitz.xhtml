@@ -1,0 +1,134 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:h="http://java.sun.com/jsf/html"
+                 xmlns:f="http://java.sun.com/jsf/core"
+                 xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui"
+                 template="/template/mainTemplate.xhtml"
+                 xmlns:x="http://xpert.com/faces">
+    <ui:param name="title" value="#{msg['autoBlitz.list']}" />
+    <ui:define name="body">
+        <ui:include src="menuAutoBlitz.xhtml" />
+        <h:form id="formListAutoBlitz">
+            <x:modalMessages/>
+
+            <x:dataTableActions fileName="autoBlitz_export" target=":formListAutoBlitz:dataTableAutoBlitz"
+                                widgetVar="dataTableAutoBlitzWidget"  />
+
+            <p:dataTable paginator="true" rows="10" rowsPerPageTemplate="10,20,30" paginatorPosition="bottom" emptyMessage="#{xmsg['noRecordFound']}"
+                         var="autoBlitz" rowIndexVar="index" id="dataTableAutoBlitz" widgetVar="dataTableAutoBlitzWidget" styleClass="table-responsive"
+                         currentPageReportTemplate="#{consultaAutoMB.dataModel.currentPageReportTemplate}"
+                         paginatorTemplate="#{consultaAutoMB.dataModel.paginatorTemplate}"
+                         value="#{consultaAutoMB.dataModel}" lazy="true" >
+                <p:column styleClass="uix-datatable-index">
+                    <h:outputText value="#{index+1}"/>
+                </p:column>
+                <p:column headerText="#{msg['autoBlitz.orgaoAutuador']}" sortBy="#{autoBlitz.agente.autuador.descricao}"
+                          filterBy="#{autoBlitz.agente.autuador.descricao}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['autoBlitz.orgaoAutuador']}" />
+                    </f:facet>
+                    <h:outputText value="#{autoBlitz.agente.autuador.descricao}">
+                        <x:initializer entityManager="#{usuarioMB.DAO.entityManager}" />
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="#{msg['autoBlitz.codOrgaoAutuador']}" sortBy="#{autoBlitz.codOrgaoAutuador}"
+                          filterBy="#{autoBlitz.codOrgaoAutuador}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['autoBlitz.codOrgaoAutuador']}" />
+                    </f:facet>
+                    <h:outputText value="#{autoBlitz.codOrgaoAutuador}"/>
+                </p:column>
+                <p:column headerText="#{msg['autoBlitz.numAuto']}" sortBy="#{autoBlitz.numAuto}"
+                          filterBy="#{autoBlitz.numAuto}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['autoBlitz.numAuto']}" />
+                    </f:facet>
+                    <h:outputText value="E#{autoBlitz.numAuto}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['autoBlitz.localInfracao']}" sortBy="#{autoBlitz.localInfracao}"
+                          filterBy="#{autoBlitz.localInfracao}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['autoBlitz.localInfracao']}" />
+                    </f:facet>
+                    <h:outputText value="#{autoBlitz.localInfracao}"/>
+                </p:column>
+                <p:column headerText="#{msg['autoBlitz.dataInfracao']}" sortBy="#{autoBlitz.dataInfracao}"
+                          filterBy="#{autoBlitz.dataInfracao}"   style="text-align: center;">
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['autoBlitz.dataInfracao']}" />
+                        <x:dateFilter/>
+                    </f:facet>
+                    <h:outputText value="#{autoBlitz.dataInfracao}">
+                        <f:convertDateTime />
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="#{msg['autoBlitz.municipioInfracao']}" sortBy="#{autoBlitz.municipioInfracao.descricao}"
+                          >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['autoBlitz.municipioInfracao']}" />
+                    </f:facet>
+                    <h:outputText value="#{autoBlitz.municipioInfracao.descricao}">
+                        <x:initializer />
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="Enquadramento" sortBy="#{autoBlitz.infracaoBlitz.enquadramento}"
+                          >
+                    <f:facet name="header">
+                        <h:outputText value="Enquadramento" />
+                    </f:facet>
+                    <h:outputText value="#{autoBlitz.infracaoBlitz.enquadramento}">
+                        <x:initializer/>
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="#{msg['autoBlitz.procedimentoAdotado']}" sortBy="#{autoBlitz.procedimentoAdotado}"
+                          filterBy="#{autoBlitz.procedimentoAdotado}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['autoBlitz.procedimentoAdotado']}" />
+                    </f:facet>
+                    <h:outputText value="#{autoBlitz.procedimentoAdotado}"/>
+                </p:column>
+                <p:column headerText="#{msg['autoBlitz.matriculaAgente']}" sortBy="#{autoBlitz.matriculaAgente}"
+                          filterBy="#{autoBlitz.matriculaAgente}"   >
+                    <f:facet name="header">
+                        <h:outputText value="#{msg['autoBlitz.matriculaAgente']}" />
+                    </f:facet>
+                    <h:outputText value="#{autoBlitz.agente.matricula}"> 
+                        <x:initializer entityManager="#{usuarioMB.DAO.entityManager}" />
+                    </h:outputText>
+                </p:column>
+                <p:column styleClass="uix-datatable-actions" exportable="false" headerText="#{xmsg['actions']}">
+                    <f:facet name="header">
+                        <h:outputText value="#{xmsg['actions']}"/>
+                    </f:facet>
+                    <p:commandButton oncomplete="PF('widgetAutoBlitzDetail').show();"  icon="ui-icon-zoomin" 
+                                     process="@form" update=":formDetailAutoBlitz" title="#{xmsg['detail']}" >
+                        <f:setPropertyActionListener value="#{autoBlitz}" target="#{consultaAutoMB.entity}" />
+                    </p:commandButton>
+                    <x:securityArea rolesAllowed="autoBlitz.create">
+                        <p:button icon="ui-icon-pencil" outcome="createAutoBlitz" title="#{xmsg['edit']}">
+                            <f:param name="id" value="#{autoBlitz.id}" />
+                        </p:button>
+                    </x:securityArea>
+                    <x:securityArea rolesAllowed="autoBlitz.delete">
+                        <p:commandButton icon="ui-icon-trash" title="#{xmsg['delete']}" process="@form" update="@form" 
+                                         action="#{consultaAutoMB.delete}" >
+                            <f:setPropertyActionListener value="#{autoBlitz.id}" target="#{consultaAutoMB.id}" />
+                            <x:confirmation message="#{xmsg['confirmDelete']} - #{autoBlitz}" />
+                        </p:commandButton>
+                    </x:securityArea>
+                </p:column>
+            </p:dataTable>
+            <div class="uix-audit-delete">
+                <x:securityArea rolesAllowed="autoBlitz.audit">
+                    <x:auditDelete for="#{consultaAutoMB.entityClass}"/>
+                </x:securityArea>
+            </div>  
+        </h:form>
+
+        <p:dialog widgetVar="widgetAutoBlitzDetail" header="#{msg['autoBlitz.detail']}" appendTo="@(body)" 
+                  modal="true" styleClass="uix-dialog-fluid" >
+            <ui:include src="detailAutoBlitz.xhtml" />
+        </p:dialog>
+    </ui:define>
+</ui:composition>

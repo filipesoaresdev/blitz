@@ -1,0 +1,192 @@
+/*
+Theme Name: Insel LTDA
+Author URI: http://www.xpertsistemas.com.br
+Description: Developed by Xpert Sistemas
+Author: Sérgio Lemos
+Version: 1.0
+Created on : 10/09/2013, 21:06
+Copyright: (c) 2012 Xpert Sistemas
+*/
+
+/* TAGS */
+body{font-family: 'Open Sans', sans-serif;color: #5a5a5a;background: #FAFAFA}
+label{font-weight: normal;}
+h1,h2,h3,h4,h5,h6{font-weight: lighter;font-stretch: condensed;}
+a:hover {text-decoration: underline;-webkit-transition: all .4s ease-out; -moz-transition: all .4s ease-out; -o-transition: all .4s ease-out;}
+select:focus, textarea:focus,input[type=text]:focus .ui-column-filter,input[type=text]:focus,input[type=password]:focus,.ui-datatable th input.ui-column-filter:focus{-webkit-box-shadow: 0 0 10px rgba(255,103,0,.5);-moz-box-shadow: 0 0 10px rgba(255,103,0,.5);box-shadow: 0 0 10px rgba(255,103,0,.5);}
+input,select, textarea{padding: 4px;font-family: 'Open Sans', sans-serif;}
+.ui-datatable, .ui-datatable td, .ui-datatable th{font-size: 12px}
+
+/* HEADER */
+header{padding: 0px 20px;background: url(../images/bg-6.jpg) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;
+  -o-background-size: cover;background-size: cover;background-color: #000; }
+header .logo{margin: 0 0 0 0}
+header .info {margin: 5px 0 0 0}
+header .info .btn-group{z-index: 1001;text-align: right;margin: 5px 0;}
+header .info .btn-group button {background: rgba(0, 0, 0, .25);text-shadow: 0 1px rgba(0, 0, 0, .4);border: 1px solid #96BBE8}
+header .info .btn-default {background: rgba(0, 0, 0, .25) !important;}
+header .info h6{color: #000;text-shadow: 0 1px rgba(255, 255, 255, .4);}
+.ui-dialog-content{background: white !important}
+
+/* MENU */
+
+nav.navbar.navbar-default{background:#c4c4c4 !important;
+                          background:#c4c4c4 linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0)) !important;
+                          background:#c4c4c4 -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.8)), to(rgba(255,255,255,0))) !important;
+                          background:#c4c4c4 -moz-linear-gradient(top, rgba(255,255,255,0.8), rgba(255,255,255,0)) !important; 
+                          border-radius: 0;border: none;padding: 0 20px 0 10px;margin: 0; min-height: 0;}
+nav .navbar-right .acesso-rapido input{margin: 5px 0 0 0;font-size: 14px; padding: 4px; width: 170px}
+.ui-toolbar{background: none !important;border: none !important;}
+.ui-datatable-footer{background: none !important;border: none !important;}
+.ui-menu {border: none;}
+.ui-menu.ui-menubar{border: none;padding: 0;border-radius: 0;box-shadow: none;background:none !important}
+.ui-menu .ui-menuitem {margin: 0;}
+.ui-state-hover{color:#022338 !important;}
+.ui-widget{font-family: 'Open Sans', sans-serif;font-size: 13px;}
+.nav ul li a{padding: 9px !important;color: white;border: 1px solid #007EBD;}
+.ui-menu > ul > li > a{padding: 10px 10px !important;border: 0}
+.ui-menu > ul > li ul li{width: 230px !important;}
+.ui-menu > ul > li ul .ui-menuitem-link {padding: 8px 0 !important; font-size: 13px;}
+/*.ui-menu .ui-menuitem-active > a{background-image: none !important;color: #fff !important}*/
+
+.ui-datagrid-content{background: none !important; border:none}
+.ui-datagrid-column{width: 100px;padding: 10px}
+
+.link-acesso-rapido{font-size: 11px;}
+.link-acesso-rapido b{font-size: 13px;}
+/* CONTEUDO */
+section.conteudo {padding: 0 20px;font-family: 'Open Sans', sans-serif;font-size: 14px;}
+section.conteudo .page-header {margin: 10px 0 0 0;}
+section.conteudo h1.page-header  span{font-size: 15px ;vertical-align: middle;}
+
+/* FOOTER */
+footer{padding: 20px;border-top: 1px solid #ddd;width: 98%;margin: 10px auto 0}
+
+/* AUXILIARES */
+.cor-cc-vermelho{color: #CD0000;}
+.cor-cc-azul{color: #da251d;}
+.btn-cc {border: none;}
+.btn-cc:hover {-webkit-transition: all .4s ease-out; -moz-transition: all .4s ease-out; -o-transition: all .4s ease-out;}
+.xpert-datatable-id{text-align: center;width: 1%}
+.xpert-datatable-actions{text-align: center;width: 1%}
+.no-padding{padding: 0}
+.no-margin{margin: 0}
+.no-margin{margin: 0}
+.no-border, .no-border td, .no-border th{border: 0 !important;}
+.padding-1{padding: 1px}
+.padding-2{padding: 2px}
+.margin{margin: 0}
+/* BOOTSTRAP */
+
+
+
+.ui-tabs .ui-tabs-panel{background: #fff}
+.ui-datatable tr.ui-widget-content:hover, .ui-panelgrid tr.ui-widget-content:hover{background-color: #CAE1FF;}
+.ui-messages-info-summary, .ui-messages-warn-summary, .ui-messages-error-summary, .ui-messages-fatal-summary, .ui-message-info-summary, .ui-message-warn-summary, .ui-message-error-summary, .ui-message-fatal-summary {font-family: 'Open Sans', sans-serif;font-weight: lighter;font-size: 14px}
+.ui-toolbar{margin: 5px 0 10px 0;}
+.ui-datatable th input.ui-column-filter{width: 95% !important; }
+
+.ui-panel .ui-panel-title{font-weight: lighter;}
+.ui-toolbar .ui-button{margin: 0 3px 0 0;}
+.ui-toolbar .ui-button span{font-size: 14px;}
+
+.ui-tabs{margin-bottom: 4px;}
+.ui-accordion .ui-accordion-header .ui-icon {left: 0;}
+.ui-accordion .ui-accordion-header .ui-icon {display: block;}
+.ui-inputfield, select {padding: 7px;}
+.ui-inputfield, select {margin: 3px 0;}
+.ui-inputfield[readonly],.ui-inputfield[disabled]{ background-color: #E6E6E6;}
+.ui-datatable .ui-column-filter{width: 100%;}
+
+/*classes de outros projetos*/
+.font-11, .font-11  td, .font-11  th{font-size:  11px;}
+.font-weight-normal, .font-weight-normal  td{font-weight: normal;}
+.grid-detail, grid-form{margin-top: 0;}
+.grid-detail td, grid-form td{padding: 4px 0;}
+.grid-detail td label, .grid-form > tbody > tr > td > label{margin: 0 5px 0 15px ; float: right; text-align: right;}
+.grid-detail td label{font-weight: bold;}
+.w-50{width: 50px;}
+.w-60{width: 60px;}
+.w-70{width: 70px;}
+.w-80{width: 80px;}
+.w-90{width: 90px;}
+.w-100{width: 100px;}
+.w-110{width: 110px;}
+.w-120{width: 120px;}
+.w-130{width: 130px;}
+.w-140{width: 140px;}
+.w-150{width: 150px;}
+.w-160{width: 160px;}
+.w-170{width: 170px;}
+.w-180{width: 180px;}
+.w-190{width: 190px;}
+.w-200{width: 200px;}
+.w-210{width: 210px;}
+.w-220{width: 220px;}
+.w-230{width: 230px;}
+.w-240{width: 240px;}
+.w-250{width: 250px;}
+.w-260{width: 260px;}
+.w-270{width: 270px;}
+.w-280{width: 280px;}
+.w-290{width: 290px;}
+.w-300{width: 300px;}
+.w-310{width: 310px;}
+.w-320{width: 320px;}
+.w-330{width: 330px;}
+.w-340{width: 340px;}
+.w-350{width: 350px;}
+.ui-datatable th{text-align: center !important;  white-space: normal;}
+.datatable-auditing th, .datatable-auditing td .ui-dt-c, .datatable-auditing td .ui-dt-c span{white-space: normal !important;}
+.ui-datatable th{text-align: center !important;}
+.legenda-tabela{font-size: 9px !important; font-weight: normal !important; margin-bottom: 1px; width: 62px; border: 0 !important;}
+.ui-dialog.ui-widget-content .ui-dialog-content {font-size: 12px; margin-bottom: 10px;}
+.ui-fieldset{margin: 3px 0;}
+.ui-fieldset-legend{width: auto;font-size: 12px;height: auto;padding-bottom: 3px !important; padding-top: 3px !important;margin: 5px 0 5px 5px;}
+.ui-menu .ui-menu-parent .ui-menu-child {min-width: 180px; width: auto;}
+.panel-permissao .ui-panel-content{padding: 2px;}
+.link-permissao{vertical-align:middle;display:block;}
+.caminho-permissao {font-size: 11px;  display: block; line-height: 11px; font-weight: normal;height: 35px; padding-top: 3px;text-align: center;}
+.nome-permissao {display: block;height: 60px; font-size: 18px; font-weight: bold; padding-top: 3px;}
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {float: left; margin-right: 2px; margin-left: 0;}
+input[type="radio"], input[type="checkbox"] {margin: 0; min-height: 0; padding-left: 0; margin-right: 3px;}
+.radio, .checkbox {padding-left: 0; margin: 0;}
+.radio td, .checkbox td{    padding: 4px;}
+.table-summary-hidden .ui-datatable-summaryrow{display: none;}
+h1{font-size: 25px;}
+
+/*font-awesome no primefaces*/
+.button-no-ui-icon .ui-icon[class^="icon-"], .button-no-ui-icon .ui-icon[class*="icon-"],.ui-menuitem-icon{text-indent: 0 !important;background-image: none !important;margin-top: 2px;margin-right: 2px}
+.ui-menu .ui-icon{
+    position: inherit;
+    top: auto;
+    left: auto;
+}
+.percent50{width: 48%}
+
+
+.columnAction{width: 80px;text-align: center;}
+
+.ui-icon-finger{background-image: url("../images/Finger-printSmall.png") !important;}
+
+.ui-inputfield{background: white !important;color: black !important;}
+
+.ui-datatable .ui-column-filter{background: #eef9dc !important;}
+
+.ui-chkbox-box{background:white !important}
+
+.text-center{text-align: center}
+
+#inputData_input{width: 120px;border-radius:2px}
+.label-responsive{
+    width: auto;
+}
+
+.ui-picklist-list {
+    
+    width: 400px !important
+}
+
+.ui-datagrid-data{
+    border-color: white !important;
+}

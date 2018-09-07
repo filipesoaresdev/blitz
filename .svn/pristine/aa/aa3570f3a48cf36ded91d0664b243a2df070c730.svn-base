@@ -1,0 +1,25 @@
+package br.gov.pi.detran.ouvidoria.mb.padrao;
+
+import br.gov.pi.detran.ouvidoria.modelo.geral.StatusAcionamento;
+import javax.faces.bean.ManagedBean;
+
+/**
+ * Classe que retorna os valores das enums
+ *
+ * @author Arnaldo
+ */
+@ManagedBean
+public class EnumMB {
+
+    public StatusAcionamento getStatusIncluido() {
+        return StatusAcionamento.INCLUIDO;
+    }
+    
+    public StatusAcionamento getStatusDesconsiderado() {
+        return StatusAcionamento.DESCONSIDERADO;
+    }
+    
+    public StatusAcionamento getStatusRespondido() {
+        return StatusAcionamento.RESPONDIDO;
+    }
+}

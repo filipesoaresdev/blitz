@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+    <persistence-unit name="detranpiPU" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>jdbc/detranpiDS</jta-data-source>
+        <class>br.gov.pi.detran.blitz.modelo.geral.Veiculo</class>
+        <class>br.gov.pi.detran.blitz.modelo.geral.Cor</class>
+        <class>br.gov.pi.detran.blitz.modelo.geral.Categoria</class>
+        <class>br.gov.pi.detran.blitz.modelo.geral.Municipio</class>
+        <class>br.gov.pi.detran.blitz.modelo.geral.Especie</class>
+        <class>br.gov.pi.detran.blitz.modelo.geral.Estado</class>
+        <class>br.gov.pi.detran.blitz.modelo.geral.MarcaModelo</class>
+        <class>br.gov.pi.detran.blitz.modelo.geral.Infracao</class>
+        <class>br.gov.pi.detran.blitz.modelo.geral.TipoVeiculo</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="blitzPU" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>jdbc/blitzDS</jta-data-source>
+        <class>br.gov.pi.detran.blitz.modelo.local.VeiculoBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.CorBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.CategoriaBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.MunicipioBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.EspecieBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.MarcaModeloBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.InfracaoBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.AutoBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.TipoVeiculoBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.EstadoBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.ParametroBlitz</class>
+        <class>br.gov.pi.detran.blitz.modelo.local.VeiculoExternoBlitz</class>
+        <class>br.gov.pi.detran.ouvidoria.modelo.audit.Auditing</class>
+        <class>br.gov.pi.detran.ouvidoria.modelo.controleacesso.Usuario</class>
+        <class>br.gov.pi.detran.ouvidoria.modelo.controleacesso.Perfil</class>
+        <class>br.gov.pi.detran.ouvidoria.modelo.controleacesso.Permissao</class>
+        <class>br.gov.pi.detran.ouvidoria.modelo.controleacesso.AcessoSistema</class>
+        <class>br.gov.pi.detran.ouvidoria.modelo.controleacesso.HistoricoSituacaoUsuario</class>
+        <class>br.gov.pi.detran.ouvidoria.modelo.controleacesso.SolicitacaoRecuperacaoSenha</class>
+        <class>br.gov.pi.detran.ouvidoria.modelo.email.ModeloEmail</class>
+        <class>br.gov.pi.detran.ouvidoria.modelo.email.ConfiguracaoEmail</class>
+        <class>br.gov.pi.detran.ouvidoria.modelo.audit.Metadata</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    
+    </persistence-unit>
+  
+</persistence>

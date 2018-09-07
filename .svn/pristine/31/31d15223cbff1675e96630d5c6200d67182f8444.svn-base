@@ -1,0 +1,31 @@
+package br.gov.pi.detran.ouvidoria.mb.padrao;
+
+import br.gov.pi.detran.ouvidoria.bo.geral.ParametroBO;
+import br.gov.pi.detran.ouvidoria.constante.Constantes;
+import br.gov.pi.detran.ouvidoria.vo.DadosUpload;
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+
+/**
+ * class que retorna o valor das constantes
+ *
+ * @author Ayslan
+ */
+@ManagedBean
+public class ConstantesMB {
+    
+    @EJB
+    private ParametroBO parametroBO;
+
+    public int getTamanhoMaximoAcionamento() {
+        return Constantes.TAMANHO_MAXIMO_ACIONAMENTO;
+    }
+
+    public int getMinutosRecuperacaoSenha() {
+        return Constantes.MINUTOS_VALIDADE_RECUPERACAO_SENHA;
+    }
+
+    public DadosUpload getDadosUpload() {
+        return new DadosUpload(parametroBO.getParametro().getTamanhoAnexo().intValue(), parametroBO.getParametro().getTiposArquivoPermitido());
+    }
+}

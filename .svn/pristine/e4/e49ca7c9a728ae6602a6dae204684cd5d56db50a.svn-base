@@ -1,0 +1,130 @@
+package br.gov.pi.detran.ouvidoria.bo.geral;
+
+import br.gov.pi.detran.ouvidoria.bo.email.EmailBO;
+import br.gov.pi.detran.ouvidoria.constante.ConstantesURL;
+import br.gov.pi.detran.ouvidoria.dao.email.ConfiguracaoEmailDAO;
+import com.xpert.core.crud.AbstractBusinessObject;
+import br.gov.pi.detran.ouvidoria.dao.geral.AcionamentoDAO;
+import br.gov.pi.detran.ouvidoria.dao.geral.HistoricoAcionamentoDAO;
+import br.gov.pi.detran.ouvidoria.modelo.email.ConfiguracaoEmail;
+import br.gov.pi.detran.ouvidoria.modelo.email.TipoAssuntoEmail;
+import com.xpert.core.validation.UniqueField;
+import com.xpert.core.exception.BusinessException;
+import java.util.List;
+import javax.ejb.EJB;
+import javax.ejb.Stateless;
+import br.gov.pi.detran.ouvidoria.modelo.geral.Acionamento;
+import br.gov.pi.detran.ouvidoria.modelo.geral.HistoricoAcionamento;
+import br.gov.pi.detran.ouvidoria.modelo.geral.StatusAcionamento;
+import br.gov.pi.detran.ouvidoria.util.SessaoUtils;
+import com.xpert.core.validation.Validation;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Stateless
+public class AcionamentoBO extends AbstractBusinessObject<Acionamento> {
+
+    @EJB
+    private AcionamentoDAO acionamentoDAO;
+    @EJB
+    private HistoricoAcionamentoDAO historicoAcionamentoDAO;
+    @EJB
+    private EmailBO emailBO;
+    @EJB
+    private ConfiguracaoEmailDAO configuracaoEmailDAO;
+
+    public void responder(Acionamento acionamento) throws BusinessException {
+
+        validaResposta(acionamento);
+        
+        acionamento.setStatus(StatusAcionamento.RESPONDIDO);
+        acionamentoDAO.saveOrMerge(acionamento);
+
+        HistoricoAcionamento historicoAcionamento = new HistoricoAcionamento();
+        historicoAcionamento.setStatus(StatusAcionamento.RESPONDIDO);
+        historicoAcionamento.setData(new Date());
+        historicoAcionamento.setUsuario(SessaoUtils.getUser());
+        historicoAcionamento.setAcionamento(acionamento);
+
+        historicoAcionamentoDAO.saveOrMerge(historicoAcionamento, false);
+
+        if (acionamento.getHistoricosAcionamento() == null) {
+            acionamento.setHistoricosAcionamento(new ArrayList<HistoricoAcionamento>());
+        }
+
+        acionamento.getHistoricosAcionamento().add(historicoAcionamento);
+
+        if (!Validation.isBlank(acionamento.getRequerente().getEmail())) {
+            //ConfiguracaoEmail configuracaoEmail = configuracaoEmailDAO.listAll().get(0);
+            Map<String, Object> parametros = new HashMap<String, Object>();
+            parametros.put("acionamento", acionamento);
+            parametros.put("url", ConstantesURL.URL_APLICACAO);
+            emailBO.enviarAssincrono(TipoAssuntoEmail.ACIONAMENTO_RESPOSTA, parametros, acionamento.getRequerente().getEmail());
+        }
+    }
+
+    public void desconsiderar(Acionamento acionamento) throws BusinessException {
+
+        validaDescosideracao(acionamento);
+
+        acionamento.setStatus(StatusAcionamento.DESCONSIDERADO);
+        acionamentoDAO.saveOrMerge(acionamento);
+
+        HistoricoAcionamento historicoAcionamento = new HistoricoAcionamento();
+        historicoAcionamento.setStatus(StatusAcionamento.DESCONSIDERADO);
+        historicoAcionamento.setData(new Date());
+        historicoAcionamento.setUsuario(SessaoUtils.getUser());
+        historicoAcionamento.setAcionamento(acionamento);
+
+        historicoAcionamentoDAO.saveOrMerge(historicoAcionamento, false);
+
+        if (acionamento.getHistoricosAcionamento() == null) {
+            acionamento.setHistoricosAcionamento(new ArrayList<HistoricoAcionamento>());
+        }
+
+        acionamento.getHistoricosAcionamento().add(historicoAcionamento);
+    }
+
+    public void validaResposta(Acionamento acionamento) throws BusinessException {
+        if (acionamento.getStatus().equals(StatusAcionamento.RESPONDIDO)) {
+            throw new BusinessException("business.acionamentoJaFoiRespondido");
+        }
+        if (Validation.isBlank(acionamento.getResposta())) {
+            throw new BusinessException("required.resposta");
+        }
+    }
+
+    public void validaDescosideracao(Acionamento acionamento) throws BusinessException {
+        if (acionamento.getStatus().equals(StatusAcionamento.RESPONDIDO)) {
+            throw new BusinessException("business.acionamentoJaFoiRespondido");
+        }
+        if (acionamento.getStatus().equals(StatusAcionamento.DESCONSIDERADO)) {
+            throw new BusinessException("business.acionamentoJaFoiDesconsiderado");
+        }
+    }
+
+    @Override
+    public AcionamentoDAO getDAO() {
+        return acionamentoDAO;
+    }
+
+    @Override
+    public List<UniqueField> getUniqueFields() {
+        return null;
+    }
+
+    @Override
+    public void validate(Acionamento acionamento) throws BusinessException {
+    }
+
+    @Override
+    public boolean isAudit() {
+        return false;
+    }
+}

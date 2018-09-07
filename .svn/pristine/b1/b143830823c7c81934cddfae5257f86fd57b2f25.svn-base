@@ -1,0 +1,127 @@
+package br.gov.pi.detran.ouvidoria.modelo.geral;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.Size;
+import org.hibernate.annotations.Index;
+import org.hibernate.validator.constraints.Email;
+
+/**
+ *
+ * @author arnaldo
+ */
+@Embeddable 
+public class Requerente implements Serializable{
+
+    @Size(max = 200)
+    @Column(name = "nome_requerente")
+    private String nomeRequerente;
+    
+    @Size(max = 150)
+    @Email
+    private String email;
+    
+    @Size(max = 20)
+    private String telefone;
+    
+    @Size(max = 20)
+    private String celular;
+    
+    @Index(name = "idx_requerente_escolaridade")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Escolaridade escolaridade;
+    
+    @Index(name = "idx_requerente_sexo")
+    @Enumerated(EnumType.STRING)
+    private Sexo sexo;
+    
+    @Index(name = "idx_requerente_faixaEtaria")
+    @Enumerated(EnumType.STRING)
+    private FaixaEtaria faixaEtaria;
+    
+    @Index(name = "idx_requerente_cidade")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Cidade cidade;
+
+    public Requerente() {
+        this.cidade = new Cidade();
+    }
+
+    public String getNomeRequerente() {
+        return nomeRequerente;
+    }
+
+    public void setNomeRequerente(String nomeRequerente) {
+        if(nomeRequerente!=null){
+            nomeRequerente = nomeRequerente.trim().toUpperCase();
+        }
+        this.nomeRequerente = nomeRequerente;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public Escolaridade getEscolaridade() {
+        return escolaridade;
+    }
+
+    public void setEscolaridade(Escolaridade escolaridade) {
+        this.escolaridade = escolaridade;
+    }
+
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
+    }
+
+    public FaixaEtaria getFaixaEtaria() {
+        return faixaEtaria;
+    }
+
+    public void setFaixaEtaria(FaixaEtaria faixaEtaria) {
+        this.faixaEtaria = faixaEtaria;
+    }
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
+
+    @Override
+    public String toString() {
+        return "Requerente{" + "nomeRequerente=" + nomeRequerente + ", email=" + email + ", telefone=" + telefone + ", celular=" + celular + ", escolaridade=" + escolaridade + ", sexo=" + sexo + ", faixaEtaria=" + faixaEtaria + '}';
+    }
+    
+}
